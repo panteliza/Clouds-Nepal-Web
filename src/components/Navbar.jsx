@@ -77,7 +77,7 @@ const NavbarMain = () => {
         </div>
 
         {/* Mobile Menu Icon */}
-        <FiAlignJustify className="text-3xl lg:hidden cursor-pointer text-[#286CFF]" onClick={toggleSidebar} />
+        <FiAlignJustify className="text-3xl lg:hidden cursor-pointer text-[#038A58]" onClick={toggleSidebar} />
 
         {/* Mobile Sidebar */}
         {showSidebar && (
