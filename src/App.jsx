@@ -5,6 +5,7 @@ import './App.css';
 import FloatingButtons from './components/FloatingButtons';
 
 import Home from './pages/Home';
+import CoursesPage from './pages/CoursesPage';
 
 
 
@@ -24,6 +25,7 @@ const App = () => {
         <FloatingButtons />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/courses" element={<CoursesPage />} />
          
           
         </Routes>

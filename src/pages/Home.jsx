@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import Navbar from '../components/Navbar';
+import Courses from "../components/Courses";
+import CoursesLimited from "../components/CoursesLimited";
 
 
 
@@ -18,7 +20,7 @@ const Home = () => {
         <Navbar />
       </div>
         <div className="w-full flex-shrink-0 overflow-hidden">
-             
+             <CoursesLimited/>
       
      
         
