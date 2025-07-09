@@ -10,6 +10,20 @@ import img1 from '../assets/LinkedIn.jpg';
 import img2 from '../assets/Facebook.jpg';
 import img3 from '../assets/Instagram.jpg';
 
+const services = [
+  { path: '/website-development', label: 'Website Development' },
+  { path: '/app-development', label: 'App Development In Nepal' },
+  { path: '/system-software-development', label: 'System/Software Development' },
+  { path: '/ui-ux', label: 'UI/UX' },
+  { path: '/seo', label: 'Search Engine Optimization (SEO)' },
+  { path: '/smm', label: 'Social Media Marketing (SMM)' },
+  { path: '/graphic-design', label: 'Graphic Design' },
+  { path: '/content-writing', label: 'Content Writing' },
+  { path: '/pay-per-click', label: 'Pay Per Click' },
+  { path: '/digital-marketing', label: 'Digital Marketing' },
+];
+
+
 const navLinks = [
   { path: '/contact-us', label: 'CONTACT US' },
   { path: '/career', label: 'CAREER' },
@@ -56,6 +70,28 @@ const NavbarMain = () => {
           <Link to="/" className="text-[#038A58] font-medium hover:text-green-600">HOME</Link>
           <Link to="/about" className="text-gray-700 font-medium hover:text-[#038A58] ">ABOUT</Link>
           <Link to="/courses" className="text-gray-700 font-medium hover:text-[#038A58] ">COURSES</Link>
+
+           <div className="relative text-gray-700 cursor-pointer font-medium hover:text-[#038A58]" onClick={toggleDropdown}>
+            <div className="flex items-center gap-1">
+              <span>SERVICES</span>
+              {showDropdown ? <AiOutlineUp /> : <AiOutlineDown />}
+            </div>
+            {showDropdown && (
+              <div className="absolute top-12 bg-white p-2 grid grid-cols-1 sm:grid-cols-1 gap-2 z-[1] shadow-lg rounded-lg w-[280px]">
+                {services.map(({ path, label }) => (
+                  <Link
+                    key={path}
+                    to={path}
+                    className="block bg-gray-100 hover:bg-[#038A58] text-gray-700 text-sm text-center py-2 px-2 rounded-md shadow transition-all"
+                    onClick={() => setShowDropdown(false)}
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div> 
+
           {navLinks.map(({ path, label }) => (
             <Link key={path} to={path} className="text-gray-700 font-medium hover:text-[#038A58]  transition-all">
               {label}
@@ -105,9 +141,31 @@ const NavbarMain = () => {
               </a>
             </div>
 
-            <Link to="/" className="text-[#038A58] font-medium py-3 px-6 border-b border-gray-200 hover:bg-gray-100" onClick={toggleSidebar}>Home</Link>
+            <Link to="/" className="text-[#038A58] font-medium py-3 px-6 border-b border-gray-200 hover:bg-gray-100" onClick={toggleSidebar}>HOME</Link>
             <Link to="/about" className="py-3 px-6 border-b font-medium border-gray-200 hover:text-[#038A58]" onClick={toggleSidebar}>ABOUT</Link>
             <Link to="/courses" className="py-3 px-6 border-b font-medium border-gray-200 hover:text-[#038A58]" onClick={toggleSidebar}>COURSES</Link>
+
+            <div className="border-b border-gray-200 px-6">
+              <button onClick={toggleDropdown} className="flex font-medium justify-between items-center w-full py-3 text-gray-700">
+                <span>SERVICES</span>
+                {showDropdown ? <AiOutlineUp /> : <AiOutlineDown />}
+              </button>
+              {showDropdown && (
+                <div className="mt-2">
+                  {services.map(({ path, label }) => (
+                    <Link
+                      key={path}
+                      to={path}
+                      className="block bg-gray-100 hover:text-[#038A58] text-gray-700 text-sm text-center py-2 px-2 rounded-md shadow transition-all"
+                      onClick={toggleSidebar}
+                    >
+                      {label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
             {navLinks.map(({ path, label }) => (
               <Link key={path} to={path} className="py-3 px-6 border-b font-medium border-gray-200 hover:text-[#038A58]" onClick={toggleSidebar}>
                 {label}
