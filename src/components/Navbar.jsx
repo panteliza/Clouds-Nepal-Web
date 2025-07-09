@@ -65,13 +65,13 @@ const NavbarMain = () => {
           {/* Social Icons */}
           <div className="flex gap-1">
             <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-              <img src={img1} alt="LinkedIn" className="h-[44px] w-[44px] rounded-full border border-gray-300 p-[5px] object-contain hover:scale-110 transition duration-300" />
+              <img src={img1} alt="LinkedIn" className="h-[44px] w-[44px] rounded-full border border-green-800 p-[5px] object-contain hover:scale-110 transition duration-300" />
             </a>
             <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-              <img src={img3} alt="Instagram" className="h-[44px] w-[44px] rounded-full border border-gray-300 p-[5px] object-contain hover:scale-110 transition duration-300" />
+              <img src={img3} alt="Instagram" className="h-[44px] w-[44px] rounded-full border border-green-800 p-[5px] object-contain hover:scale-110 transition duration-300" />
             </a>
             <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-              <img src={img2} alt="Facebook" className="h-[44px] w-[44px] rounded-full border border-gray-300 p-[5px] object-contain hover:scale-110 transition duration-300" />
+              <img src={img2} alt="Facebook" className="h-[44px] w-[44px] rounded-full border border-green-800 p-[5px] object-contain hover:scale-110 transition duration-300" />
             </a>
           </div>
         </div>
@@ -105,11 +105,11 @@ const NavbarMain = () => {
               </a>
             </div>
 
-            <Link to="/" className="text-[#099BA4] font-medium py-3 px-6 border-b border-gray-200 hover:bg-gray-100" onClick={toggleSidebar}>Home</Link>
-            <Link to="/about" className="py-3 px-6 border-b font-medium border-gray-200 hover:bg-[#07A2BB]" onClick={toggleSidebar}>ABOUT</Link>
-            <Link to="/courses" className="py-3 px-6 border-b font-medium border-gray-200 hover:bg-[#07A2BB]" onClick={toggleSidebar}>COURSES</Link>
+            <Link to="/" className="text-[#038A58] font-medium py-3 px-6 border-b border-gray-200 hover:bg-gray-100" onClick={toggleSidebar}>Home</Link>
+            <Link to="/about" className="py-3 px-6 border-b font-medium border-gray-200 hover:text-[#038A58]" onClick={toggleSidebar}>ABOUT</Link>
+            <Link to="/courses" className="py-3 px-6 border-b font-medium border-gray-200 hover:text-[#038A58]" onClick={toggleSidebar}>COURSES</Link>
             {navLinks.map(({ path, label }) => (
-              <Link key={path} to={path} className="py-3 px-6 border-b font-medium border-gray-200 hover:bg-[#07A2BB]" onClick={toggleSidebar}>
+              <Link key={path} to={path} className="py-3 px-6 border-b font-medium border-gray-200 hover:text-[#038A58]" onClick={toggleSidebar}>
                 {label}
               </Link>
             ))}
@@ -117,13 +117,13 @@ const NavbarMain = () => {
             {/* Mobile Social Icons */}
             <div className="flex justify-center gap-1 mt-4 px-6">
               <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-                <img src={img1} alt="LinkedIn" className="h-[44px] w-[44px] rounded-full border border-gray-300 p-[5px] object-contain hover:scale-110 transition duration-300" />
+                <img src={img1} alt="LinkedIn" className="h-[44px] w-[44px] rounded-full border border-green-800 p-[5px] object-contain hover:scale-110 transition duration-300" />
               </a>
               <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                <img src={img3} alt="Instagram" className="h-[44px] w-[44px] rounded-full border border-gray-300 p-[5px] object-contain hover:scale-110 transition duration-300" />
+                <img src={img3} alt="Instagram" className="h-[44px] w-[44px] rounded-full border border-green-800 p-[5px] object-contain hover:scale-110 transition duration-300" />
               </a>
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                <img src={img2} alt="Facebook" className="h-[44px] w-[44px] rounded-full border border-gray-300 p-[5px] object-contain hover:scale-110 transition duration-300" />
+                <img src={img2} alt="Facebook" className="h-[44px] w-[44px] rounded-full border border-green-800 p-[5px] object-contain hover:scale-110 transition duration-300" />
               </a>
             </div>
           </div>
