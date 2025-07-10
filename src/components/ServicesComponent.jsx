@@ -106,12 +106,14 @@ const ServicesComponent = () => {
                 backgroundColor: "rgba(0, 0, 0, 0.5)",
               }}
             >
-              <h3 className="text-xl font-bold text-center">{service.title}</h3>
-              <Link to={service.link}>
-                <span className="mt-4 px-4 py-2 bg-white text-green-600 font-semibold rounded-full shadow-md hover:bg-gray-100 text-sm">
-                  Learn more
-                </span>
-              </Link>
+             <div className="flex flex-col items-center space-y-3">
+  <h3 className="text-xl font-bold text-center">{service.title}</h3>
+  <Link to={service.link}>
+    <span className="px-4 py-2 bg-white text-green-600 font-semibold rounded-full shadow-md hover:bg-gray-100 text-sm">
+      Learn more
+    </span>
+  </Link>
+</div>
             </div>
 
             {/* Text Section */}
