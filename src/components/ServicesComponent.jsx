@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-// Service Images
+// Service Images (replace with actual paths)
 import webDevImg from "../assets/website.svg";
 import appDevImg from "../assets/app development.svg";
 import systemDevImg from "../assets/system-software.svg";
@@ -13,7 +13,7 @@ import contentImg from "../assets/content-writing.svg";
 import ppcImg from "../assets/pay-per-click.svg";
 import digImg from "../assets/digital-market.svg";
 
-// Icons (can be replaced with actual icons per service)
+// Icons (use actual icons later if needed)
 import webIcon from "../assets/logo.webp";
 import appIcon from "../assets/logo.webp";
 import systemIcon from "../assets/logo.webp";
@@ -94,10 +94,9 @@ const ServicesComponent = () => {
                 </div>
               </div>
 
-              {/* Responsive Overlay Section */}
+              {/* Hover-only Overlay */}
               <div
-                className="absolute inset-0 transition-opacity duration-500 bg-center bg-cover flex flex-col justify-center items-center text-white p-4
-                sm:opacity-0 sm:group-hover:opacity-100 opacity-100"
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-center bg-cover flex flex-col justify-center items-center text-white p-4"
                 style={{
                   backgroundImage: `url(${service.image})`,
                   backgroundBlendMode: "overlay",
