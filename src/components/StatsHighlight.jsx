@@ -7,7 +7,7 @@ import {
   FaUserTie,
   FaAward,
 } from "react-icons/fa";
-import statsImage from "../assets/logo.webp";
+import statsImage from "../assets/IT company.jpg";
 import { motion, useInView } from "framer-motion";
 
 const statsData = [
@@ -46,6 +46,7 @@ const StatsSection = () => {
 
   return (
     <div className="relative bg-gradient-to-br from-green-50 via-white to-green-100 py-24 px-4 sm:px-6 lg:px-20 max-w-screen-xl mx-auto overflow-hidden">
+      {/* Animated background blobs */}
       <div className="absolute -top-10 -left-10 w-72 h-72 bg-green-300 opacity-30 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-[-60px] right-[-60px] w-96 h-96 bg-green-400 opacity-20 rounded-full blur-2xl animate-spin-slow z-0"></div>
 
@@ -83,12 +84,12 @@ const StatsSection = () => {
           {statsData.map((stat, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: [50, -10, 0] }}
+              transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
               className="bg-green-500 text-white px-6 py-6 rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out relative"
             >
-              <div className="bg-white text-green-600 p-3 rounded-full w-fit shadow-md animate-pulse mb-2">
+              <div className="bg-white text-green-600 p-3 rounded-full w-fit shadow-md animate-bounce mb-2">
                 {stat.icon}
               </div>
               <h3 className="text-3xl font-bold">

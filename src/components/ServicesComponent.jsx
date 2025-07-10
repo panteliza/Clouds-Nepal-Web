@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-// Service Images (Replace with actual image paths)
+// Service Images
 import webDevImg from "../assets/website.svg";
 import appDevImg from "../assets/app development.svg";
 import systemDevImg from "../assets/system-software.svg";
@@ -13,7 +13,7 @@ import contentImg from "../assets/content-writing.svg";
 import ppcImg from "../assets/pay-per-click.svg";
 import digImg from "../assets/digital-market.svg";
 
-// Icons (Replace with actual icon paths)
+// Icons (can be replaced with actual icons per service)
 import webIcon from "../assets/logo.webp";
 import appIcon from "../assets/logo.webp";
 import systemIcon from "../assets/logo.webp";
@@ -47,76 +47,16 @@ const ServicesComponent = () => {
   }, []);
 
   const services = [
-    {
-      image: webDevImg,
-      flag: webIcon,
-      title: "Website Development",
-      description: "Specialized Custom Website Development Services",
-      link: "/website-development",
-    },
-    {
-      image: appDevImg,
-      flag: appIcon,
-      title: "App Development In Nepal",
-      description: "Building Custom Apps for Seamless User Experience",
-      link: "/app-development",
-    },
-    {
-      image: systemDevImg,
-      flag: systemIcon,
-      title: "System/Software Development",
-      description: "Cutting-edge System/Software Development Solutions",
-      link: "/system-development",
-    },
-    {
-      image: uiuxImg,
-      flag: uiuxIcon,
-      title: "UI/UX",
-      description: "Design UI/UX interfaces for effortless user interaction",
-      link: "/ui-ux",
-    },
-    {
-      image: seoImg,
-      flag: seoIcon,
-      title: "Search Engine Optimization (SEO)",
-      description: "Enhance Search Engine Ranking with Effective SEO",
-      link: "/seo",
-    },
-    {
-      image: smmImg,
-      flag: smmIcon,
-      title: "Social Media Marketing (SMM)",
-      description: "Boost online presence, engage audience",
-      link: "/smm",
-    },
-    {
-      image: graphicImg,
-      flag: graphicIcon,
-      title: "Graphic Design",
-      description: "Bringing Ideas to Visual Life",
-      link: "/graphic-design",
-    },
-    {
-      image: contentImg,
-      flag: contentIcon,
-      title: "Content Writing",
-      description: "Creating Content that Resonates",
-      link: "/content-writing",
-    },
-    {
-      image: ppcImg,
-      flag: ppcIcon,
-      title: "Pay Per Click (PPC)",
-      description: "Optimized Pay-Per-Click Campaigns",
-      link: "/ppc",
-    },
-    {
-  image: digImg,
-  flag: digIcon,
-  title: "Digital Marketing",
-  description: "Designing Digital Paths That Echo with Audiences",
-  link: "/digital-marketing",
-},
+    { image: webDevImg, flag: webIcon, title: "Website Development", description: "Specialized Custom Website Development Services", link: "/website-development" },
+    { image: appDevImg, flag: appIcon, title: "App Development In Nepal", description: "Building Custom Apps for Seamless User Experience", link: "/app-development" },
+    { image: systemDevImg, flag: systemIcon, title: "System/Software Development", description: "Cutting-edge System/Software Development Solutions", link: "/system-development" },
+    { image: uiuxImg, flag: uiuxIcon, title: "UI/UX", description: "Design UI/UX interfaces for effortless user interaction", link: "/ui-ux" },
+    { image: seoImg, flag: seoIcon, title: "Search Engine Optimization (SEO)", description: "Enhance Search Engine Ranking with Effective SEO", link: "/seo" },
+    { image: smmImg, flag: smmIcon, title: "Social Media Marketing (SMM)", description: "Boost online presence, engage audience", link: "/smm" },
+    { image: graphicImg, flag: graphicIcon, title: "Graphic Design", description: "Bringing Ideas to Visual Life", link: "/graphic-design" },
+    { image: contentImg, flag: contentIcon, title: "Content Writing", description: "Creating Content that Resonates", link: "/content-writing" },
+    { image: ppcImg, flag: ppcIcon, title: "Pay Per Click (PPC)", description: "Optimized Pay-Per-Click Campaigns", link: "/ppc" },
+    { image: digImg, flag: digIcon, title: "Digital Marketing", description: "Designing Digital Paths That Echo with Audiences", link: "/digital-marketing" },
   ];
 
   return (
@@ -138,7 +78,7 @@ const ServicesComponent = () => {
                 visibleCards.includes(index.toString()) ? "animate-zoomIn opacity-100" : "opacity-0"
               }`}
             >
-              {/* Image */}
+              {/* Image Section */}
               <div className="relative">
                 <img
                   src={service.image}
@@ -154,22 +94,23 @@ const ServicesComponent = () => {
                 </div>
               </div>
 
-              {/* Hover Overlay */}
+              {/* Responsive Overlay Section */}
               <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-center bg-cover flex flex-col justify-center items-center text-white p-4"
+                className="absolute inset-0 transition-opacity duration-500 bg-center bg-cover flex flex-col justify-center items-center text-white p-4
+                sm:opacity-0 sm:group-hover:opacity-100 opacity-100"
                 style={{
                   backgroundImage: `url(${service.image})`,
                   backgroundBlendMode: "overlay",
                   backgroundColor: "rgba(0, 0, 0, 0.5)",
                 }}
               >
-                <h3 className="text-xl font-bold">{service.title}</h3>
-                <span className="mt-4 px-4 py-2 bg-white text-blue-600 font-semibold rounded-full shadow-md hover:bg-gray-100">
+                <h3 className="text-xl font-bold text-center">{service.title}</h3>
+                <span className="mt-4 px-4 py-2 bg-white text-green-600 font-semibold rounded-full shadow-md hover:bg-gray-100 text-sm">
                   Learn more
                 </span>
               </div>
 
-              {/* Content */}
+              {/* Text Section */}
               <div className="p-6 text-center">
                 <h3 className="text-xl font-bold text-gray-800">{service.title}</h3>
                 <p className="text-gray-600 mt-2">{service.description}</p>
