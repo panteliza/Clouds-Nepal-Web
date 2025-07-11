@@ -11,12 +11,12 @@ import statsImage from "../assets/IT company.jpg";
 import { motion, useInView } from "framer-motion";
 
 const statsData = [
-  { icon: <FaUsers size={28} />, title: "Active & Enrolled Clients", value: 10000, suffix: "+" },
-  { icon: <FaBriefcase size={28} />, title: "Successful Job Placements", value: 7000, suffix: "+" },
-  { icon: <FaLaptopCode size={28} />, title: "Software Projects Delivered", value: 30, suffix: "+" },
-  { icon: <FaUniversity size={28} />, title: "College Collaborations", value: 20, suffix: "+" },
-  { icon: <FaUserTie size={28} />, title: "Expert Trainers", value: 80, suffix: "+" },
-  { icon: <FaAward size={28} />, title: "Years of Experience", value: 7, suffix: "+" },
+  { icon: <FaUsers size={28} />, title: "Active & Enrolled Clients", value: 1500, suffix: "+" },
+  { icon: <FaBriefcase size={28} />, title: "Successful Internship Placements", value: 400, suffix: "+" },
+ { icon: <FaAward size={28} />, title: "Years of Experience", value: 6, suffix: "+" },
+ 
+  { icon: <FaUserTie size={28} />, title: "Qualified Teachers", value: 40, suffix: "+" },
+  
 ];
 
 const CountUp = ({ end, trigger }) => {

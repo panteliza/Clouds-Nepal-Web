@@ -189,7 +189,7 @@ const CoursesLimited = () => {
         Explore our most popular and career-focused trainings, carefully selected for maximum impact.
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <div className="grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto ">
         {courses.slice(0, 15).map((course, index) => (
           <div
             key={index}
@@ -198,21 +198,21 @@ const CoursesLimited = () => {
             <img
               src={course.image}
               alt={course.title}
-              className="w-full h-52 object-cover transition-transform duration-300 hover:scale-105"
+              className="w-full h-44 sm:h-52 object-cover transition-transform duration-300 hover:scale-105"
               loading="lazy"
             />
             <div className="p-5 flex-1">
-              <h3 className="text-lg font-bold text-green-700 mb-2">{course.title}</h3>
-              <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
+              <h3 className="sm:text-lg font-bold text-green-700 mb-2">{course.title}</h3>
+              <ul className="list-disc list-inside text-[10px] sm:text-sm text-gray-600 space-y-1">
                 {course.points.map((point, i) => (
                   <li key={i}>{point}</li>
                 ))}
               </ul>
             </div>
-            <div className="p-4 flex justify-center">
+            <div className="sm:p-4 pb-2 flex justify-center">
               <Link
                 to={course.path}
-                className="px-6 py-2 bg-green-700 text-white rounded-full font-semibold hover:bg-green-800 transition"
+                className=" px-3 py-1 sm:px-6 sm:py-2 bg-green-700 text-white rounded-full font-semibold hover:bg-green-800 transition"
               >
                 Read More
               </Link>

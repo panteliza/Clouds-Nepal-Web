@@ -14,7 +14,7 @@ import ppcImg from "../assets/pay-per-click.svg";
 import digImg from "../assets/digital-market.svg";
 
 // Icons
-import logoIcon from "../assets/logo.webp"; // same icon used for all for now
+import logoIcon from "../assets/logo.webp";
 
 const services = [
   { image: webDevImg, flag: logoIcon, title: "Website Development", description: "Specialized Custom Website Development Services", link: "/website-development" },
@@ -60,20 +60,20 @@ const ServicesComponent = () => {
   return (
     <div className="bg-gray-100 py-10 px-4 scroll-smooth">
       <div className="text-center mb-10">
-        <h2 className="text-4xl font-bold animate-fadeIn">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold animate-fadeIn">
           <span className="text-green-600">Our</span>{" "}
           <span className="text-green-700">Services</span>
         </h2>
-        <p className="text-gray-600 mt-2">From development to marketing — we cover it all.</p>
+        <p className="text-sm sm:text-base text-gray-600 mt-2">From development to marketing — we cover it all.</p>
       </div>
 
-      <div className="grid gap-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+      <div className="grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto ">
         {services.map((service, index) => (
           <div
             data-index={index}
             onClick={() => handleCardClick(index)}
             key={index}
-            className={`service-card relative group py-5 px-5 bg-white shadow-md rounded-lg overflow-hidden transition-all duration-700 hover:shadow-xl transform hover:-translate-y-3 cursor-pointer ${
+            className={`service-card relative group  sm:py-5 px-5  shadow-md rounded-lg overflow-hidden transition-all duration-700 hover:shadow-xl transform hover:-translate-y-3 cursor-pointer bg-white ${
               visibleCards.includes(index.toString()) ? "animate-zoomIn opacity-100" : "opacity-0"
             }`}
           >
@@ -82,7 +82,7 @@ const ServicesComponent = () => {
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-full h-48 object-cover rounded"
+                className="w-full h-36 sm:h-48 object-cover rounded"
               />
               <div className="absolute -bottom-5 right-5 bg-white rounded-full p-1 shadow-lg border-4 border-gray-200">
                 <img
@@ -106,20 +106,20 @@ const ServicesComponent = () => {
                 backgroundColor: "rgba(0, 0, 0, 0.5)",
               }}
             >
-             <div className="flex flex-col items-center space-y-3">
-  <h3 className="text-xl font-bold text-center">{service.title}</h3>
-  <Link to={service.link}>
-    <span className="px-4 py-2 bg-white text-green-600 font-semibold rounded-full shadow-md hover:bg-gray-100 text-sm">
-      Learn more
-    </span>
-  </Link>
-</div>
+              <div className="flex flex-col items-center space-y-3">
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-center">{service.title}</h3>
+                <Link to={service.link}>
+                  <span className="px-4 py-2 bg-white text-green-600 font-semibold rounded-full shadow-md hover:bg-gray-100 text-xs sm:text-sm">
+                    Learn more
+                  </span>
+                </Link>
+              </div>
             </div>
 
             {/* Text Section */}
-            <div className="p-6 text-center">
-              <h3 className="text-xl font-bold text-gray-800">{service.title}</h3>
-              <p className="text-gray-600 mt-2">{service.description}</p>
+            <div className="pt-6 pb-2 text-center">
+              <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-800">{service.title}</h3>
+              <p className="text-sm sm:text-base text-gray-600 mt-2">{service.description}</p>
             </div>
           </div>
         ))}
