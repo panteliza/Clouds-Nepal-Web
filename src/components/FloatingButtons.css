@@ -8,6 +8,7 @@
   z-index: 1000;
 }
 
+/* WhatsApp & Email & Close Circular Buttons */
 .floating-button {
   width: 60px;
   height: 60px;
@@ -25,25 +26,37 @@
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
 }
 
-/* Color themes */
-.floating-button.orange {
-  background-color: #f97316;
-  animation: shiver 1.5s infinite ease-in-out;
-}
-
 .floating-button.green {
-  background-color: #22c55e;
+  background-color: #32CD32; /* WhatsApp */
 }
 
 .floating-button.blue {
-  background-color: #3b82f6;
+  background-color: #3b82f6; /* Email */
+}
+
+.floating-button.red {
+  background-color: #ef4444; /* Close Button - Red */
+}
+
+/* ✅ Let's Talk Image Only */
+.lets-talk-image {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  cursor: pointer;
+  animation: shiver 1.5s infinite ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+.lets-talk-image:hover {
+  transform: scale(1.05);
 }
 
 /* Shiver animation */
 @keyframes shiver {
   0%   { transform: translate(0, 0); }
-  25%  { transform: translate(-2px, 2px); }
-  50%  { transform: translate(2px, -2px); }
-  75%  { transform: translate(-2px, -2px); }
+  25%  { transform: translate(-1.5px, 1.5px); }
+  50%  { transform: translate(1.5px, -1.5px); }
+  75%  { transform: translate(-1.5px, -1.5px); }
   100% { transform: translate(0, 0); }
 }

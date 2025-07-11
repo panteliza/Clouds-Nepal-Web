@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaWhatsapp, FaCommentDots, FaTimes } from 'react-icons/fa';
-import './FloatingButtons.css'; // Make sure this path is correct
+import letsTalkImg from '../assets/lets talk.png'; // ✅ Make sure this path is correct
+import './FloatingButtons.css';
 
 const FloatingButtons = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,10 +11,8 @@ const FloatingButtons = () => {
     <div className="floating-container">
       {isOpen && (
         <>
-          {/* WhatsApp button */}
           <a
-            href="https://wa.me/9779766896866
-?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+            href="https://wa.me/9779766896866?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20your%20services."
             target="_blank"
             rel="noreferrer"
             className="floating-button green"
@@ -21,9 +20,8 @@ const FloatingButtons = () => {
             <FaWhatsapp size={24} color="white" />
           </a>
 
-          {/* Email button */}
           <a
-            href="mailto:webcloudsnepal@gmail.com?subject=Service%20Inquiry&body=Hello,%20I%20would%20like%20to%20know%20more%20about%20your%20construction%20services."
+            href="mailto:webcloudsnepal@gmail.com?subject=Service%20Inquiry&body=Hello,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
             target="_blank"
             rel="noreferrer"
             className="floating-button blue"
@@ -33,12 +31,18 @@ const FloatingButtons = () => {
         </>
       )}
 
-      {/* Toggle Button */}
-      <div className="floating-button orange" onClick={toggleButtons}>
+      {/* ✅ Toggle Button */}
+      <div onClick={toggleButtons}>
         {isOpen ? (
-          <FaTimes size={24} color="white" />
+          <div className="floating-button red">
+            <FaTimes size={24} color="white" />
+          </div>
         ) : (
-          <FaCommentDots size={24} color="white" />
+          <img
+            src={letsTalkImg}
+            alt="Let's Talk"
+            className="lets-talk-image"
+          />
         )}
       </div>
     </div>
