@@ -49,7 +49,7 @@ const CloudsContactForm = () => {
       %0AMessage: ${encodeURIComponent(data.message)}
     `;
 
-    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=cloudsnepalweb@gmail.com&su=${encodeURIComponent(subject)}&body=${body}`;
+    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=webcloudsnepal@gmail.com&su=${encodeURIComponent(subject)}&body=${body}`;
     window.open(gmailLink, "_blank");
     setMessageSent(true);
   };
@@ -107,7 +107,7 @@ const CloudsContactForm = () => {
         {/* Info Section */}
         <div className="flex flex-col gap-6 justify-center items-center">
           <a
-            href="https://www.google.com/maps?q=clouds+nepal+web"
+            href="https://www.google.com/maps/place/Clouds+Nepal+Web/@27.7026219,85.2856552,14z/data=!4m10!1m2!2m1!1sclouds+nepal+web!3m6!1s0x39eb1921c7255c99:0x6ccea7cf28cfbfce!8m2!3d27.7026219!4d85.3217041!15sChBjbG91ZHMgbmVwYWwgd2VikgEQc29mdHdhcmVfY29tcGFueaoBORABMh8QASIbWnUaihpCWsZ6PG0LXuWV1CKeJTC7zICFwVvWMhQQAiIQY2xvdWRzIG5lcGFsIHdlYuABAA!16s%2Fg%2F11svzpr6j_?entry=ttu&g_ep=EgoyMDI1MDcwOC4wIKXMDSoASAFQAw%3D%3D"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full overflow-hidden rounded-xl shadow-2xl transform hover:scale-[1.02] transition"
