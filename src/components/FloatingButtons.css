@@ -40,7 +40,7 @@
 
 /* ✅ Let's Talk Image Only */
 .lets-talk-image {
-  width: 120px;
+  width: 100px;
   height: auto;
   object-fit: contain;
   cursor: pointer;
