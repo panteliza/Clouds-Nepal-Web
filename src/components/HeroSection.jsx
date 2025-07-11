@@ -29,23 +29,21 @@ const HeroSection = () => {
         </svg>
 
         {/* Floating Code Symbols */}
-     <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-  {Array.from({ length: 25 }).map((_, i) => (
-    <span
-      key={i}
-      className={`absolute text-4xl font-mono opacity-[0.22] animate-float-symbol text-glow`}
-      style={{
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-        animationDelay: `${i * 1.2}s`,
-      }}
-    >
-      {["<>", "</>", "{ }", "=>", "if", "==", "!=", "&&", "||", "<div />"][i % 10]}
-    </span>
-  ))}
-</div>
-
-
+        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+          {Array.from({ length: 20 }).map((_, i) => (
+            <span
+              key={i}
+              className={`absolute text-[#05693A] text-4xl font-mono opacity-[0.05] animate-float-symbol`}
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${i * 1.5}s`,
+              }}
+            >
+              {["<>", "</>", "{ }", "=>", "if", "==", "!=", "&&", "||", "<div />"][i % 10]}
+            </span>
+          ))}
+        </div>
       </div>
 
       <motion.div
@@ -204,19 +202,6 @@ const HeroSection = () => {
         .animate-float-symbol {
           animation: floatSymbol 12s ease-in-out infinite;
         }
-        .text-glow {
-  color: #05693A; /* original green */
-  text-shadow:
-    0 0 3px #06a35e,   /* lighter glow */
-    0 0 6px #06a35e,
-    0 0 10px #05693A;
-}
-
-
-}
-
-}
-
       `}</style>
     </section>
   );
