@@ -76,7 +76,7 @@ const BottomNav = () => {
             {/* Links */}
             <div className="flex flex-col space-y-5 text-[16px] font-medium text-gray-800">
               <div className="space-y-3">
-                <Link to="/" onClick={toggleSidebar} className="hover:text-green-700 block">🏠 Home</Link>
+                <Link to="/" onClick={toggleSidebar} className="hover:text-green-700 block">🏛️ Home</Link>
                 <Link to="/about" onClick={toggleSidebar} className="hover:text-green-700 block">ℹ️ About</Link>
                 <Link to="/courses" onClick={toggleSidebar} className="hover:text-green-700 block">📘 Courses</Link>
                 <Link to="/contact-us" onClick={toggleSidebar} className="hover:text-green-700 block">📩 Contact Us</Link>
