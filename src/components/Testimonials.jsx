@@ -62,14 +62,14 @@ const Testimonials = () => {
 
   return (
     <section className="bg-green-900 text-white py-16 px-4 relative z-10">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 items-start">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
         {/* Left Section */}
         <div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Our Student Voice</h2>
           <p className="mb-6 text-lg">
             Our team can assist you in transforming your skill through latest tech capabilities to stay ahead of the competition.
           </p>
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap">
             {testimonials.slice(0, 5).map((item, i) => (
               <div
                 key={i}
@@ -90,8 +90,8 @@ const Testimonials = () => {
             autoplay={{ delay: 5000 }}
             spaceBetween={30}
             breakpoints={{
-              640: { slidesPerView: 1 },
-              1024: { slidesPerView: 2 },
+              0: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
             }}
             className="pb-16"
           >
@@ -127,7 +127,7 @@ const Testimonials = () => {
       {/* Modal */}
       {modalData && (
         <div className="fixed inset-0 z-50 bg-white/30 backdrop-blur-sm flex items-center justify-center px-4">
-          <div className="bg-white text-gray-800 rounded-lg p-6 max-w-xl w-full relative shadow-lg">
+          <div className="bg-white text-gray-800 rounded-lg p-6 w-full max-w-lg sm:max-w-xl relative shadow-lg">
             <button
               onClick={() => setModalData(null)}
               className="absolute top-2 right-2 bg-gray-800 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-gray-600 transition"
