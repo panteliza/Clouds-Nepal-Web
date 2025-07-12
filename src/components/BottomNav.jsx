@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaHome, FaBook, FaInfoCircle, FaEllipsisH } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
+import { motion } from "framer-motion";
 
 const BottomNav = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -45,17 +46,23 @@ const BottomNav = () => {
         </button>
       </nav>
 
-      {/* Sidebar and Overlay */}
+      {/* Sidebar + Overlay */}
       {showSidebar && (
         <>
-          {/* Light blur (not dark) */}
+          {/* Light Blur Overlay */}
           <div
             className="fixed inset-0 bg-white/30 backdrop-blur-sm z-40"
             onClick={toggleSidebar}
           ></div>
 
-          {/* Sidebar Drawer */}
-          <div className="fixed top-0 right-0 w-[280px] h-full bg-white z-50 p-6 overflow-y-auto shadow-2xl transition-transform duration-300 ease-in-out translate-x-0 rounded-l-2xl">
+          {/* Framer Motion Sidebar */}
+          <motion.div
+            initial={{ x: 300 }}
+            animate={{ x: 0 }}
+            exit={{ x: 300 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="fixed top-0 right-0 w-[280px] h-full z-50 p-6 overflow-y-auto rounded-l-2xl shadow-2xl bg-gradient-to-br from-green-50 via-white to-green-100 animate-gradient-bg"
+          >
             {/* Close Button */}
             <div className="flex justify-end mb-4">
               <button
@@ -78,8 +85,7 @@ const BottomNav = () => {
 
               {/* Services */}
               <div className="pt-5 border-t border-gray-200">
-               <h3 className="text-green-700 font-semibold text-sm mb-3">💻 Our Services</h3>
-
+                <h3 className="text-green-700 font-semibold text-sm mb-3">💻 Our Services</h3>
                 <div className="space-y-2">
                   {services.map(({ path, label }) => (
                     <Link
@@ -94,7 +100,7 @@ const BottomNav = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </>
       )}
     </>
