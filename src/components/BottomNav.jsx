@@ -78,7 +78,8 @@ const BottomNav = () => {
 
               {/* Services */}
               <div className="pt-5 border-t border-gray-200">
-                <h3 className="text-green-700 font-semibold text-sm mb-3">🔧 Our Services</h3>
+               <h3 className="text-green-700 font-semibold text-sm mb-3">💻 Our Services</h3>
+
                 <div className="space-y-2">
                   {services.map(({ path, label }) => (
                     <Link
