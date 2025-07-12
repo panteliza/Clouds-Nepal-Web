@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-import mapImage from "../assets/map.png"; // Replace with your own map image
+
 
 const courseOptions = [
   "ASP.NET", "AWS", "Backend Development", "Business Analysis", "C/C++", "Data Science",
@@ -106,19 +106,7 @@ const CloudsContactForm = () => {
 
         {/* Info Section */}
         <div className="flex flex-col gap-6 justify-center items-center">
-          <a
-            href="https://www.google.com/maps/place/Clouds+Nepal+Web/@27.7026219,85.2856552,14z/data=!4m10!1m2!2m1!1sclouds+nepal+web!3m6!1s0x39eb1921c7255c99:0x6ccea7cf28cfbfce!8m2!3d27.7026219!4d85.3217041!15sChBjbG91ZHMgbmVwYWwgd2VikgEQc29mdHdhcmVfY29tcGFueaoBORABMh8QASIbWnUaihpCWsZ6PG0LXuWV1CKeJTC7zICFwVvWMhQQAiIQY2xvdWRzIG5lcGFsIHdlYuABAA!16s%2Fg%2F11svzpr6j_?entry=ttu&g_ep=EgoyMDI1MDcwOC4wIKXMDSoASAFQAw%3D%3D"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full overflow-hidden rounded-xl shadow-2xl transform hover:scale-[1.02] transition"
-          >
-            <img
-              src={mapImage}
-              alt="Clouds Nepal Web Map"
-              className="w-full h-[250px] md:h-[300px] object-contain"
-            />
-          </a>
-
+         
           <div ref={refs[0]} className={cardBase} style={{ animation: "fadeInLeft 1.2s ease-out forwards", animationPlayState: "paused" }}>
             <FaMapMarkerAlt className="text-blue-900 text-3xl mb-3 shiver-icon" />
             <h3 className="font-bold text-lg text-gray-800">Location</h3>
