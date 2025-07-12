@@ -17,43 +17,43 @@ const testimonials = [
     name: "Susmita Rai",
     course: "DevOps",
     image: img1,
-    shortText: `I would like to share my testimony about the impactful DevOps training I recently completed...`,
-    fullText: `I would like to share my testimony about the impactful DevOps training I recently completed at Clouds Nepal Web. The experienced instructor left no detail untouched, helped us through technical challenges, and even offered extra sessions when needed. It was a highly rewarding experience that truly boosted my confidence and knowledge.`,
+    shortText: `Clouds Nepal Web provided one of the most effective DevOps training programs I’ve attended.`,
+    fullText: `Clouds Nepal Web provided one of the most effective DevOps training programs I’ve attended. The course was well-structured, highly practical, and the instructors left no stone unturned. We tackled real-world challenges, received constant feedback, and even had the opportunity to revisit complex topics through extra classes. I gained not only technical skills but also confidence to handle DevOps workflows professionally.`,
   },
   {
     name: "Bivek Kumar Yadav",
     course: "Python with Data Science",
     image: img2,
-    shortText: `The overall experience of training at Clouds Nepal Web was really impressive...`,
-    fullText: `The overall experience of training at Clouds Nepal Web was outstanding. Their curriculum, faculty expertise, and focus on real-world projects provided a clear learning path. It greatly improved my coding skills and analytical thinking.`,
+    shortText: `My journey at Clouds Nepal Web was truly transformative in terms of data science skills.`,
+    fullText: `My journey at Clouds Nepal Web was truly transformative. The Python with Data Science course blended strong theoretical foundation with practical hands-on projects. From data wrangling to machine learning model evaluation, the instructors made sure we built real skills. I now feel ready to pursue both job and freelance opportunities in the field.`,
   },
   {
     name: "Manisha Shrestha",
     course: "Web Development",
     image: img3,
-    shortText: `Clouds Nepal Web gave me the confidence to start a coding career...`,
-    fullText: `Clouds Nepal Web gave me the confidence to start a coding career. Their project-based teaching and mentoring helped me go from zero to deploying websites within weeks.`,
+    shortText: `The full-stack course at Clouds Nepal Web helped me go from zero to deployment.`,
+    fullText: `The full-stack course at Clouds Nepal Web helped me go from zero to deployment. It was practical, beginner-friendly, and focused on real-world tools like Git, React, and Node.js. The support from mentors was consistent and the peer environment was highly encouraging.`,
   },
   {
     name: "Sagar Thapa",
     course: "UI/UX Design",
     image: img4,
-    shortText: `The UI/UX design course at Clouds Nepal Web was engaging and practical...`,
-    fullText: `The UI/UX design course at Clouds Nepal Web was engaging and practical. I loved how they combined theory with live design critiques and prototyping tools.`,
+    shortText: `Clouds Nepal Web gave me practical design skills and confidence to build prototypes.`,
+    fullText: `Clouds Nepal Web gave me practical design skills and confidence to build prototypes. Their UI/UX design course combined Figma practice, user psychology, and live project reviews. It helped me build a solid portfolio and understand how to work with developers effectively.`,
   },
   {
     name: "Ramesh Karki",
     course: "Machine Learning",
     image: img5,
-    shortText: `The ML program at Clouds Nepal Web was very detailed and industry-focused...`,
-    fullText: `The ML program at Clouds Nepal Web was very detailed and industry-focused. From data processing to model evaluation, everything was taught in a very logical way with strong practical examples.`,
+    shortText: `ML training at Clouds Nepal Web built my fundamentals and project skills.`,
+    fullText: `ML training at Clouds Nepal Web built my fundamentals and project skills. The instructors broke down complex algorithms in a beginner-friendly way and gave hands-on assignments to reinforce learning. I can now confidently experiment with datasets and train models for real use.`,
   },
   {
     name: "Ritu Sharma",
     course: "Flutter App Dev",
     image: img6,
-    shortText: `Flutter training at Clouds Nepal Web made me job-ready...`,
-    fullText: `Flutter training at Clouds Nepal Web made me job-ready. The hands-on projects and feedback from instructors helped me build and publish my first real mobile app.`,
+    shortText: `The Flutter course helped me publish my first app to the Play Store.`,
+    fullText: `The Flutter course helped me publish my first app to the Play Store. From UI design to integrating Firebase, the training covered it all. The course taught me not just coding but also best practices in mobile development.`,
   },
 ];
 
@@ -63,7 +63,7 @@ const Testimonials = () => {
   return (
     <section className="bg-[#0066b2] text-white py-16 px-4 relative z-10">
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 items-start">
-        {/* Left */}
+        {/* Left Section */}
         <div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Our Student Voice</h2>
           <p className="mb-6 text-lg">
@@ -81,7 +81,7 @@ const Testimonials = () => {
           </div>
         </div>
 
-        {/* Right */}
+        {/* Swiper Section */}
         <div className="md:col-span-2">
           <Swiper
             modules={[Pagination, Navigation, Autoplay]}
@@ -126,16 +126,16 @@ const Testimonials = () => {
 
       {/* Modal */}
       {modalData && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-70 flex items-center justify-center px-4">
-          <div className="bg-white text-gray-800 rounded-lg p-6 max-w-xl w-full relative">
+        <div className="fixed inset-0 z-50 bg-white/30 backdrop-blur-sm flex items-center justify-center px-4">
+          <div className="bg-white text-gray-800 rounded-lg p-6 max-w-xl w-full relative shadow-lg">
             <button
               onClick={() => setModalData(null)}
-              className="absolute top-2 right-2 bg-black text-white rounded-full w-8 h-8 flex items-center justify-center"
+              className="absolute top-2 right-2 bg-gray-800 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-red-600 transition"
             >
               ✖
             </button>
-            <p className="text-md mb-6">{modalData.fullText}</p>
-            <div className="flex items-center mt-auto">
+            <p className="text-base mb-6 leading-relaxed">{modalData.fullText}</p>
+            <div className="flex items-center">
               <img
                 src={modalData.image}
                 alt={modalData.name}
