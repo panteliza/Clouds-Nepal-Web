@@ -61,7 +61,7 @@ const Testimonials = () => {
   const [modalData, setModalData] = useState(null);
 
   return (
-    <section className="bg-[#0066b2] text-white py-16 px-4 relative z-10">
+    <section className="bg-green-900 text-white py-16 px-4 relative z-10">
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 items-start">
         {/* Left Section */}
         <div>
@@ -130,7 +130,7 @@ const Testimonials = () => {
           <div className="bg-white text-gray-800 rounded-lg p-6 max-w-xl w-full relative shadow-lg">
             <button
               onClick={() => setModalData(null)}
-              className="absolute top-2 right-2 bg-gray-800 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-red-600 transition"
+              className="absolute top-2 right-2 bg-gray-800 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-gray-600 transition"
             >
               ✖
             </button>
