@@ -106,7 +106,7 @@ const NavbarMain = () => {
         </div>
 
         {/* Social Icons for Mobile */}
-        <div className="flex gap-2 items-center lg:hidden">
+        <div className="flex gap-1 items-center lg:hidden">
           <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
             <img src={img1} alt="LinkedIn" className="h-[36px] w-[36px] rounded-full border border-green-800 p-[4px] object-contain hover:scale-110 transition duration-300" />
           </a>
