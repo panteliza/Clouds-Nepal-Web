@@ -1,3 +1,4 @@
+/* ✅ Floating container for all buttons */
 .floating-container {
   position: fixed;
   bottom: 20px;
@@ -8,7 +9,14 @@
   z-index: 1000;
 }
 
-/* WhatsApp & Email & Close Circular Buttons */
+/* 🔼 Move buttons slightly up on small screens */
+@media screen and (max-width: 768px) {
+  .floating-container {
+    bottom: 80px; /* Push it up to avoid overlapping bottom nav */
+  }
+}
+
+/* 🔘 Circular floating buttons (WhatsApp, Email, Close) */
 .floating-button {
   width: 60px;
   height: 60px;
@@ -35,10 +43,10 @@
 }
 
 .floating-button.red {
-  background-color: #ef4444; /* Close Button - Red */
+  background-color: #ef4444; /* Close Button */
 }
 
-/* ✅ Let's Talk Image Only */
+/* 💬 Let's Talk Image Button */
 .lets-talk-image {
   width: 100px;
   height: auto;
@@ -52,7 +60,7 @@
   transform: scale(1.05);
 }
 
-/* Shiver animation */
+/* ✨ Shiver animation for 'Let's Talk' image */
 @keyframes shiver {
   0%   { transform: translate(0, 0); }
   25%  { transform: translate(-1.5px, 1.5px); }
