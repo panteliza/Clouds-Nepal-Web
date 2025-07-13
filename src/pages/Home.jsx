@@ -7,6 +7,7 @@ import StatsHighlight from "../components/StatsHighlight";
 import CloudsContactForm from "../components/CloudsContactForm";
 import HeroSection from "../components/HeroSection";
 import Testimonials from "../components/Testimonials";
+import Footer from "../components/Footer";
 
 
 
@@ -31,6 +32,7 @@ const Home = () => {
              <CoursesLimited/>
              <CloudsContactForm/>
              <Testimonials/>
+           <Footer/>
       
      
         
