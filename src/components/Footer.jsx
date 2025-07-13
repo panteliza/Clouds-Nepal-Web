@@ -9,12 +9,12 @@ const Footer = () => {
     <footer
       className="w-full text-white"
       style={{
-        backgroundColor: "",
-        backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url(${footerBg})`,
+        backgroundColor: "#0f3e24", // Tailwind green-700
+        backgroundImage: `linear-gradient(to bottom, rgba(21, 128, 61, 0.6), rgba(21, 128, 61, 0.8)), url(${footerBg})`,
         backgroundPosition: "center bottom",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        paddingBottom: "0px", // ✅ No extra space at the bottom
+        paddingBottom: "0px",
       }}
     >
       {/* Content Section */}
@@ -114,13 +114,13 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright Bar */}
+      {/* Copyright */}
       <div
         className="w-full text-center py-3 px-4 text-white font-medium"
-       style={{
-  backgroundImage: "linear-gradient(to right, #166534, #22c55e, #4ade80, #86efac, #22c55e, #16a34a)"
-}}
-
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, #166534, #22c55e, #4ade80, #86efac, #22c55e, #16a34a)",
+        }}
       >
         <p className="text-sm xl:text-md">
           © {new Date().getFullYear()} <strong>Clouds Nepal Web</strong>. All Rights Reserved.
