@@ -1,150 +1,128 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-// Service Images
-import webDevImg from "../assets/website.svg";
-import appDevImg from "../assets/app development.svg";
-import systemDevImg from "../assets/system-software.svg";
-import uiuxImg from "../assets/UI_UX.svg";
-import seoImg from "../assets/seo.svg";
-import smmImg from "../assets/social.svg";
-import graphicImg from "../assets/graphic.svg";
-import contentImg from "../assets/content-writing.svg";
-import ppcImg from "../assets/pay-per-click.svg";
-import digImg from "../assets/digital-market.svg";
+// 📌 Replace these with actual image paths
+import img1 from "../assets/frontend.webp";
+import img2 from "../assets/backend.webp";
+import img3 from "../assets/fullstack.webp";
+import img4 from "../assets/mean.webp";
+import img5 from "../assets/digital-marketing.webp";
+import img6 from "../assets/graphics.webp";
+import img7 from "../assets/python-django.webp";
+import img8 from "../assets/qa.webp";
+import img9 from "../assets/uiux.webp";
+import img10 from "../assets/ethical-hacking.webp";
+import img11 from "../assets/business-analysis.webp";
+import img12 from "../assets/flutter.webp";
+import img13 from "../assets/react-native.webp";
+import img14 from "../assets/python-ai.webp";
+import img15 from "../assets/data-science.webp";
 
-// Icons
-import logoIcon from "../assets/logo.webp";
-
-const services = [
-  { image: webDevImg, flag: logoIcon, title: "Website Development", description: "Specialized Custom Website Development Services", link: "/website-development" },
-  { image: appDevImg, flag: logoIcon, title: "App Development In Nepal", description: "Building Custom Apps for Seamless User Experience", link: "/app-development" },
-  { image: systemDevImg, flag: logoIcon, title: "System/Software Development", description: "Cutting-edge System/Software Development Solutions", link: "/system-development" },
-  { image: uiuxImg, flag: logoIcon, title: "UI/UX", description: "Design UI/UX interfaces for effortless user interaction", link: "/ui-ux" },
-  { image: seoImg, flag: logoIcon, title: "Search Engine Optimization (SEO)", description: "Enhance Search Engine Ranking with Effective SEO", link: "/seo" },
-  { image: smmImg, flag: logoIcon, title: "Social Media Marketing (SMM)", description: "Boost online presence, engage audience", link: "/smm" },
-  { image: graphicImg, flag: logoIcon, title: "Graphic Design", description: "Bringing Ideas to Visual Life", link: "/graphic-design" },
-  { image: contentImg, flag: logoIcon, title: "Content Writing", description: "Creating Content that Resonates", link: "/content-writing" },
-  { image: ppcImg, flag: logoIcon, title: "Pay Per Click (PPC)", description: "Optimized Pay-Per-Click Campaigns", link: "/ppc" },
-  { image: digImg, flag: logoIcon, title: "Digital Marketing", description: "Designing Digital Paths That Echo with Audiences", link: "/digital-marketing" },
+const courses = [
+  { image: img1, title: "Frontend Development", path: "/frontend-development", points: ["HTML, CSS, and JavaScript Basics", "Responsive Web Design", "JavaScript Frameworks (React, Vue, Angular)"] },
+  { image: img2, title: "Backend Development", path: "/backend-development", points: ["MongoDB Basics and Data Modeling", "Building RESTful APIs with Express.js", "Node.js and Asynchronous Programming"] },
+  { image: img3, title: "Full Stack Web Development", path: "/fullstack-development", points: ["Frontend with HTML, CSS", "Backend with Node.js, Express.js", "RESTful APIs Integration"] },
+  { image: img4, title: "MEAN Stack", path: "/mean-stack", points: ["Frontend with HTML, CSS", "Backend with Node.js, Express.js", "Integrating with Angular"] },
+  { image: img5, title: "Digital Marketing", path: "/digital-marketing", points: ["Search Engine Optimization (SEO)", "Pay-Per-Click (PPC) Advertising", "Social Media Marketing (SMM)"] },
+  { image: img6, title: "Graphics Design", path: "/graphics-design", points: ["Fundamentals of Design Theory", "Typography and Font Pairing", "Color Theory"] },
+  { image: img7, title: "Python & Django", path: "/python-django", points: ["Python Basics & OOP", "Django Framework", "Python Libraries"] },
+  { image: img8, title: "QA Training", path: "/qa-training", points: ["Manual Testing", "Test Case Design", "Bug Reporting"] },
+  { image: img9, title: "UI/UX Design", path: "/uiux-design", points: ["Design Principles", "Wireframing & Prototyping", "User Research"] },
+  { image: img10, title: "Ethical Hacking", path: "/ethical-hacking", points: ["Networking Fundamentals", "Linux for Hackers", "Security Testing"] },
+  { image: img11, title: "Business Analysis", path: "/business-analysis", points: ["Planning & Monitoring", "Requirements Gathering", "BA Role"] },
+  { image: img12, title: "Flutter App Dev", path: "/flutter-training", points: ["Flutter & Dart", "UI Building", "API Integration"] },
+  { image: img13, title: "React Native App Dev", path: "/react-native-training", points: ["JSX Basics", "Component Lifecycle", "Navigation"] },
+  { image: img14, title: "Python With AI", path: "/python-ai-training", points: ["Python Basics", "AI Concepts", "Use of AI Libraries"] },
+  { image: img15, title: "Data Science With Python", path: "/data-science-python", points: ["NumPy & Pandas", "Data Analysis", "Visualization"] },
 ];
 
-const ServicesComponent = () => {
-  const [visibleCards, setVisibleCards] = useState([]);
-  const [activeOverlay, setActiveOverlay] = useState(null);
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisibleCards((prev) => [...prev, entry.target.dataset.index]);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
+const item = {
+  hidden: { opacity: 0, scale: 0.9, y: 20 },
+  visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", duration: 0.8 } },
+};
 
-    const cards = document.querySelectorAll(".service-card");
-    cards.forEach((card) => observer.observe(card));
-
-    return () => observer.disconnect();
-  }, []);
-
-  const handleCardClick = (index) => {
-    if (window.innerWidth < 768) {
-      setActiveOverlay((prev) => (prev === index ? null : index));
-    }
-  };
-
+const CoursesLimited = () => {
   return (
-    <div className="bg-gray-100 py-10 px-4 scroll-smooth">
-      <div className="text-center mb-10">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold animate-fadeIn">
-          <span className="text-green-600">Our</span>{" "}
-          <span className="text-green-700">Services</span>
-        </h2>
-        <p className="text-sm sm:text-base text-gray-600 mt-2">From development to marketing — we cover it all.</p>
-      </div>
+    <section className="py-20 px-4 bg-white relative overflow-hidden">
+      <motion.h2
+        className="text-4xl font-extrabold text-center mb-6 bg-gradient-to-r from-green-700 via-green-600 to-green-800 text-transparent bg-clip-text"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        Top Professional IT Courses
+      </motion.h2>
 
-      <div className="grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto ">
-        {services.map((service, index) => (
-          <div
-            data-index={index}
-            onClick={() => handleCardClick(index)}
+      <p className="text-center max-w-3xl mx-auto text-gray-600 mb-12">
+        Explore our most popular and career-focused trainings, carefully selected for maximum impact.
+      </p>
+
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto"
+      >
+        {courses.slice(0, 15).map((course, index) => (
+          <motion.div
             key={index}
-            className={`service-card relative group  sm:py-5 px-5  shadow-md rounded-lg overflow-hidden transition-all duration-700 hover:shadow-xl transform hover:-translate-y-3 cursor-pointer bg-white ${
-              visibleCards.includes(index.toString()) ? "animate-zoomIn opacity-100" : "opacity-0"
-            }`}
+            variants={item}
+            className="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300 flex flex-col"
           >
-            {/* Image Section */}
-            <div className="relative">
-              <img
-                src={service.image}
-                alt={service.title}
-                className="w-full h-36 sm:h-48 object-cover rounded"
-              />
-              <div className="absolute -bottom-5 right-5 bg-white rounded-full p-1 shadow-lg border-4 border-gray-200">
-                <img
-                  src={service.flag}
-                  alt={`${service.title} Icon`}
-                  className="w-10 h-10 rounded-full object-contain"
-                />
-              </div>
+            <img
+              src={course.image}
+              alt={course.title}
+              className="w-full h-44 sm:h-52 object-cover transition-transform duration-300 hover:scale-105"
+              loading="lazy"
+            />
+            <div className="p-5 flex-1">
+              <h3 className="sm:text-lg font-bold text-green-700 mb-2">{course.title}</h3>
+              <ul className="list-disc list-inside text-[10px] sm:text-sm text-gray-600 space-y-1">
+                {course.points.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
             </div>
-
-            {/* Hover or Tap Overlay */}
-            <div
-              className={`absolute inset-0 transition-opacity duration-500 bg-center bg-cover flex flex-col justify-center items-center text-white p-4 ${
-                activeOverlay === index || window.innerWidth >= 768
-                  ? "group-hover:opacity-100 opacity-100 sm:opacity-0 sm:group-hover:opacity-100"
-                  : "opacity-0"
-              }`}
-              style={{
-                backgroundImage: `url(${service.image})`,
-                backgroundBlendMode: "overlay",
-                backgroundColor: "rgba(0, 0, 0, 0.5)",
-              }}
-            >
-              <div className="flex flex-col items-center space-y-3">
-                <h3 className="text-base sm:text-lg md:text-xl font-bold text-center">{service.title}</h3>
-                <Link to={service.link}>
-                  <span className="px-4 py-2 bg-white text-green-600 font-semibold rounded-full shadow-md hover:bg-gray-100 text-xs sm:text-sm">
-                    Learn more
-                  </span>
-                </Link>
-              </div>
+            <div className="sm:p-4 pb-2 flex justify-center">
+              <Link
+                to={course.path}
+                className="px-3 py-1 sm:px-6 sm:py-2 bg-green-700 text-white rounded-full font-semibold hover:bg-green-800 transition"
+              >
+                Read More
+              </Link>
             </div>
-
-            {/* Text Section */}
-            <div className="pt-6 pb-2 text-center">
-              <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-800">{service.title}</h3>
-              <p className="text-sm sm:text-base text-gray-600 mt-2">{service.description}</p>
-            </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
-      {/* Animations */}
-      <style>{`
-        @keyframes zoomIn {
-          0% { transform: scale(0.85); opacity: 0; }
-          100% { transform: scale(1); opacity: 1; }
-        }
-        .animate-zoomIn {
-          animation: zoomIn 0.9s ease-out forwards;
-        }
-
-        @keyframes fadeIn {
-          0% { opacity: 0; transform: translateY(-20px); }
-          100% { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fadeIn {
-          animation: fadeIn 1.3s ease-out forwards;
-        }
-      `}</style>
-    </div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.2, duration: 0.6 }}
+        viewport={{ once: true }}
+        className="mt-14 text-center"
+      >
+        <Link
+          to="/courses"
+          className="inline-block px-8 py-3 text-lg font-semibold text-white bg-gradient-to-r from-green-700 to-green-900 rounded-full shadow-lg hover:scale-105 transition duration-300"
+        >
+          Explore More Courses
+        </Link>
+      </motion.div>
+    </section>
   );
 };
 
-export default ServicesComponent;
+export default CoursesLimited;
