@@ -9,7 +9,8 @@ import HeroSection from "../components/HeroSection";
 import Testimonials from "../components/Testimonials";
 import Footer from "../components/Footer";
 import ClientsSlider from "../components/ClientsSlider";
-
+import CourseSearchBar from "../components/CourseSearchBar";
+import { allCourses } from "../components/courses";
 
 
 
@@ -26,6 +27,7 @@ const Home = () => {
       <div className="pt-[70px]">
         <Navbar />
       </div>
+       <CourseSearchBar allCourses={allCourses} />
         <div className="w-full flex-shrink-0 overflow-hidden">
           <HeroSection/>
           <ServicesComponent/>
