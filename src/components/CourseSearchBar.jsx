@@ -79,7 +79,7 @@ const CourseSearchBar = ({ allCourses }) => {
               onClick={() => setShowList(!showList)}
               className="flex items-center gap-2 font-semibold text-white text-base cursor-pointer transition hover:text-yellow-100"
             >
-              <FaBars className="text-lg" />
+              <FaBars className="sm:text-lg" />
               <span>All Courses</span>
             </div>
 
