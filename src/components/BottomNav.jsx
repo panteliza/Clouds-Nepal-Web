@@ -79,6 +79,18 @@ const BottomNav = () => {
                 <Link to="/" onClick={toggleSidebar} className="hover:text-green-700 block">🏛️ Home</Link>
                 <Link to="/about" onClick={toggleSidebar} className="hover:text-green-700 block">ℹ️ About</Link>
                 <Link to="/courses" onClick={toggleSidebar} className="hover:text-green-700 block">📘 Courses</Link>
+                <Link to="/testimonials" onClick={toggleSidebar} className="hover:text-green-700 block">
+  👨‍🎓 / 👩‍🎓 Students' Testimonial
+</Link>
+
+<Link to="/vision" onClick={toggleSidebar} className="hover:text-green-700 block">
+  👁️ Our Vision
+</Link>
+
+<Link to="/mission" onClick={toggleSidebar} className="hover:text-green-700 block">
+  🎯 Our Mission
+</Link>
+
                 <Link to="/contact-us" onClick={toggleSidebar} className="hover:text-green-700 block">📩 Contact Us</Link>
                 <Link to="/career" onClick={toggleSidebar} className="hover:text-green-700 block">💼 Career</Link>
               </div>
