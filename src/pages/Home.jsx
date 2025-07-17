@@ -8,6 +8,7 @@ import CloudsContactForm from "../components/CloudsContactForm";
 import HeroSection from "../components/HeroSection";
 import Testimonials from "../components/Testimonials";
 import Footer from "../components/Footer";
+import ClientsSlider from "../components/ClientsSlider";
 
 
 
@@ -32,6 +33,7 @@ const Home = () => {
              <CoursesLimited/>
              <CloudsContactForm/>
              <Testimonials/>
+             <ClientsSlider/>
            <Footer/>
       
      
