@@ -92,7 +92,7 @@ const CourseSearchBar = ({ allCourses }) => {
                 <input
                   type="text"
                   placeholder="What do you want to learn today?"
-                  className="w-full px-4 py-2 focus:outline-none bg-transparent text-[5px] sm:text-base "
+                  className="w-full px-4 py-2 focus:outline-none bg-transparent  text-base "
                   value={searchTerm}
                   ref={inputRef}
                   onChange={(e) => {
