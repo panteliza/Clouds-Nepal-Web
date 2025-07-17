@@ -51,7 +51,7 @@ const CourseSearchBar = ({ allCourses }) => {
 
   return (
     <>
-      {/* Gradient animation style */}
+      {/* Inline animation style */}
       <style>{`
         @keyframes gradientFlow {
           0% { background-position: 0% 50%; }
@@ -62,18 +62,19 @@ const CourseSearchBar = ({ allCourses }) => {
           background-size: 200% 200%;
           animation: gradientFlow 8s ease infinite;
         }
+        input, button {
+          font-size: 16px !important; /* ✅ prevent zoom on mobile */
+        }
       `}</style>
 
-      {/* 🌈 Gradient Header */}
+      {/* Animated Header */}
       <div className="relative w-full z-40">
-        {/* Animated background */}
         <div className="absolute inset-0 z-0 animate-gradient-flow bg-[length:200%_200%] bg-gradient-to-r from-green-400 via-emerald-500 to-green-700 blur-sm opacity-90" />
         <div className="absolute inset-0 z-0 bg-white/40 backdrop-blur-sm mix-blend-overlay pointer-events-none" />
 
-        {/* Actual content */}
         <div className="relative z-10 flex flex-wrap items-center justify-between gap-4 px-4 md:px-6 py-4">
           <div className="flex flex-grow items-center gap-3 w-full md:w-auto">
-            {/* All Courses Toggle */}
+            {/* All Courses */}
             <div
               onClick={() => setShowList(!showList)}
               className="flex items-center gap-2 font-semibold text-white text-base cursor-pointer transition hover:text-yellow-100"
@@ -82,7 +83,7 @@ const CourseSearchBar = ({ allCourses }) => {
               <span>All Courses</span>
             </div>
 
-            {/* Search bar */}
+            {/* Search Box */}
             <div className="relative flex-grow" ref={containerRef}>
               <form
                 onSubmit={handleSearch}
@@ -91,7 +92,7 @@ const CourseSearchBar = ({ allCourses }) => {
                 <input
                   type="text"
                   placeholder="What do you want to learn today?"
-                  className="w-full px-4 py-2 text-base focus:outline-none bg-transparent"
+                  className="w-full px-4 py-2 focus:outline-none bg-transparent text-base"
                   value={searchTerm}
                   ref={inputRef}
                   onChange={(e) => {
@@ -102,13 +103,13 @@ const CourseSearchBar = ({ allCourses }) => {
                 />
                 <button
                   type="submit"
-                  className="px-4 bg-green-100 hover:bg-green-200 text-green-700 text-sm transition"
+                  className="px-4 bg-green-100 hover:bg-green-200 text-green-700 transition"
                 >
                   🔍
                 </button>
               </form>
 
-              {/* 🔽 Suggestion Dropdown (ABSOLUTE INSIDE FLOW) */}
+              {/* Dropdown */}
               <AnimatePresence>
                 {showSuggestions && searchTerm && (
                   <motion.div
@@ -144,7 +145,7 @@ const CourseSearchBar = ({ allCourses }) => {
             </div>
           </div>
 
-          {/* Inquiry Button */}
+          {/* Inquiry button */}
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -155,7 +156,7 @@ const CourseSearchBar = ({ allCourses }) => {
         </div>
       </div>
 
-      {/* 📋 All Courses Scroll List */}
+      {/* Scrollable Courses Below */}
       <AnimatePresence>
         {showList && (
           <motion.div
