@@ -80,7 +80,7 @@ const CourseSearchBar = ({ allCourses }) => {
               className="flex items-center gap-2 font-semibold text-white text-base cursor-pointer transition hover:text-yellow-100"
             >
               <FaBars className="sm:text-lg" />
-              <span>All Courses</span>
+              <span className="text-[11px] sm:text-lg">All Courses</span>
             </div>
 
             {/* Search Box */}
@@ -92,7 +92,7 @@ const CourseSearchBar = ({ allCourses }) => {
                 <input
                   type="text"
                   placeholder="What do you want to learn today?"
-                  className="w-full px-4 py-2 focus:outline-none bg-transparent text-base"
+                  className="w-full px-4 py-2 focus:outline-none bg-transparent text-[5px] sm:text-base "
                   value={searchTerm}
                   ref={inputRef}
                   onChange={(e) => {
