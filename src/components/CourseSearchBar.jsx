@@ -8,6 +8,7 @@ const CourseSearchBar = ({ allCourses }) => {
   const [showList, setShowList] = useState(false);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const inputRef = useRef();
+  const containerRef = useRef();
   const navigate = useNavigate();
 
   const filteredSuggestions = allCourses.filter(course =>
@@ -37,7 +38,10 @@ const CourseSearchBar = ({ allCourses }) => {
 
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (!inputRef.current?.contains(e.target)) {
+      if (
+        !inputRef.current?.contains(e.target) &&
+        !containerRef.current?.contains(e.target)
+      ) {
         setShowSuggestions(false);
       }
     };
@@ -47,7 +51,7 @@ const CourseSearchBar = ({ allCourses }) => {
 
   return (
     <>
-      {/* Inline CSS for gradient animation */}
+      {/* Gradient animation style */}
       <style>{`
         @keyframes gradientFlow {
           0% { background-position: 0% 50%; }
@@ -60,24 +64,26 @@ const CourseSearchBar = ({ allCourses }) => {
         }
       `}</style>
 
-      {/* 🌈 Animated Header */}
-      <div className="relative w-full overflow-hidden z-40">
+      {/* 🌈 Gradient Header */}
+      <div className="relative w-full z-40">
+        {/* Animated background */}
         <div className="absolute inset-0 z-0 animate-gradient-flow bg-[length:200%_200%] bg-gradient-to-r from-green-400 via-emerald-500 to-green-700 blur-sm opacity-90" />
         <div className="absolute inset-0 z-0 bg-white/40 backdrop-blur-sm mix-blend-overlay pointer-events-none" />
 
+        {/* Actual content */}
         <div className="relative z-10 flex flex-wrap items-center justify-between gap-4 px-4 md:px-6 py-4">
-          {/* Left: All Courses + Search */}
           <div className="flex flex-grow items-center gap-3 w-full md:w-auto">
+            {/* All Courses Toggle */}
             <div
               onClick={() => setShowList(!showList)}
               className="flex items-center gap-2 font-semibold text-white text-base cursor-pointer transition hover:text-yellow-100"
             >
-              <FaBars className=" sm:text-lg" />
+              <FaBars className="text-lg" />
               <span>All Courses</span>
             </div>
 
-            {/* Search Box */}
-            <div className="relative flex-grow" ref={inputRef}>
+            {/* Search bar */}
+            <div className="relative flex-grow" ref={containerRef}>
               <form
                 onSubmit={handleSearch}
                 className="flex rounded-full overflow-hidden shadow-lg bg-white transition focus-within:ring-2 focus-within:ring-green-400"
@@ -85,8 +91,9 @@ const CourseSearchBar = ({ allCourses }) => {
                 <input
                   type="text"
                   placeholder="What do you want to learn today?"
-                  className="w-full px-4 py-2 text-sm focus:outline-none bg-transparent"
+                  className="w-full px-4 py-2 text-base focus:outline-none bg-transparent"
                   value={searchTerm}
+                  ref={inputRef}
                   onChange={(e) => {
                     setSearchTerm(e.target.value);
                     setShowSuggestions(true);
@@ -101,7 +108,7 @@ const CourseSearchBar = ({ allCourses }) => {
                 </button>
               </form>
 
-              {/* 🔽 Suggestion Dropdown */}
+              {/* 🔽 Suggestion Dropdown (ABSOLUTE INSIDE FLOW) */}
               <AnimatePresence>
                 {showSuggestions && searchTerm && (
                   <motion.div
@@ -109,7 +116,7 @@ const CourseSearchBar = ({ allCourses }) => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -5 }}
                     transition={{ duration: 0.2 }}
-                    className="sm:absolute fixed sm:left-0 left-4 right-4 sm:right-0 top-[58px] sm:top-full bg-white shadow-xl rounded-xl z-[999] max-h-[40vh] overflow-y-auto sm:mt-2"
+                    className="absolute left-0 right-0 top-full mt-2 bg-white shadow-xl rounded-xl z-[99] max-h-[260px] overflow-y-auto"
                   >
                     {filteredSuggestions.length > 0 ? (
                       <>
@@ -137,7 +144,7 @@ const CourseSearchBar = ({ allCourses }) => {
             </div>
           </div>
 
-          {/* Right: Inquiry Button */}
+          {/* Inquiry Button */}
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -148,7 +155,7 @@ const CourseSearchBar = ({ allCourses }) => {
         </div>
       </div>
 
-      {/* 📜 Scrollable Course List */}
+      {/* 📋 All Courses Scroll List */}
       <AnimatePresence>
         {showList && (
           <motion.div
