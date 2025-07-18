@@ -69,7 +69,8 @@ const CourseSearchBar = ({ allCourses }) => {
 
       {/* Animated Header */}
       <div className="relative w-full z-40">
-        <div className="absolute inset-0 z-0 animate-gradient-flow bg-[length:200%_200%] bg-gradient-to-r from-green-400 via-emerald-500 to-green-700 blur-sm opacity-90" />
+       <div className="absolute inset-0 z-0 animate-gradient-flow bg-[length:200%_200%] bg-gradient-to-r from-[#06693A] via-[#059669] to-[#034D2C] blur-sm opacity-90" />
+
         <div className="absolute inset-0 z-0 bg-white/40 backdrop-blur-sm mix-blend-overlay pointer-events-none" />
 
         <div className="relative z-10 flex flex-wrap items-center justify-between gap-4 px-4 md:px-6 py-4">
@@ -85,29 +86,43 @@ const CourseSearchBar = ({ allCourses }) => {
 
             {/* Search Box */}
             <div className="relative flex-grow" ref={containerRef}>
-              <form
-                onSubmit={handleSearch}
-                className="flex rounded-full overflow-hidden shadow-lg bg-white transition focus-within:ring-2 focus-within:ring-green-400"
-              >
-                <input
-                  type="text"
-                  placeholder="What do you want to learn today?"
-                  className="w-full px-4 py-2 focus:outline-none bg-transparent  text-base "
-                  value={searchTerm}
-                  ref={inputRef}
-                  onChange={(e) => {
-                    setSearchTerm(e.target.value);
-                    setShowSuggestions(true);
-                  }}
-                  onFocus={() => setShowSuggestions(true)}
-                />
-                <button
-                  type="submit"
-                  className="px-4 bg-green-100 hover:bg-green-200 text-green-700 transition"
-                >
-                  🔍
-                </button>
-              </form>
+         <form
+  onSubmit={handleSearch}
+  className="flex items-center gap-2 rounded-full overflow-hidden shadow-md bg-white ring-1 ring-gray-200 focus-within:ring-2 focus-within:ring-[#06693A]"
+>
+  <input
+    type="text"
+    placeholder="What do you want to learn today?"
+    className="w-full px-5 py-2 text-sm sm:text-base text-gray-800 placeholder-gray-400 bg-white shadow-inner focus:outline-none focus:ring-0 border-none"
+    value={searchTerm}
+    ref={inputRef}
+    onChange={(e) => {
+      setSearchTerm(e.target.value);
+      setShowSuggestions(true);
+    }}
+    onFocus={() => setShowSuggestions(true)}
+  />
+  <button
+    type="submit"
+    className="flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-600 px-4 py-2 rounded-r-full transition-all duration-200"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-5 w-5"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={2}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"
+      />
+    </svg>
+  </button>
+</form>
+
 
               {/* Dropdown */}
               <AnimatePresence>
@@ -146,13 +161,17 @@ const CourseSearchBar = ({ allCourses }) => {
           </div>
 
           {/* Inquiry button */}
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="hidden md:inline-block bg-gradient-to-r from-lime-400 to-green-600 hover:from-lime-500 hover:to-green-700 text-white px-5 py-2 rounded-full shadow font-medium transition"
-          >
-            Send Inquiry →
-          </motion.button>
+         <motion.button
+  initial={{ opacity: 0, y: -10 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+  whileHover={{ scale: 1.08, boxShadow: "0px 0px 12px rgba(6, 105, 58, 0.4)" }}
+  whileTap={{ scale: 0.95 }}
+  className="hidden md:inline-block bg-gradient-to-r from-[#044e30] to-[#06693A] hover:from-[#033d26] hover:to-[#055a33] text-white px-6 py-2.5 rounded-full font-semibold tracking-wide shadow-lg transition-all duration-300 mt-1"
+>
+  Send Inquiry →
+</motion.button>
+
         </div>
       </div>
 
