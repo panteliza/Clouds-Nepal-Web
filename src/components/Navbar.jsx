@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 import BottomNav from './BottomNav';
 
 import logo from '../assets/logo.webp';
-import img1 from '../assets/LinkedIn.jpg';
-import img2 from '../assets/Facebook.jpg';
-import img3 from '../assets/Instagram.jpg';
+import img1 from '../assets/linkedin.png';
+import img2 from '../assets/facebook.png';
+import img3 from '../assets/instagram.png';
 
 const services = [
   { path: '/website-development', label: 'Website Development' },
@@ -123,31 +123,32 @@ const NavbarMain = () => {
             </Link>
           ))}
 
-          <div className="flex gap-1">
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-              <img src={img1} alt="LinkedIn" className="h-[44px] w-[44px] rounded-full border border-green-800 p-[5px] object-contain hover:scale-110 transition duration-300" />
-            </a>
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-              <img src={img3} alt="Instagram" className="h-[44px] w-[44px] rounded-full border border-green-800 p-[5px] object-contain hover:scale-110 transition duration-300" />
-            </a>
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-              <img src={img2} alt="Facebook" className="h-[44px] w-[44px] rounded-full border border-green-800 p-[5px] object-contain hover:scale-110 transition duration-300" />
-            </a>
-          </div>
+         <div className="flex ">
+  <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+    <img src={img1} alt="LinkedIn" className="h-[40px] w-[40px] object-contain hover:scale-110 transition duration-300" />
+  </a>
+  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+    <img src={img3} alt="Instagram" className="h-[40px] w-[40px] object-contain hover:scale-110 transition duration-300" />
+  </a>
+  <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+    <img src={img2} alt="Facebook" className="h-[40px] w-[40px] object-contain hover:scale-110 transition duration-300" />
+  </a>
+</div>
         </div>
 
         {/* Mobile Social Icons */}
-        <div className="flex gap-1 items-center lg:hidden">
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-            <img src={img1} alt="LinkedIn" className="h-[36px] w-[36px] rounded-full border border-green-800 p-[4px] object-contain hover:scale-110 transition duration-300" />
-          </a>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-            <img src={img3} alt="Instagram" className="h-[36px] w-[36px] rounded-full border border-green-800 p-[4px] object-contain hover:scale-110 transition duration-300" />
-          </a>
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-            <img src={img2} alt="Facebook" className="h-[36px] w-[36px] rounded-full border border-green-800 p-[4px] object-contain hover:scale-110 transition duration-300" />
-          </a>
-        </div>
+       <div className="flex  items-center lg:hidden">
+  <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+    <img src={img1} alt="LinkedIn" className="h-[30px] w-[30px] object-contain hover:scale-110 transition duration-300" />
+  </a>
+  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+    <img src={img3} alt="Instagram" className="h-[30px] w-[30px] object-contain hover:scale-110 transition duration-300" />
+  </a>
+  <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+    <img src={img2} alt="Facebook" className="h-[30px] w-[30px] object-contain hover:scale-110 transition duration-300" />
+  </a>
+</div>
+
       </nav>
 
       {/* Mobile Bottom Navigation */}
