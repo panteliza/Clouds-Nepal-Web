@@ -1,59 +1,67 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import "swiper/css/navigation";
 
-import img1 from "../assets/logo.webp";
-import img2 from "../assets/logo.webp";
-import img3 from "../assets/logo.webp";
-import img4 from "../assets/logo.webp";
-import img5 from "../assets/logo.webp";
-import img6 from "../assets/logo.webp";
+// ✅ Correct Image Imports
+import img1 from "../assets/Ansha Basnet.png";
+import img2 from "../assets/Anmol Kayastha.png";
+import img3 from "../assets/Bipin Sainju Shrestha.jpg";
+import img4 from "../assets/Aman Shrestha.jpg";
+import img5 from "../assets/Barsha Shrestha.jpg";
+import img6 from "../assets/Aryan Gurung.jpg";
+import img7 from "../assets/Bhupendra Paneru.jpg";
 
 const testimonials = [
   {
-    name: "Susmita Rai",
+    name: "Ansha Basnet",
     course: "DevOps",
     image: img1,
     shortText: `Clouds Nepal Web provided one of the most effective DevOps training programs I’ve attended.`,
     fullText: `Clouds Nepal Web provided one of the most effective DevOps training programs I’ve attended. The course was well-structured, highly practical, and the instructors left no stone unturned. We tackled real-world challenges, received constant feedback, and even had the opportunity to revisit complex topics through extra classes. I gained not only technical skills but also confidence to handle DevOps workflows professionally.`,
   },
   {
-    name: "Bivek Kumar Yadav",
+    name: "Anmol Kayastha",
     course: "Python with Data Science",
     image: img2,
     shortText: `My journey at Clouds Nepal Web was truly transformative in terms of data science skills.`,
     fullText: `My journey at Clouds Nepal Web was truly transformative. The Python with Data Science course blended strong theoretical foundation with practical hands-on projects. From data wrangling to machine learning model evaluation, the instructors made sure we built real skills. I now feel ready to pursue both job and freelance opportunities in the field.`,
   },
   {
-    name: "Manisha Shrestha",
+    name: "Bipin Sainju Shrestha",
     course: "Web Development",
     image: img3,
     shortText: `The full-stack course at Clouds Nepal Web helped me go from zero to deployment.`,
     fullText: `The full-stack course at Clouds Nepal Web helped me go from zero to deployment. It was practical, beginner-friendly, and focused on real-world tools like Git, React, and Node.js. The support from mentors was consistent and the peer environment was highly encouraging.`,
   },
   {
-    name: "Sagar Thapa",
+    name: "Aman Shrestha",
     course: "UI/UX Design",
     image: img4,
     shortText: `Clouds Nepal Web gave me practical design skills and confidence to build prototypes.`,
     fullText: `Clouds Nepal Web gave me practical design skills and confidence to build prototypes. Their UI/UX design course combined Figma practice, user psychology, and live project reviews. It helped me build a solid portfolio and understand how to work with developers effectively.`,
   },
   {
-    name: "Ramesh Karki",
+    name: "Barsha Shrestha",
     course: "Machine Learning",
     image: img5,
     shortText: `ML training at Clouds Nepal Web built my fundamentals and project skills.`,
     fullText: `ML training at Clouds Nepal Web built my fundamentals and project skills. The instructors broke down complex algorithms in a beginner-friendly way and gave hands-on assignments to reinforce learning. I can now confidently experiment with datasets and train models for real use.`,
   },
   {
-    name: "Ritu Sharma",
+    name: "Aryan Gurung",
     course: "Flutter App Dev",
     image: img6,
     shortText: `The Flutter course helped me publish my first app to the Play Store.`,
     fullText: `The Flutter course helped me publish my first app to the Play Store. From UI design to integrating Firebase, the training covered it all. The course taught me not just coding but also best practices in mobile development.`,
+  },
+  {
+    name: "Bhupendra Paneru",
+    course: "Backend with Node.js",
+    image: img7,
+    shortText: `Great backend bootcamp experience with professional instructors and live projects.`,
+    fullText: `Great backend bootcamp experience with professional instructors and live projects. I understood Node.js architecture, Express, MongoDB, and REST APIs in depth. The hands-on projects and mentorship boosted my skills for real-world applications.`,
   },
 ];
 
@@ -70,12 +78,12 @@ const Testimonials = () => {
             Our team can assist you in transforming your skill through latest tech capabilities to stay ahead of the competition.
           </p>
           <div className="flex gap-2 flex-wrap">
-            {testimonials.slice(0, 5).map((item, i) => (
+            {testimonials.map((item, i) => (
               <div
                 key={i}
                 className="w-10 h-10 rounded-full border-2 border-white overflow-hidden"
               >
-                <img src={item.image} alt="avatar" className="w-full h-full object-cover" />
+                <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
               </div>
             ))}
           </div>
@@ -84,9 +92,8 @@ const Testimonials = () => {
         {/* Swiper Section */}
         <div className="md:col-span-2">
           <Swiper
-            modules={[Pagination, Navigation, Autoplay]}
+            modules={[Pagination, Autoplay]}
             pagination={{ clickable: true }}
-            navigation={true}
             autoplay={{ delay: 5000 }}
             spaceBetween={30}
             breakpoints={{
