@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import React, { useState } from "react";
 
 const courseOptions = [
   "ASP.NET", "AWS", "Backend Development", "Business Analysis", "C/C++", "Data Science",
@@ -12,22 +11,6 @@ const courseOptions = [
 
 const CloudsContactForm = () => {
   const [messageSent, setMessageSent] = useState(false);
-  const refs = [useRef(), useRef(), useRef()];
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          entry.target.style.opacity = entry.isIntersecting ? "1" : "0";
-          entry.target.style.animationPlayState = entry.isIntersecting ? "running" : "paused";
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    refs.forEach(ref => ref.current && observer.observe(ref.current));
-    return () => refs.forEach(ref => ref.current && observer.unobserve(ref.current));
-  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -52,114 +35,85 @@ const CloudsContactForm = () => {
     setMessageSent(true);
   };
 
-  const inputStyle = "w-full p-3 rounded border border-gray-300 hover:shadow-md transition";
-  const cardBase =
-    "flex flex-col items-center p-6 bg-white shadow-xl rounded-lg transform opacity-0 transition-opacity duration-700 w-full hover:shadow-2xl hover:-translate-y-1 transition-transform duration-300";
+  const inputStyle = "w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition";
 
   return (
-    <div className="relative w-full bg-white py-12 px-4 overflow-hidden">
-      {/* Top Wave */}
-      <svg className="w-full h-32 absolute top-0 left-0 animate-waveUp" viewBox="0 0 1440 320">
-        <path
-          fill="#22c55e"
-          fillOpacity="0.5"
-          d="M0,64L40,80C80,96,160,128,240,144C320,160,400,160,480,144C560,128,640,96,720,101.3C800,107,880,149,960,170.7C1040,192,1120,192,1200,181.3C1280,171,1360,149,1400,138.7L1440,128L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"
-        />
-      </svg>
+    <div className="relative min-h-screen py-20 px-4 flex items-center justify-center bg-gradient-to-br from-green-200 via-white to-blue-200 overflow-hidden">
+      {/* Floating Glow Background */}
+      <div className="absolute top-0 left-0 w-full h-full bg-animated rounded-xl z-0"></div>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
-        {/* Form Section */}
-        <div className="bg-white p-8 rounded-xl shadow-2xl">
-          <h2 className="text-3xl font-bold text-center text-blue-900 mb-6">Enroll Now</h2>
-          {messageSent ? (
-            <p className="text-green-700 font-semibold text-center">Submitted successfully! Please check your Gmail.</p>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input type="text" name="name" placeholder="Your Name" required className={inputStyle} />
-                <input type="number" name="age" placeholder="Age" required className={inputStyle} />
-                <input type="text" name="permanent" placeholder="Permanent Address" required className={inputStyle} />
-                <input type="text" name="temporary" placeholder="Temporary Address" required className={inputStyle} />
-                <input type="tel" name="phone" placeholder="Phone Number" required className={inputStyle} />
-                <input type="email" name="email" placeholder="Email" required className={inputStyle} />
-                <input type="text" name="qualification" placeholder="Qualification" required className={inputStyle} />
-              </div>
+      <div className="max-w-4xl w-full bg-white p-10 rounded-xl shadow-2xl relative z-10 animate-softFade">
+        <h2 className="text-4xl font-bold text-center text-blue-900 mb-8">Enroll in a Course</h2>
 
-              <select name="course" required className={inputStyle}>
-                <option value="">-- Select a Course --</option>
-                {courseOptions.map((course, index) => (
-                  <option key={index} value={course}>{course}</option>
-                ))}
-              </select>
+        {messageSent ? (
+          <p className="text-green-700 font-semibold text-center">Form submitted successfully! Please check your Gmail.</p>
+        ) : (
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input type="text" name="name" placeholder="Your Name" required className={inputStyle} />
+              <input type="number" name="age" placeholder="Age" required className={inputStyle} />
+              <input type="text" name="permanent" placeholder="Permanent Address" required className={inputStyle} />
+              <input type="text" name="temporary" placeholder="Temporary Address" required className={inputStyle} />
+              <input type="tel" name="phone" placeholder="Phone Number" required className={inputStyle} />
+              <input type="email" name="email" placeholder="Email" required className={inputStyle} />
+              <input type="text" name="qualification" placeholder="Qualification" required className={inputStyle} />
+            </div>
 
-              <textarea
-                name="message"
-                placeholder="Write your message..."
-                rows="4"
-                required
-                className={inputStyle}
-              />
+            <select name="course" required className={inputStyle}>
+              <option value="">-- Select a Course --</option>
+              {courseOptions.map((course, i) => (
+                <option key={i} value={course}>{course}</option>
+              ))}
+            </select>
 
-              <button type="submit" className="w-full bg-blue-800 text-white py-2 font-semibold rounded hover:bg-blue-900 transition">
-                Submit
-              </button>
-            </form>
-          )}
-        </div>
+            <textarea
+              name="message"
+              placeholder="Write your message..."
+              rows="4"
+              required
+              className={inputStyle}
+            />
 
-        {/* Info Cards */}
-       
-
-
-
-
-
+            <button
+              type="submit"
+              className="w-full bg-blue-800 text-white py-3 text-lg font-semibold rounded hover:bg-blue-900 transition"
+            >
+              Submit
+            </button>
+          </form>
+        )}
       </div>
 
-      {/* Bottom Wave */}
-      <svg className="w-full h-32 absolute bottom-0 left-0 animate-waveDown" viewBox="0 0 1440 320">
-        <path
-          fill="#16a34a"
-          fillOpacity="0.45"
-          d="M0,96L60,112C120,128,240,160,360,181.3C480,203,600,213,720,192C840,171,960,117,1080,96C1200,75,1320,85,1380,90.7L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
-        />
-      </svg>
-
-      {/* Animations */}
+      {/* Custom Animations */}
       <style>{`
-        @keyframes fadeInLeft {
-          0% { opacity: 0; transform: translateX(-30px); }
-          100% { opacity: 1; transform: translateX(0); }
+        .animate-softFade {
+          animation: softFade 1.2s ease-out forwards;
         }
-        @keyframes fadeInRight {
-          0% { opacity: 0; transform: translateX(30px); }
-          100% { opacity: 1; transform: translateX(0); }
+
+        @keyframes softFade {
+          0% {
+            opacity: 0;
+            transform: scale(0.95);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1);
+          }
         }
-        @keyframes waveUp {
-          0% { transform: translateX(0); }
-          50% { transform: translateX(-100px); }
-          100% { transform: translateX(0); }
+
+        .bg-animated {
+          background: radial-gradient(circle at 20% 30%, rgba(144, 238, 144, 0.25), transparent 50%),
+                      radial-gradient(circle at 80% 70%, rgba(173, 216, 230, 0.25), transparent 50%);
+          animation: backgroundShift 15s infinite alternate;
         }
-        @keyframes waveDown {
-          0% { transform: translateX(0); }
-          50% { transform: translateX(100px); }
-          100% { transform: translateX(0); }
-        }
-        @keyframes shiver {
-          0% { transform: translate(0, 0) rotate(0); }
-          25% { transform: translate(-2px, 2px) rotate(-1deg); }
-          50% { transform: translate(2px, -2px) rotate(1deg); }
-          75% { transform: translate(-2px, -2px) rotate(-1deg); }
-          100% { transform: translate(0, 0) rotate(0); }
-        }
-        .animate-waveUp {
-          animation: waveUp 10s ease-in-out infinite;
-        }
-        .animate-waveDown {
-          animation: waveDown 10s ease-in-out infinite;
-        }
-        .shiver-icon {
-          animation: shiver 1.2s infinite ease-in-out;
+
+        @keyframes backgroundShift {
+          0% {
+            background-position: 0% 0%;
+          }
+          100% {
+            background-position: 100% 100%;
+          }
         }
       `}</style>
     </div>
