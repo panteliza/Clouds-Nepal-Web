@@ -1,4 +1,4 @@
-// FrontendDevelopmentCourse.jsx – Fixed and Responsive
+// FrontendDevelopmentCourse.jsx – Fixed and Mobile-Safe
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from '../components/Navbar';
@@ -53,18 +53,19 @@ const FrontendDevelopmentCourse = () => {
   return (
     <>
       <div className="bg-gray-50 min-h-screen text-gray-800 overflow-x-hidden">
-       
+        <Navbar />
 
         {/* Hero Section */}
         <section className="w-full pt-[100px] max-w-screen-xl mx-auto px-4 md:px-10">
-          <motion.h1
-            className="text-3xl md:text-4xl font-bold text-[#06693A] mb-6"
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            Frontend Development Training in Nepal
-          </motion.h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-[#06693A] mb-6">
+              Frontend Development Training in Nepal
+            </h1>
+          </motion.div>
 
           {/* Overview + Classes */}
           <div className="flex flex-col lg:flex-row gap-8">
@@ -97,7 +98,7 @@ const FrontendDevelopmentCourse = () => {
           </div>
         </section>
 
-        {/* Curriculum */}
+        {/* Curriculum Section */}
         <section className="w-full max-w-screen-xl mx-auto px-4 md:px-10 mt-16">
           <h2 className="text-2xl font-bold text-[#06693A] mb-6">Your Learning Journey</h2>
           <p className="text-lg mb-4">
@@ -120,7 +121,7 @@ const FrontendDevelopmentCourse = () => {
           </ul>
         </section>
 
-        {/* Benefits */}
+        {/* Benefits Section */}
         <section className="w-full max-w-screen-xl mx-auto px-4 md:px-10 mt-16">
           <h2 className="text-2xl font-bold text-[#06693A] mb-6">Benefits of Frontend Development Training</h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -139,7 +140,7 @@ const FrontendDevelopmentCourse = () => {
           </div>
         </section>
 
-        {/* FAQ */}
+        {/* FAQ Section */}
         <section className="w-full max-w-screen-xl mx-auto px-4 md:px-10 mt-16 pb-20">
           <h2 className="text-2xl font-bold text-[#06693A] mb-6 text-center">Frequently Asked Questions</h2>
           <div className="space-y-3 max-w-2xl mx-auto">
