@@ -45,7 +45,7 @@ const StatsSection = () => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <div className="relative bg-gradient-to-br from-green-50 via-white to-green-100 py-24 px-4 sm:px-6 lg:px-20 max-w-screen-xl mx-auto overflow-hidden">
+    <div className="relative bg-gradient-to-br from-green-50 via-white to-green-100 py-10 px-4 sm:px-6 lg:px-20 max-w-screen-xl mx-auto overflow-hidden">
       {/* Animated background blobs */}
       <div className="absolute -top-10 -left-10 w-72 h-72 bg-green-300 opacity-30 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-[-60px] right-[-60px] w-96 h-96 bg-green-400 opacity-20 rounded-full blur-2xl animate-spin-slow z-0"></div>
@@ -79,7 +79,7 @@ const StatsSection = () => {
           whileInView="visible"
           viewport={{ once: true }}
           transition={{ staggerChildren: 0.15 }}
-          className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3"
+          className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-3"
         >
           {statsData.map((stat, index) => (
             <motion.div
