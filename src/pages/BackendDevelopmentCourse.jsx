@@ -144,15 +144,7 @@ const BackendDevelopmentCourse = () => {
       </section>
 
       {/* Inquiry Button */}
-      <div className="text-center pb-10">
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-gradient-to-r from-[#033d26] to-[#044e30] hover:from-[#022e1d] hover:to-[#033d26] text-white px-6 py-3 rounded-full font-semibold tracking-wide shadow-lg transition-all duration-300"
-        >
-          Send Inquiry →
-        </motion.button>
-      </div>
+    
     </div>
     <Footer />
     </>

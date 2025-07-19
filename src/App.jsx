@@ -18,6 +18,7 @@ import AppDevelopment from './pages/AppDevelopment';
 import WebsiteDevelopment from './pages/WebsiteDevelopment';
 import FrontendDevelopmentCourse from './pages/FrontendDevelopmentCourse';
 import BackendDevelopmentCourse from './pages/BackendDevelopmentCourse';
+import FullStackDevelopmentCourse from './pages/FullStackDevelopmentCourse';
 
 
 
@@ -50,6 +51,7 @@ const App = () => {
           <Route path="/website-development" element={<WebsiteDevelopment />} />
           <Route path="/frontend-development" element={<FrontendDevelopmentCourse />} />
           <Route path="/backend-development" element={<BackendDevelopmentCourse />} />
+          <Route path="/fullstack-development" element={<FullStackDevelopmentCourse />} />
          
           
         </Routes>
