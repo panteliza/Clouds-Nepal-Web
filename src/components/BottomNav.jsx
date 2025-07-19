@@ -9,16 +9,18 @@ const BottomNav = () => {
   const toggleSidebar = () => setShowSidebar(!showSidebar);
 
   const services = [
-    { path: "/website-development", label: "Website Development" },
-    { path: "/app-development", label: "App Development" },
-    { path: "/system-software-development", label: "System Software" },
-    { path: "/ui-ux", label: "UI/UX Design" },
-    { path: "/seo", label: "SEO Optimization" },
-    { path: "/smm", label: "Social Media Marketing" },
-    { path: "/graphic-design", label: "Graphic Design" },
-    { path: "/content-writing", label: "Content Writing" },
-    { path: "/pay-per-click", label: "Pay Per Click Ads" },
-    { path: "/digital-marketing", label: "Digital Marketing" },
+     { path: '/website-development', label: 'Website Development' },
+    { path: '/application-development', label: 'Application Development' },
+    { path: '/mobile-app-development', label: 'Mobile App Development' },
+    { path: '/enterprise-software', label: 'Enterprise Software' },
+    { path: '/cloud-it-consulting', label: 'Cloud Services, IT Consulting' },
+    { path: '/maintenance-support', label: 'Maintenance & Support' },
+    { path: '/crm-hr-payroll', label: 'CRM, HR & Payroll' },
+    { path: '/accounting-billing', label: 'Accounting, Billing Software' },
+    { path: '/invoicing-payment', label: 'Invoicing & Payment Software' },
+    { path: '/pos-ims-erp', label: 'POS, IMS, ERP Software' },
+    { path: '/seo-sem-ppc', label: 'SEO, SEM, PPC' },
+    { path: '/marketing-automation', label: 'Marketing & Automation' },
   ];
 
   return (
