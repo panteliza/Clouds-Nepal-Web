@@ -88,25 +88,25 @@ const Footer = () => {
                  webcloudsnepal@gmail.com
                 </a>
               </li>
-              <li className="flex items-start gap-2">
-                <FaPhoneAlt className="text-lg mt-1" />
-                <div className="flex flex-col space-y-1">
-                  <a href="tel:+9779766896866" className="hover:underline">
-                   9766896866
-                  </a>
-                  <a href="tel:+9779762634769" className="hover:underline">
-                   9762634769
-                  </a>
-                    <a href="tel:+9779769341576" className="hover:underline">
-                   9769341576
-      
-                  </a>
-                   <a href="tel:+9779769341568" className="hover:underline">
-                   9769341568
-      
-                  </a>
-                </div>
-              </li>
+            <li className="flex flex-col gap-1">
+  <a href="tel:+9779766896866" className="flex items-center gap-2 hover:underline">
+    <FaPhoneAlt className="text-lg" />
+    9766896866
+  </a>
+  <a href="tel:+9779762634769" className="flex items-center gap-2 hover:underline">
+    <FaPhoneAlt className="text-lg" />
+    9762634769
+  </a>
+  <a href="tel:+9779769341576" className="flex items-center gap-2 hover:underline">
+    <FaPhoneAlt className="text-lg" />
+    9769341576
+  </a>
+  <a href="tel:+9779769341568" className="flex items-center gap-2 hover:underline">
+    <FaPhoneAlt className="text-lg" />
+    9769341568
+  </a>
+</li>
+
             </ul>
 
             {/* CTA Button */}
