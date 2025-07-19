@@ -41,7 +41,7 @@ const CoursesLimited = () => {
   return (
     <section className="py-16 px-4 bg-white">
       <motion.h2
-        className="text-4xl font-extrabold text-center mb-6 bg-gradient-to-r from-green-700 via-green-600 to-green-800 text-transparent bg-clip-text"
+        className="text-4xl font-extrabold text-center mb-2 bg-gradient-to-r from-green-700 via-green-600 to-green-800 text-transparent bg-clip-text"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -51,7 +51,7 @@ const CoursesLimited = () => {
       </motion.h2>
 
       <motion.p
-        className="text-center max-w-3xl mx-auto text-gray-600 mb-12"
+        className="text-center max-w-3xl mx-auto text-gray-600 mb-10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.6 }}

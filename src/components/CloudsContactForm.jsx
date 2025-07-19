@@ -38,7 +38,7 @@ const CloudsContactForm = () => {
   const inputStyle = "w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition";
 
   return (
-    <div className="relative min-h-screen py-20 px-4 flex items-center justify-center bg-gradient-to-br from-green-200 via-white to-blue-200 overflow-hidden">
+    <div className="relative min-h-screen py-5 px-4 flex items-center justify-center bg-gradient-to-br from-green-200 via-white to-blue-200 overflow-hidden">
       {/* Floating Glow Background */}
       <div className="absolute top-0 left-0 w-full h-full bg-animated rounded-xl z-0"></div>
 
