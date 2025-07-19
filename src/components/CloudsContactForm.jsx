@@ -108,29 +108,12 @@ const CloudsContactForm = () => {
         </div>
 
         {/* Info Cards */}
-        <div className="flex flex-col gap-6 justify-center items-center">
-          <div ref={refs[0]} className={cardBase} style={{ animation: "fadeInLeft 1.2s ease-out forwards" }}>
-            <FaMapMarkerAlt className="text-blue-900 text-3xl mb-3 shiver-icon" />
-            <h3 className="font-bold text-lg text-gray-800">Location</h3>
-            <p className="text-center text-gray-700">Tinkune, Kathmandu, Nepal</p>
-          </div>
-
-         <div ref={refs[1]} className={cardBase} style={{ animation: "fadeInRight 1.2s ease-out forwards" }}>
-  <FaPhoneAlt className="text-blue-900 text-3xl mb-3 shiver-icon" />
-  <h3 className="font-bold text-lg text-gray-800">Phone</h3>
-  <a href="tel:+9779769341568" className="text-gray-700 block">977-9769341568</a>
-  <a href="tel:+9779769341576" className="text-gray-700 block">977-9769341576</a>
-  <a href="tel:+9779762634769" className="text-gray-700 block">977-9762634769</a>
-  <a href="tel:+9779766896866" className="text-gray-700 block">977-9766896866</a>
-</div>
+       
 
 
-          <div ref={refs[2]} className={cardBase} style={{ animation: "fadeInLeft 1.2s ease-out forwards" }}>
-            <FaEnvelope className="text-blue-900 text-3xl mb-3 shiver-icon" />
-            <h3 className="font-bold text-lg text-gray-800">Email</h3>
-            <a href="mailto:cloudsnepalweb@gmail.com" className="text-gray-700">webcloudsnepal@gmail.com</a>
-          </div>
-        </div>
+
+
+
       </div>
 
       {/* Bottom Wave */}
