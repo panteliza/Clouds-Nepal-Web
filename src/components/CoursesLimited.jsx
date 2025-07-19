@@ -20,7 +20,7 @@ import img14 from "../assets/python-ai.webp";
 import img15 from "../assets/data-science.webp";
 
 const courses = [
-  { image: img1, title: "Frontend Development", path: "/frontend-development", points: ["HTML, CSS, and JavaScript Basics", "Responsive Web Design", "JavaScript Frameworks (React, Vue, Angular)"] },
+  { image: img1, title: "Frontend Development", path: "/frontend-development-course", points: ["HTML, CSS, and JavaScript Basics", "Responsive Web Design", "JavaScript Frameworks (React, Vue, Angular)"] },
   { image: img2, title: "Backend Development", path: "/backend-development", points: ["MongoDB Basics and Data Modeling", "Building RESTful APIs with Express.js", "Node.js and Asynchronous Programming"] },
   { image: img3, title: "Full Stack Web Development", path: "/fullstack-development", points: ["Frontend Development with HTML, CSS", "Backend Development with Node.js, Express.js", "Building RESTful APIs and Integration"] },
   { image: img4, title: "MEAN Stack", path: "/mean-stack", points: ["Frontend Development with HTML, CSS", "Backend Development with Node.js, Express.js", "Building RESTful APIs and Integrating with Angular"] },

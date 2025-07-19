@@ -16,6 +16,8 @@ import UIUX from './pages/UIUX';
 import SystemSoftware from './pages/SystemSoftware';
 import AppDevelopment from './pages/AppDevelopment';
 import WebsiteDevelopment from './pages/WebsiteDevelopment';
+import FrontendDevelopmentCourse from './pages/FrontendDevelopmentCourse';
+import BackendDevelopmentCourse from './pages/BackendDevelopmentCourse';
 
 
 
@@ -46,6 +48,8 @@ const App = () => {
           <Route path="/system-development" element={<SystemSoftware />} />
           <Route path="/app-development" element={<AppDevelopment />} />
           <Route path="/website-development" element={<WebsiteDevelopment />} />
+          <Route path="/frontend-development" element={<FrontendDevelopmentCourse />} />
+          <Route path="/backend-development" element={<BackendDevelopmentCourse />} />
          
           
         </Routes>
