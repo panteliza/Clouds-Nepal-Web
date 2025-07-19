@@ -17,17 +17,92 @@ import digImg from "../assets/digital-market.svg";
 import logoIcon from "../assets/logo.webp";
 
 const services = [
-  { image: webDevImg, flag: logoIcon, title: "Website Development", description: "Specialized Custom Website Development Services", link: "/website-development" },
-  { image: appDevImg, flag: logoIcon, title: "App Development In Nepal", description: "Building Custom Apps for Seamless User Experience", link: "/app-development" },
-  { image: systemDevImg, flag: logoIcon, title: "System/Software Development", description: "Cutting-edge System/Software Development Solutions", link: "/system-development" },
-  { image: uiuxImg, flag: logoIcon, title: "UI/UX", description: "Design UI/UX interfaces for effortless user interaction", link: "/ui-ux" },
-  { image: seoImg, flag: logoIcon, title: "Search Engine Optimization (SEO)", description: "Enhance Search Engine Ranking with Effective SEO", link: "/seo" },
-  { image: smmImg, flag: logoIcon, title: "Social Media Marketing (SMM)", description: "Boost online presence, engage audience", link: "/smm" },
-  { image: graphicImg, flag: logoIcon, title: "Graphic Design", description: "Bringing Ideas to Visual Life", link: "/graphic-design" },
-  { image: contentImg, flag: logoIcon, title: "Content Writing", description: "Creating Content that Resonates", link: "/content-writing" },
-  { image: ppcImg, flag: logoIcon, title: "Pay Per Click (PPC)", description: "Optimized Pay-Per-Click Campaigns", link: "/ppc" },
-  { image: digImg, flag: logoIcon, title: "Digital Marketing", description: "Designing Digital Paths That Echo with Audiences", link: "/digital-marketing" },
+  {
+    image: webDevImg,
+    flag: logoIcon,
+    title: "Website Development",
+    description: "Custom websites built for performance and branding.",
+    link: "/website-development"
+  },
+  {
+    image: appDevImg,
+    flag: logoIcon,
+    title: "Application Development",
+    description: "Business-centric desktop and web applications.",
+    link: "/application-development"
+  },
+  {
+    image: systemDevImg,
+    flag: logoIcon,
+    title: "Mobile App Development",
+    description: "Modern Android & iOS app development solutions.",
+    link: "/mobile-app-development"
+  },
+  {
+    image: uiuxImg,
+    flag: logoIcon,
+    title: "Enterprise Software",
+    description: "Scalable software tailored for enterprise operations.",
+    link: "/enterprise-software"
+  },
+  {
+    image: seoImg,
+    flag: logoIcon,
+    title: "Cloud Services, IT Consulting",
+    description: "Consulting, deployment & management of cloud infrastructure.",
+    link: "/cloud-it-consulting"
+  },
+  {
+    image: smmImg,
+    flag: logoIcon,
+    title: "Maintenance & Support",
+    description: "Reliable ongoing maintenance and technical support.",
+    link: "/maintenance-support"
+  },
+  {
+    image: graphicImg,
+    flag: logoIcon,
+    title: "CRM, HR & Payroll",
+    description: "Simplify your workforce and customer management.",
+    link: "/crm-hr-payroll"
+  },
+  {
+    image: contentImg,
+    flag: logoIcon,
+    title: "Accounting, Billing Software",
+    description: "Smart tools for accounting and billing automation.",
+    link: "/accounting-billing"
+  },
+  {
+    image: ppcImg,
+    flag: logoIcon,
+    title: "Invoicing & Payment Software",
+    description: "Faster, easier and secure invoicing/payment systems.",
+    link: "/invoicing-payment"
+  },
+  {
+    image: digImg,
+    flag: logoIcon,
+    title: "POS, IMS, ERP Software",
+    description: "Retail and enterprise business process automation.",
+    link: "/pos-ims-erp"
+  },
+  {
+    image: webDevImg, // reused image
+    flag: logoIcon,
+    title: "SEO, SEM, PPC",
+    description: "Boost traffic with advanced digital ad and SEO strategies.",
+    link: "/seo-sem-ppc"
+  },
+  {
+    image: appDevImg, // reused image
+    flag: logoIcon,
+    title: "Marketing & Automation",
+    description: "Automate your digital campaigns and grow your reach.",
+    link: "/marketing-automation"
+  }
 ];
+
 
 const ServicesComponent = () => {
   const [visibleCards, setVisibleCards] = useState([]);

@@ -39,16 +39,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/courses" element={<CoursesPage />} />
-          <Route path="/digital-marketing" element={<DigitalMarketing />} />
-          <Route path="/graphic-design" element={<GraphicDesign />} />
-          <Route path="/ppc" element={<PayPerClick />} />
-          <Route path="/content-writing" element={<ContentWriting />} />
-          <Route path="/smm" element={<SocialMediaMarketing />} />
-          <Route path="/seo" element={<Seo />} />
-          <Route path="/ui-ux" element={<UIUX />} />
-          <Route path="/system-development" element={<SystemSoftware />} />
-          <Route path="/app-development" element={<AppDevelopment />} />
-          <Route path="/website-development" element={<WebsiteDevelopment />} />
+         
           <Route path="/frontend-development" element={<FrontendDevelopmentCourse />} />
           <Route path="/backend-development" element={<BackendDevelopmentCourse />} />
           <Route path="/fullstack-development" element={<FullStackDevelopmentCourse />} />
