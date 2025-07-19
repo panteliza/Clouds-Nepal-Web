@@ -84,18 +84,26 @@ const Footer = () => {
             <ul className="space-y-4 text-sm">
               <li className="flex items-center gap-2">
                 <MdEmail className="text-lg" />
-                <a href="mailto:cloudsnepalweb@gmail.com" className="hover:underline">
-                  cloudsnepalweb@gmail.com
+                <a href="mailto:webcloudsnepal@gmail.com" className="hover:underline">
+                 webcloudsnepal@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <FaPhoneAlt className="text-lg mt-1" />
                 <div className="flex flex-col space-y-1">
-                  <a href="tel:+97756420265" className="hover:underline">
-                    056-420265
+                  <a href="tel:+9779766896866" className="hover:underline">
+                   9766896866
                   </a>
-                  <a href="tel:+97756420245" className="hover:underline">
-                    056-420245
+                  <a href="tel:+9779762634769" className="hover:underline">
+                   9762634769
+                  </a>
+                    <a href="tel:+9779769341576" className="hover:underline">
+                   9769341576
+      
+                  </a>
+                   <a href="tel:+9779769341568" className="hover:underline">
+                   9769341568
+      
                   </a>
                 </div>
               </li>
@@ -103,7 +111,7 @@ const Footer = () => {
 
             {/* CTA Button */}
             <a
-              href="https://wa.me/97756420265"
+              href="https://wa.me/9766896866"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block mt-4 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
