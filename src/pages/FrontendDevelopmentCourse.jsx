@@ -53,7 +53,7 @@ const FrontendDevelopmentCourse = () => {
   return (
     <>
       <div className="bg-gray-50 min-h-screen text-gray-800 overflow-x-hidden">
-        <Navbar />
+       
 
         {/* Hero Section */}
         <section className="w-full pt-[100px] max-w-screen-xl mx-auto px-4 md:px-10">
