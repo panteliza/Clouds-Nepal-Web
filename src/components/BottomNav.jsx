@@ -23,7 +23,7 @@ const BottomNav = () => {
     { path: '/marketing-automation', label: 'Marketing & Automation' },
   ];
 
-  const courses = [
+  const coursesall = [
     { title: "Frontend Development", path: "/frontend-development-course" },
     { title: "Backend Development", path: "/backend-development" },
     { title: "Full Stack Web Development", path: "/fullstack-development" },
@@ -141,7 +141,7 @@ const BottomNav = () => {
               <motion.div className="pt-5 border-t border-gray-200">
                 <h3 className="text-green-700 font-semibold text-sm mb-3">📚 Our Courses</h3>
                 <div className="space-y-2">
-                  {courses.map(({ path, title }) => (
+                  {coursesall.map(({ path, title }) => (
                     <motion.div
                       key={path}
                       variants={{
