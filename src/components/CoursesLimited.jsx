@@ -8,7 +8,7 @@ import img2 from "../assets/backend.webp";
 import img3 from "../assets/fullstack.webp";
 import img4 from "../assets/mean.webp";
 import img5 from "../assets/digital-marketing.webp";
-import img6 from "../assets/graphics.webp";
+
 import img7 from "../assets/python-django.webp";
 import img8 from "../assets/qa.webp";
 import img9 from "../assets/uiux.webp";
@@ -25,7 +25,7 @@ const courses = [
   { image: img3, title: "Full Stack Web Development", path: "/fullstack-development", points: ["Frontend Development with HTML, CSS", "Backend Development with Node.js, Express.js", "Building RESTful APIs and Integration"] },
   { image: img4, title: "MEAN Stack", path: "/mean-stack", points: ["Frontend Development with HTML, CSS", "Backend Development with Node.js, Express.js", "Building RESTful APIs and Integrating with Angular"] },
   { image: img5, title: "Digital Marketing", path: "/digital-marketing", points: ["Search Engine Optimization (SEO)", "Pay-Per-Click (PPC) Advertising", "Social Media Marketing (SMM)"] },
-  
+
   { image: img7, title: "Python & Django Training", path: "/python-django", points: ["Python Basics and Advanced Concepts", "Object-Oriented Programming (OOP) in Python", "Python Libraries and Frameworks"] },
   { image: img8, title: "QA Training", path: "/qa-training", points: ["Introduction to Software Testing", "Manual Testing Concepts and Techniques", "Test Case Design and Execution"] },
   { image: img9, title: "UI/UX Design Training", path: "/uiux-design", points: ["Introduction to UI/UX Design", "Design Principles and Fundamentals", "User Research and Persona Creation"] },
@@ -60,11 +60,11 @@ const CoursesLimited = () => {
         Explore our most popular and career-focused trainings, carefully selected for maximum impact.
       </motion.p>
 
-      <div className="grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+      <div className="grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto group">
         {courses.slice(0, 15).map((course, index) => (
           <motion.div
             key={index}
-            className="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-200 hover:shadow-xl flex flex-col"
+            className="relative bg-white rounded-2xl shadow-md overflow-hidden border border-gray-200 hover:shadow-xl flex flex-col transition duration-300 ease-in-out hover:z-50 hover:scale-105 group-hover:blur-[2px] hover:!blur-none"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -73,9 +73,8 @@ const CoursesLimited = () => {
             <motion.img
               src={course.image}
               alt={course.title}
-              className="w-full h-44 sm:h-52 object-cover hover:scale-105 transition-transform duration-300"
+              className="w-full h-44 sm:h-52 object-cover transition duration-500 ease-in-out group-hover:blur-[2px] group-hover:brightness-[0.6] hover:!blur-none hover:brightness-100 hover:scale-110"
               loading="lazy"
-              whileHover={{ scale: 1.05 }}
             />
             <div className="p-5 flex-1">
               <h3 className="sm:text-lg font-bold text-green-700 mb-2">{course.title}</h3>
