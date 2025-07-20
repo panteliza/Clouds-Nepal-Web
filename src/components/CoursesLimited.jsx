@@ -61,27 +61,41 @@ const CoursesLimited = () => {
         Explore our most popular and career-focused trainings, carefully selected for maximum impact.
       </motion.p>
 
-      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto relative z-0">
-        {courses.map((course, index) => (
+      <motion.div
+        className="grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto relative z-0"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              staggerChildren: 0.15
+            }
+          }
+        }}
+      >
+        {courses.slice(0, 15).map((course, index) => (
           <motion.div
             key={index}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
-            className={`relative group bg-white rounded-2xl shadow-md overflow-hidden border border-gray-200 flex flex-col transition duration-300 ease-in-out ${hoveredIndex === index ? "z-50 scale-105" : hoveredIndex !== null ? "blur-[2px] opacity-60" : "opacity-100"}`}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
+            className={`relative bg-white rounded-2xl shadow-md overflow-hidden border border-gray-200 flex flex-col transition duration-300 ease-in-out ${hoveredIndex === index ? "z-50 scale-105" : hoveredIndex !== null ? "blur-sm opacity-70" : "opacity-100"}`}
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0 }
+            }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <motion.img
               src={course.image}
               alt={course.title}
-              className={`w-full h-48 sm:h-52 object-cover transition duration-500 ease-in-out ${hoveredIndex !== null && hoveredIndex !== index ? "blur-[2px] brightness-90 grayscale-0" : "blur-0 brightness-100 grayscale-0"}`}
+              className={`w-full h-44 sm:h-52 object-cover transition duration-500 ease-in-out ${hoveredIndex !== null && hoveredIndex !== index ? "blur-[2px] brightness-95 grayscale-0" : "blur-0 brightness-100 grayscale-0 scale-100"}`}
               loading="lazy"
             />
             <div className="p-5 flex-1">
-              <h3 className="sm:text-lg font-bold text-green-700 mb-2 text-base md:text-lg">{course.title}</h3>
-              <ul className="list-disc list-inside text-[11px] sm:text-[13px] md:text-sm text-gray-600 space-y-1">
+              <h3 className="sm:text-lg font-bold text-green-700 mb-2">{course.title}</h3>
+              <ul className="list-disc list-inside text-[10px] sm:text-sm text-gray-600 space-y-1">
                 {course.points.map((point, i) => (
                   <li key={i}>{point}</li>
                 ))}
@@ -90,14 +104,14 @@ const CoursesLimited = () => {
             <div className="sm:p-4 pb-2 flex justify-center">
               <Link
                 to={course.path}
-                className="px-4 py-1.5 sm:px-6 sm:py-2 bg-green-700 text-white rounded-full font-semibold hover:bg-green-800 transition text-sm"
+                className="px-3 py-1 sm:px-6 sm:py-2 bg-green-700 text-white rounded-full font-semibold hover:bg-green-800 transition"
               >
                 Read More
               </Link>
             </div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       <motion.div
         className="mt-12 text-center"
