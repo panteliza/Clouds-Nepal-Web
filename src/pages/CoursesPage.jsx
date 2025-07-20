@@ -3,7 +3,7 @@ import NavbarMain from '../components/Navbar'
 
 
 import CourseSearchBar from '../components/CourseSearchBar'
-import { allCourses } from "../components/courses.jsx";
+import { allCourses } from "../components/courses";
 import CoursesComponent from '../components/CoursesComponent';
 import Footer from '../components/Footer';
 
