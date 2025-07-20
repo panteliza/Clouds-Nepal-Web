@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 // Service Images
 import webDevImg from "../assets/website.svg";
-import appDevImg from "../assets/app development.svg";
-import systemDevImg from "../assets/system-software.svg";
+import appDevImg from "../assets/system-software.svg";
+import systemDevImg from "../assets/app development.svg";
 import uiuxImg from "../assets/UI_UX.svg";
 import seoImg from "../assets/seo.svg";
 import smmImg from "../assets/social.svg";
@@ -46,7 +46,7 @@ const services = [
     link: "/enterprise-software"
   },
   {
-    image: seoImg,
+    image: webDevImg,
     flag: logoIcon,
     title: "Cloud Services, IT Consulting",
     description: "Consulting, deployment & management of cloud infrastructure.",
@@ -88,14 +88,14 @@ const services = [
     link: "/pos-ims-erp"
   },
   {
-    image: webDevImg, // reused image
+    image:   seoImg,
     flag: logoIcon,
     title: "SEO, SEM, PPC",
     description: "Boost traffic with advanced digital ad and SEO strategies.",
     link: "/seo-sem-ppc"
   },
   {
-    image: appDevImg, // reused image
+    image: appDevImg,
     flag: logoIcon,
     title: "Marketing & Automation",
     description: "Automate your digital campaigns and grow your reach.",
@@ -103,10 +103,8 @@ const services = [
   }
 ];
 
-
 const ServicesComponent = () => {
   const [visibleCards, setVisibleCards] = useState([]);
-  const [activeOverlay, setActiveOverlay] = useState(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -126,12 +124,6 @@ const ServicesComponent = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleCardClick = (index) => {
-    if (window.innerWidth < 768) {
-      setActiveOverlay((prev) => (prev === index ? null : index));
-    }
-  };
-
   return (
     <div className="bg-gray-100 py-10 px-4 scroll-smooth">
       <div className="text-center mb-10">
@@ -142,13 +134,13 @@ const ServicesComponent = () => {
         <p className="text-sm sm:text-base text-gray-600 mt-2">From development to marketing — we cover it all.</p>
       </div>
 
-      <div className="grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto ">
+      <div className="grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
         {services.map((service, index) => (
-          <div
-            data-index={index}
-            onClick={() => handleCardClick(index)}
+          <Link
+            to={service.link}
             key={index}
-            className={`service-card relative group  sm:py-5 px-5  shadow-md rounded-lg overflow-hidden transition-all duration-700 hover:shadow-xl transform hover:-translate-y-3 cursor-pointer bg-white ${
+            data-index={index}
+            className={`service-card relative group sm:py-5 px-5 shadow-md rounded-lg overflow-hidden transition-all duration-700 hover:shadow-xl transform hover:-translate-y-3 bg-white ${
               visibleCards.includes(index.toString()) ? "animate-zoomIn opacity-100" : "opacity-0"
             }`}
           >
@@ -168,13 +160,9 @@ const ServicesComponent = () => {
               </div>
             </div>
 
-            {/* Hover or Tap Overlay */}
+            {/* Hover/Tap Overlay */}
             <div
-              className={`absolute inset-0 transition-opacity duration-500 bg-center bg-cover flex flex-col justify-center items-center text-white p-4 ${
-                activeOverlay === index || window.innerWidth >= 768
-                  ? "group-hover:opacity-100 opacity-100 sm:opacity-0 sm:group-hover:opacity-100"
-                  : "opacity-0"
-              }`}
+              className={`absolute inset-0 transition-opacity duration-500 bg-center bg-cover flex flex-col justify-center items-center text-white p-4 group-hover:opacity-100 sm:opacity-0 sm:group-hover:opacity-100`}
               style={{
                 backgroundImage: `url(${service.image})`,
                 backgroundBlendMode: "overlay",
@@ -183,11 +171,9 @@ const ServicesComponent = () => {
             >
               <div className="flex flex-col items-center space-y-3">
                 <h3 className="text-base sm:text-lg md:text-xl font-bold text-center">{service.title}</h3>
-                <Link to={service.link}>
-                  <span className="px-4 py-2 bg-white text-green-600 font-semibold rounded-full shadow-md hover:bg-gray-100 text-xs sm:text-sm">
-                    Learn more
-                  </span>
-                </Link>
+                <span className="px-4 py-2 bg-white text-green-600 font-semibold rounded-full shadow-md hover:bg-gray-100 text-xs sm:text-sm">
+                  Learn more
+                </span>
               </div>
             </div>
 
@@ -196,7 +182,7 @@ const ServicesComponent = () => {
               <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-800">{service.title}</h3>
               <p className="text-sm sm:text-base text-gray-600 mt-2">{service.description}</p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 

@@ -11,6 +11,11 @@ import BackendDevelopmentCourse from './pages/BackendDevelopmentCourse';
 import FullStackDevelopmentCourse from './pages/FullStackDevelopmentCourse';
 import FrontendDevelopmentCourse from './pages/FrontendDevelopmentCourse';
 import WebsiteDevelopmentService from './pages/WebsiteDevelopmentService';
+import ApplicationDevelopmentService from './pages/ApplicationDevelopmentService';
+import MobileAppDevelopmentService from './pages/MobileAppDevelopmentService';
+import EnterpriseSoftwareService from './pages/EnterpriseSoftwareService';
+import CloudConsultingService from './pages/CloudConsultingService';
+import MaintenanceSupportService from './pages/MaintenanceSupportService';
 
 
 
@@ -38,6 +43,12 @@ const App = () => {
          
           {/* Services Page */}
           <Route path="/website-development" element={<WebsiteDevelopmentService />} />
+          <Route path="/cloud-it-consulting" element={<CloudConsultingService />} />
+          <Route path="/maintenance-support" element={<MaintenanceSupportService />} />
+          <Route path="/enterprise-software" element={<EnterpriseSoftwareService />} />
+          <Route path="/application-development" element={<ApplicationDevelopmentService />} />
+          <Route path="/mobile-app-development" element={<MobileAppDevelopmentService />} />
+            <Route path="/website-development" element={<WebsiteDevelopmentService />} />
         </Routes>
       </div>
     </BrowserRouter>

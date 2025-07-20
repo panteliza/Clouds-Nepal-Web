@@ -1,18 +1,20 @@
-// WebsiteDevelopmentService.jsx – Fully Animated Service Page
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { FaCheckCircle, FaCode, FaChartLine, FaMobileAlt } from "react-icons/fa";
-import heroImage from "../assets/website.svg"; // Replace with actual optimized image
-import featureImg from "../assets/uiux.webp"; // Replace with actual optimized image
+import {
+  FaProjectDiagram,
+  FaServer,
+  FaShieldAlt,
+} from "react-icons/fa";
+import heroImage from "../assets/UI_UX.svg"; // Replace with optimized enterprise software illustration
 import ServicesComponent from "../components/ServicesComponent";
 
-const WebsiteDevelopmentService = () => {
+const EnterpriseSoftwareService = () => {
   useEffect(() => {
-      // Scroll to the top when the page loads
-      window.scrollTo(0, 0);
-    }, []);
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="bg-gray-50 text-gray-800">
       <Navbar />
@@ -26,16 +28,16 @@ const WebsiteDevelopmentService = () => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-4xl md:text-5xl font-bold text-[#044e30] leading-tight">
-            Custom Website Development in Nepal
+            Custom Enterprise Software Solutions
           </h1>
           <p className="mt-4 text-lg">
-            We build high-performance, responsive, and secure websites tailored to your brand and business goals. Our expert team delivers future-proof solutions from static sites to enterprise-grade platforms.
+            We design and build robust enterprise-grade software tailored for your organizational operations. Our solutions streamline workflows, centralize data, and scale with your growing needs.
           </p>
           <a
             href="/contact"
             className="inline-block mt-6 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-semibold shadow-md transition-all"
           >
-            Start Your Project
+            Request a Demo
           </a>
         </motion.div>
 
@@ -47,7 +49,7 @@ const WebsiteDevelopmentService = () => {
         >
           <img
             src={heroImage}
-            alt="Website development Nepal"
+            alt="Enterprise Software Development Nepal"
             className="rounded-2xl shadow-xl w-full"
           />
         </motion.div>
@@ -61,23 +63,26 @@ const WebsiteDevelopmentService = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Why Choose Us for Website Development?
+          Why Choose Us for Enterprise Software?
         </motion.h2>
 
         <div className="grid md:grid-cols-3 gap-8">
           {[
             {
-              icon: <FaCode className="text-green-600 text-3xl" />, title: "Modern Tech Stack",
-              desc: "We use React, Next.js, Node, TailwindCSS, and headless CMSs like Strapi for speed and scalability."
+              icon: <FaProjectDiagram className="text-green-600 text-3xl" />,
+              title: "Process Automation",
+              desc: "Automate complex business processes across departments using secure centralized systems.",
             },
             {
-              icon: <FaMobileAlt className="text-green-600 text-3xl" />, title: "Mobile-First Design",
-              desc: "Every site we build is responsive and optimized for all screen sizes and devices."
+              icon: <FaServer className="text-green-600 text-3xl" />,
+              title: "Enterprise Architecture",
+              desc: "We build scalable architectures ready for data warehousing, APIs, and third-party integrations.",
             },
             {
-              icon: <FaChartLine className="text-green-600 text-3xl" />, title: "SEO & Speed Optimized",
-              desc: "From Core Web Vitals to structured data, we ensure your site ranks and loads fast."
-            }
+              icon: <FaShieldAlt className="text-green-600 text-3xl" />,
+              title: "Security & Compliance",
+              desc: "Our platforms are built with enterprise-grade security, roles, permissions, and data protection.",
+            },
           ].map((item, idx) => (
             <motion.div
               key={idx}
@@ -104,15 +109,15 @@ const WebsiteDevelopmentService = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            Our Development Process
+            Our Enterprise Software Development Process
           </motion.h2>
 
           <ol className="space-y-6 text-gray-700">
-            <li><strong>1. Discovery & Strategy:</strong> Understand your brand, market, and goals.</li>
-            <li><strong>2. UI/UX Design:</strong> Wireframes & visual design using Figma + AI tools.</li>
-            <li><strong>3. Development:</strong> Code using React/Next.js, Tailwind, APIs, and CMS.</li>
-            <li><strong>4. QA & Optimization:</strong> Speed, security, and SEO testing.</li>
-            <li><strong>5. Launch & Support:</strong> Deploy on Vercel/Netlify + maintenance plans.</li>
+            <li><strong>1. Business Needs Assessment:</strong> Gather requirements and define operational gaps.</li>
+            <li><strong>2. System Design:</strong> Design software architecture and UI/UX that meets enterprise workflows.</li>
+            <li><strong>3. Development & Integration:</strong> Build scalable modules using secure coding practices and APIs.</li>
+            <li><strong>4. Testing & Compliance:</strong> QA, data security, performance and industry compliance checks.</li>
+            <li><strong>5. Deployment & Support:</strong> Deploy to servers or cloud and maintain through SLAs.</li>
           </ol>
         </div>
       </section>
@@ -125,25 +130,25 @@ const WebsiteDevelopmentService = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          Let’s Build Your Dream Website
+          Build Software That Powers Your Enterprise
         </motion.h2>
-        <p className="text-gray-600 max-w-xl mx-auto ">
-          Whether it’s a business website, portfolio, eCommerce store, or a custom app – our team in Nepal will deliver a world-class solution tailored to your needs.
+        <p className="text-gray-600 max-w-xl mx-auto">
+          Let us build a fully customized enterprise software solution that streamlines your workflows, boosts productivity, and integrates across all departments.
         </p>
-       <a
-              href="https://wa.me/9766896866"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-4 bg-green-500 text-white px-4 py-2 rounded-2xl hover:bg-green-600 transition"
-            >
-             Get a free consulation
-            </a>
+        <a
+          href="https://wa.me/9766896866"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block mt-4 bg-green-500 text-white px-4 py-2 rounded-2xl hover:bg-green-600 transition"
+        >
+         Get a free consultation 
+        </a>
       </section>
-      <ServicesComponent/>
 
+      <ServicesComponent />
       <Footer />
     </div>
   );
 };
 
-export default WebsiteDevelopmentService;
+export default EnterpriseSoftwareService;
