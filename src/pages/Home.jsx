@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Navbar from '../components/Navbar';
-import Courses from "../components/Courses";
+import CoursesComponent from "../components/CoursesComponent";
 import CoursesLimited from "../components/CoursesLimited";
 import ServicesComponent from "../components/ServicesComponent";
 import StatsHighlight from "../components/StatsHighlight";

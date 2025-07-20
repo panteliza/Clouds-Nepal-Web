@@ -25,7 +25,7 @@ const courses = [
   { image: img3, title: "Full Stack Web Development", path: "/fullstack-development", points: ["Frontend Development with HTML, CSS", "Backend Development with Node.js, Express.js", "Building RESTful APIs and Integration"] },
   { image: img4, title: "MEAN Stack", path: "/mean-stack", points: ["Frontend Development with HTML, CSS", "Backend Development with Node.js, Express.js", "Building RESTful APIs and Integrating with Angular"] },
   { image: img5, title: "Digital Marketing", path: "/digital-marketing", points: ["Search Engine Optimization (SEO)", "Pay-Per-Click (PPC) Advertising", "Social Media Marketing (SMM)"] },
-  { image: img6, title: "Graphics Design", path: "/graphics-design", points: ["Fundamentals of Design Theory", "Typography and Font Pairing", "Color Theory and Application"] },
+  
   { image: img7, title: "Python & Django Training", path: "/python-django", points: ["Python Basics and Advanced Concepts", "Object-Oriented Programming (OOP) in Python", "Python Libraries and Frameworks"] },
   { image: img8, title: "QA Training", path: "/qa-training", points: ["Introduction to Software Testing", "Manual Testing Concepts and Techniques", "Test Case Design and Execution"] },
   { image: img9, title: "UI/UX Design Training", path: "/uiux-design", points: ["Introduction to UI/UX Design", "Design Principles and Fundamentals", "User Research and Persona Creation"] },
