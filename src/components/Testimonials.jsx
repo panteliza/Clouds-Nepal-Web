@@ -12,6 +12,19 @@ import img4 from "../assets/Aman Shrestha.jpg";
 import img5 from "../assets/Barsha Shrestha.jpg";
 import img6 from "../assets/Aryan Gurung.jpg";
 import img7 from "../assets/Bhupendra Paneru.jpg";
+import img8 from "../assets/Rejita Sharma.png";
+import img9 from "../assets/Pradip Rana.png";
+import img10 from "../assets/Suraj Rai.png";
+import img11 from "../assets/Dharamkaji Shrestha.png";
+import img12 from "../assets/Sanjay Chaudhary.jpg";
+import img13 from "../assets/Roshan Thapa.jpg";
+import img14 from "../assets/Sneha Chaudhary.jpg";
+import img15 from "../assets/Gokarna Pandey.jpg";
+import img16 from "../assets/Dipjung Gurung.jpg";
+import img17 from "../assets/Chetan Rajbansi.jpg";
+import img18 from "../assets/Nitesh Acharya.jpg";
+import img19 from "../assets/Suman Basnet.jpg";
+
 
 const testimonials = [
   {
@@ -67,6 +80,11 @@ const testimonials = [
 
 const Testimonials = () => {
   const [modalData, setModalData] = useState(null);
+  const avatarImages = [
+    img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,
+    img11, img12, img13, img14, img15, img16, img17, img18,
+    img19,
+  ];
 
   return (
     <section className="bg-green-900 text-white py-16 px-4 relative z-10">
@@ -77,16 +95,22 @@ const Testimonials = () => {
           <p className="mb-6 text-lg">
             Our team can assist you in transforming your skill through latest tech capabilities to stay ahead of the competition.
           </p>
-          <div className="flex gap-2 flex-wrap">
-            {testimonials.map((item, i) => (
-              <div
-                key={i}
-                className="w-10 h-10 rounded-full border-2 border-white overflow-hidden"
-              >
-                <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
-              </div>
-            ))}
-          </div>
+        <div className="flex items-center flex-wrap gap-2 mt-4">
+  <div className="flex -space-x-2 overflow-hidden">
+    {avatarImages.map((img, i) => (
+      <img
+        key={i}
+        src={img}
+        alt={`Student ${i + 1}`}
+        className="w-8 h-8 rounded-full border-2 border-white object-cover"
+      />
+    ))}
+  </div>
+  <div className="text-sm font-semibold text-white whitespace-nowrap ml-4">
+    +1200 Students have learned with us
+  </div>
+</div>
+
         </div>
 
         {/* Swiper Section */}
