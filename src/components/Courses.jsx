@@ -4,7 +4,7 @@ export const allCourses = [
   { title: "Full Stack Web Development", path: "/fullstack-development" },
   { title: "MEAN Stack", path: "/mean-stack" },
   { title: "Digital Marketing", path: "/digital-marketing" },
-  { title: "Graphics Design", path: "/graphics-design" },
+ 
   { title: "Python & Django Training", path: "/python-django" },
   { title: "QA Training", path: "/qa-training" },
   { title: "UI/UX Design Training", path: "/uiux-design" },
