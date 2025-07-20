@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { FaCheckCircle, FaCode, FaChartLine, FaMobileAlt } from "react-icons/fa";
-import heroImage from "../assets/react-native.webp"; // Replace with actual optimized image
+import heroImage from "../assets/website.svg"; // Replace with actual optimized image
 import featureImg from "../assets/uiux.webp"; // Replace with actual optimized image
 
 const WebsiteDevelopmentService = () => {
