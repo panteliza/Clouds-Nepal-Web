@@ -12,7 +12,11 @@ import img3 from "../assets/IT company3.png";
 
 import { motion, useInView } from "framer-motion";
 
-// Stats data
+// 🌀 Swiper
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
+
 const statsData = [
   { icon: <FaUsers size={28} />, title: "Active & Enrolled Clients", value: 1500, suffix: "+" },
   { icon: <FaBriefcase size={28} />, title: "Successful Internship Placements", value: 400, suffix: "+" },
@@ -20,7 +24,6 @@ const statsData = [
   { icon: <FaUserTie size={28} />, title: "Qualified Teachers", value: 40, suffix: "+" },
 ];
 
-// Animated counter
 const CountUp = ({ end, trigger }) => {
   const [count, setCount] = useState(0);
   const duration = 1500;
@@ -47,6 +50,15 @@ const StatsSection = () => {
   const isInView = useInView(ref, { once: true });
   const images = [img1, img2, img3];
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="relative bg-gradient-to-br from-green-50 via-white to-green-100 py-10 px-4 sm:px-6 lg:px-20 max-w-screen-xl mx-auto overflow-hidden">
       {/* Background decoration */}
@@ -54,7 +66,7 @@ const StatsSection = () => {
       <div className="absolute bottom-[-60px] right-[-60px] w-96 h-96 bg-green-400 opacity-20 rounded-full blur-2xl animate-spin-slow z-0"></div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center relative z-10">
-        {/* Left section */}
+        {/* Left Section */}
         <div className="space-y-6">
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
@@ -69,17 +81,36 @@ const StatsSection = () => {
             and training the next-gen digital workforce.
           </p>
 
-          {/* Horizontal image row */}
-          <div className="flex gap-4 overflow-x-auto py-2 scrollbar-thin scrollbar-thumb-green-400 justify-center ">
-            {images.map((img, idx) => (
-              <img
-                key={idx}
-                src={img}
-                alt={`img-${idx}`}
-                className="rounded-xl w-64 h-40 object-cover flex-shrink-0 border border-green-200 shadow-md"
-              />
-            ))}
-          </div>
+          {/* Images Section */}
+          {isMobile ? (
+            <Swiper
+              modules={[Autoplay]}
+              autoplay={{ delay: 2500, disableOnInteraction: false }}
+              loop
+              className="w-full rounded-xl"
+            >
+              {images.map((img, idx) => (
+                <SwiperSlide key={idx} className="flex justify-center ">
+                  <img
+                    src={img}
+                    alt={`img-${idx}`}
+                    className="rounded-xl w-72 h-44 object-cover border border-green-200 shadow-md"
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          ) : (
+            <div className="flex flex-wrap gap-2 justify-center">
+              {images.map((img, idx) => (
+                <img
+                  key={idx}
+                  src={img}
+                  alt={`img-${idx}`}
+                  className="rounded-xl w-60 h-40 object-cover border border-green-200 shadow-md"
+                />
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Stats */}
