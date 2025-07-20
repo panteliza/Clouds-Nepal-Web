@@ -1,5 +1,5 @@
 export const allCourses = [
-  { title: "Frontend Development", path: "/frontend-development-course" },
+  { title: "Frontend Development", path: "/frontend-development" },
   { title: "Backend Development", path: "/backend-development" },
   { title: "Full Stack Web Development", path: "/fullstack-development" },
   { title: "MEAN Stack", path: "/mean-stack" },

@@ -7,9 +7,9 @@ import FloatingButtons from './components/FloatingButtons';
 import Home from './pages/Home';
 import CoursesPage from './pages/CoursesPage';
 
-import FrontendDevelopmentCourse from './pages/FrontendDevelopmentCourse';
 import BackendDevelopmentCourse from './pages/BackendDevelopmentCourse';
 import FullStackDevelopmentCourse from './pages/FullStackDevelopmentCourse';
+import FrontendDevelopmentCourse from './pages/FrontendDevelopmentCourse';
 
 
 

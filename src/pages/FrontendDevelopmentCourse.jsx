@@ -16,7 +16,6 @@ const classSchedule = [
 ];
 
 const faqs = [
-
   {
     question: "What is frontend development training?",
     answer: "Frontend development training teaches you how to build the visible parts of websites and apps that users interact with, using HTML, CSS, JavaScript, and frameworks like React."
@@ -46,8 +45,6 @@ const faqs = [
     answer: "Absolutely! We cover freelancing tips, project handling, and portfolio creation to help you get started."
   },
 ];
-
-
 
 const FrontendDevelopmentCourse = () => {
   const [showMore, setShowMore] = useState(false);
@@ -80,7 +77,7 @@ const FrontendDevelopmentCourse = () => {
             </p>
           </div>
 
-          <div className="lg:w-1/3 bg-green-50 p-4 rounded-xl shadow-md">
+          <div className="lg:w-1/3 bg-green-50 p-4 rounded-xl shadow-md self-start">
             <h3 className="font-semibold text-lg mb-2">Upcoming Classes</h3>
             <ul className="space-y-2 text-sm">
               {displayedClasses.map((cls, idx) => (
@@ -105,17 +102,17 @@ const FrontendDevelopmentCourse = () => {
         <h2 className="text-2xl font-bold text-[#044e30] mb-6">What You Will Learn</h2>
         <ul className="space-y-3 list-disc pl-5 text-base">
           <li>Introduction to Frontend Development & Web Technologies</li>
-            <li>UI/UX Fundamentals – Figma & AI-assisted design tools</li>
-            <li>Mastering HTML5 & CSS3 – semantic tags, layout, forms</li>
-            <li>Responsive Design – mobile-first, breakpoints, accessibility</li>
-            <li>JavaScript ES6+ – DOM, events, async (Promises/Async/Await)</li>
-            <li>ReactJS – components, props, hooks, router</li>
-            <li>Advanced Styling – Tailwind CSS, Framer Motion animations</li>
-            <li>REST APIs – fetch, Axios, dynamic data rendering</li>
-            <li>Version Control – Git, GitHub workflows</li>
-            <li>Intro to Next.js – SSR, file-based routing</li>
-            <li>Form Handling – Formik/React Hook Form</li>
-            <li>Final Project – React UI + mock API + Netlify/Vercel deploy</li>
+          <li>UI/UX Fundamentals – Figma & AI-assisted design tools</li>
+          <li>Mastering HTML5 & CSS3 – semantic tags, layout, forms</li>
+          <li>Responsive Design – mobile-first, breakpoints, accessibility</li>
+          <li>JavaScript ES6+ – DOM, events, async (Promises/Async/Await)</li>
+          <li>ReactJS – components, props, hooks, router</li>
+          <li>Advanced Styling – Tailwind CSS, Framer Motion animations</li>
+          <li>REST APIs – fetch, Axios, dynamic data rendering</li>
+          <li>Version Control – Git, GitHub workflows</li>
+          <li>Intro to Next.js – SSR, file-based routing</li>
+          <li>Form Handling – Formik/React Hook Form</li>
+          <li>Final Project – React UI + mock API + Netlify/Vercel deploy</li>
         </ul>
       </section>
 
