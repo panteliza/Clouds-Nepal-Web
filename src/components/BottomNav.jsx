@@ -58,63 +58,95 @@ const BottomNav = () => {
           ></div>
 
           {/* Framer Motion Sidebar */}
+        {/* Framer Motion Sidebar */}
+<motion.div
+  initial={{ x: 300 }}
+  animate={{ x: 0 }}
+  exit={{ x: 300 }}
+  transition={{ duration: 0.4, ease: "easeInOut" }}
+  className="fixed top-0 right-0 w-[280px] h-full z-50 p-6 overflow-y-auto rounded-l-2xl shadow-2xl bg-gradient-to-br from-green-50 via-white to-green-100 animate-gradient-bg"
+>
+  {/* Close Button */}
+  <div className="flex justify-end mb-4">
+    <button
+      onClick={toggleSidebar}
+      className="text-gray-600 hover:text-red-600"
+    >
+      <MdClose size={26} />
+    </button>
+  </div>
+
+  {/* Animated Links */}
+  <motion.div
+    className="flex flex-col space-y-5 text-[16px] font-medium text-gray-800"
+    initial="hidden"
+    animate="visible"
+    variants={{
+      visible: {
+        transition: {
+          staggerChildren: 0.05,
+        },
+      },
+    }}
+  >
+    <motion.div
+      className="space-y-3"
+      variants={{
+        hidden: { opacity: 0, x: 30 },
+        visible: { opacity: 1, x: 0 },
+      }}
+    >
+      <Link to="/" onClick={toggleSidebar} className="hover:text-green-700 block">🏛️ Home</Link>
+      <Link to="/about" onClick={toggleSidebar} className="hover:text-green-700 block">ℹ️ About</Link>
+      <Link to="/courses" onClick={toggleSidebar} className="hover:text-green-700 block">📘 Courses</Link>
+      <Link to="/testimonials" onClick={toggleSidebar} className="hover:text-green-700 block">👨‍🎓 / 👩‍🎓 Students' Testimonial</Link>
+      <Link to="/vision" onClick={toggleSidebar} className="hover:text-green-700 block">👁️ Our Vision</Link>
+      <Link to="/mission" onClick={toggleSidebar} className="hover:text-green-700 block">🎯 Our Mission</Link>
+      <Link to="/contact-us" onClick={toggleSidebar} className="hover:text-green-700 block">📩 Contact Us</Link>
+      <Link to="/career" onClick={toggleSidebar} className="hover:text-green-700 block">💼 Career</Link>
+    </motion.div>
+
+    {/* Services */}
+    <motion.div
+      className="pt-5 border-t border-gray-200"
+      initial="hidden"
+      animate="visible"
+      variants={{
+        visible: {
+          transition: {
+            delayChildren: 0.2,
+            staggerChildren: 0.04,
+          },
+        },
+      }}
+    >
+      <h3 className="text-green-700 font-semibold text-sm mb-3">💻 Our Services</h3>
+      <div className="space-y-2">
+        {services.map(({ path, label }) => (
           <motion.div
-            initial={{ x: 300 }}
-            animate={{ x: 0 }}
-            exit={{ x: 300 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="fixed top-0 right-0 w-[280px] h-full z-50 p-6 overflow-y-auto rounded-l-2xl shadow-2xl bg-gradient-to-br from-green-50 via-white to-green-100 animate-gradient-bg"
+            key={path}
+            variants={{
+              hidden: { opacity: 0, x: 30 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            whileHover={{ scale: 1.03 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
-            {/* Close Button */}
-            <div className="flex justify-end mb-4">
-              <button
-                onClick={toggleSidebar}
-                className="text-gray-600 hover:text-red-600"
-              >
-                <MdClose size={26} />
-              </button>
-            </div>
-
-            {/* Links */}
-            <div className="flex flex-col space-y-5 text-[16px] font-medium text-gray-800">
-              <div className="space-y-3">
-                <Link to="/" onClick={toggleSidebar} className="hover:text-green-700 block">🏛️ Home</Link>
-                <Link to="/about" onClick={toggleSidebar} className="hover:text-green-700 block">ℹ️ About</Link>
-                <Link to="/courses" onClick={toggleSidebar} className="hover:text-green-700 block">📘 Courses</Link>
-                <Link to="/testimonials" onClick={toggleSidebar} className="hover:text-green-700 block">
-  👨‍🎓 / 👩‍🎓 Students' Testimonial
-</Link>
-
-<Link to="/vision" onClick={toggleSidebar} className="hover:text-green-700 block">
-  👁️ Our Vision
-</Link>
-
-<Link to="/mission" onClick={toggleSidebar} className="hover:text-green-700 block">
-  🎯 Our Mission
-</Link>
-
-                <Link to="/contact-us" onClick={toggleSidebar} className="hover:text-green-700 block">📩 Contact Us</Link>
-                <Link to="/career" onClick={toggleSidebar} className="hover:text-green-700 block">💼 Career</Link>
-              </div>
-
-              {/* Services */}
-              <div className="pt-5 border-t border-gray-200">
-                <h3 className="text-green-700 font-semibold text-sm mb-3">💻 Our Services</h3>
-                <div className="space-y-2">
-                  {services.map(({ path, label }) => (
-                    <Link
-                      key={path}
-                      to={path}
-                      onClick={toggleSidebar}
-                      className="text-[15px] text-gray-700 hover:text-green-700 block"
-                    >
-                      {label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <Link
+              to={path}
+              onClick={toggleSidebar}
+              className="text-[15px] text-gray-700 hover:text-green-700 block"
+            >
+              {label}
+            </Link>
           </motion.div>
+        ))}
+      </div>
+    </motion.div>
+  </motion.div>
+</motion.div>
+
+
         </>
       )}
     </>
