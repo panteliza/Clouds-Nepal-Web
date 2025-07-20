@@ -16,6 +16,12 @@ import MobileAppDevelopmentService from './pages/MobileAppDevelopmentService';
 import EnterpriseSoftwareService from './pages/EnterpriseSoftwareService';
 import CloudConsultingService from './pages/CloudConsultingService';
 import MaintenanceSupportService from './pages/MaintenanceSupportService';
+import CrmHrPayrollService from './pages/CrmHrPayrollService';
+import AccountingBillingService from './pages/AccountingBillingService';
+import InvoicingPaymentService from './pages/InvoicingPaymentService';
+import PosImsErpService from './pages/PosImsErpService';
+import SeoSemPpcService from './pages/SeoSemPpcService';
+import MarketingAutomationService from './pages/MarketingAutomationService';
 
 
 
@@ -43,6 +49,12 @@ const App = () => {
          
           {/* Services Page */}
           <Route path="/website-development" element={<WebsiteDevelopmentService />} />
+          <Route path="/seo-sem-ppc" element={<SeoSemPpcService />} />
+          <Route path="/marketing-automation" element={<MarketingAutomationService />} />
+          <Route path="/pos-ims-erp" element={<PosImsErpService />} />
+          <Route path="/invoicing-payment" element={<InvoicingPaymentService />} />
+          <Route path="/accounting-billing" element={<AccountingBillingService />} />
+          <Route path="/crm-hr-payroll" element={<CrmHrPayrollService />} />
           <Route path="/cloud-it-consulting" element={<CloudConsultingService />} />
           <Route path="/maintenance-support" element={<MaintenanceSupportService />} />
           <Route path="/enterprise-software" element={<EnterpriseSoftwareService />} />
