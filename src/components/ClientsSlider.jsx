@@ -13,7 +13,7 @@ import client5 from "../assets/client5.jpeg";
 
 import client7 from "../assets/client7.png";
 import client8 from "../assets/client8.jpeg";
-import client9 from "../assets/client9.jpeg";
+import client9 from "../assets/client9.png";
 import client10 from "../assets/client10.jpeg";
 import client11 from "../assets/client11.jpeg";
 import client12 from "../assets/client12.jpeg";
