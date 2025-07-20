@@ -10,6 +10,7 @@ import CoursesPage from './pages/CoursesPage';
 import BackendDevelopmentCourse from './pages/BackendDevelopmentCourse';
 import FullStackDevelopmentCourse from './pages/FullStackDevelopmentCourse';
 import FrontendDevelopmentCourse from './pages/FrontendDevelopmentCourse';
+import WebsiteDevelopmentService from './pages/WebsiteDevelopmentService';
 
 
 
@@ -35,7 +36,8 @@ const App = () => {
           <Route path="/backend-development" element={<BackendDevelopmentCourse />} />
           <Route path="/fullstack-development" element={<FullStackDevelopmentCourse />} />
          
-          
+          {/* Services Page */}
+          <Route path="/website-development" element={<WebsiteDevelopmentService />} />
         </Routes>
       </div>
     </BrowserRouter>
