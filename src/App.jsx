@@ -47,6 +47,7 @@ import ServicesComponent from './components/ServicesComponent';
 import SEOTrainingCourse from './pages/SEOTrainingCourse';
 import SEOADVANCEDTrainingCourse from './pages/SEOADVANCEDTrainingCourse';
 import NodeJSTrainingCourse from './pages/NodeJSTrainingCourse';
+import ExpressJsTrainingCourse from './pages/ExpressJsTrainingCourse';
 
 
 
@@ -95,6 +96,7 @@ const App = () => {
           <Route path="/seo-basic" element={<SEOTrainingCourse />} />
           <Route path="/seo-advanced" element={<SEOADVANCEDTrainingCourse />} />
           <Route path="/nodejs-training" element={<NodeJSTrainingCourse />} />
+          <Route path="/expressjs-training" element={<ExpressJsTrainingCourse />} />
           
 
          
