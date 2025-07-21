@@ -34,6 +34,17 @@ import ReactNativeAppDevelopmentCourse from './pages/ReactNativeAppDevelopmentCo
 import PythonAiTrainingCourse from './pages/PythonAiTrainingCourse';
 import CCppCourse from './pages/CCppCourse';
 import DataScienceWithPythonCourse from './pages/DataScienceWithPythonCourse';
+import ASPNetCoreTrainingCourse from './pages/ASPNetCoreTrainingCourse';
+import ReactJSTrainingCourse from './pages/ReactJSTrainingCourse';
+import VideoEditingTrainingCourse from './pages/VideoEditingTrainingCourse';
+import AWSSolutionsArchitectureTraining from './pages/AWSSolutionsArchitectureTraining';
+import MachineLearningPythonTraining from './pages/MachineLearningPythonTraining';
+
+import DevOpsTrainingCourse from './pages/DevOpsTrainingCourse';
+import PHPTrainingCourse from './pages/PHPTrainingCourse';
+import PythonTrainingCourse from './pages/PythonTrainingCourse';
+import ServicesComponent from './components/ServicesComponent';
+import SEOTrainingCourse from './pages/SEOTrainingCourse';
 
 
 
@@ -68,9 +79,20 @@ const App = () => {
           <Route path="/flutter-training" element={<FlutterTrainingCourse />} />
           <Route path="/python-ai-training" element={<PythonAiTrainingCourse />} />
           <Route path="/data-science-python" element={<DataScienceWithPythonCourse />} />
-
-          <Route path="/c-cpp-training" element={<CCppCourse />} />
           <Route path="/react-native-training" element={<ReactNativeAppDevelopmentCourse />} />
+          <Route path="/c-cpp-training" element={<CCppCourse />} />
+          <Route path="/aspnet-core" element={<ASPNetCoreTrainingCourse />} />
+          <Route path="/reactjs-training" element={<ReactJSTrainingCourse />} />
+          <Route path="/video-editing" element={<VideoEditingTrainingCourse />} />
+          <Route path="/aws-training" element={<AWSSolutionsArchitectureTraining />} />
+          <Route path="/ml-python" element={<MachineLearningPythonTraining />} />
+          <Route path="/devops-training" element={<DevOpsTrainingCourse />} />
+          <Route path="/php-training" element={<PHPTrainingCourse />} />
+          <Route path="/python-training" element={<PythonTrainingCourse />} />
+          <Route path="/seo-basic" element={<SEOTrainingCourse />} />
+          
+
+         
          
           {/* Services Page */}
           <Route path="/website-development" element={<WebsiteDevelopmentService />} />
