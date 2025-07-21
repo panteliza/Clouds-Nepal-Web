@@ -29,6 +29,11 @@ import UIUXDesignCourse from './pages/UIUXDesignCourse';
 import QATrainingCourse from './pages/QATrainingCourse';
 import EthicalHackingCourse from './pages/EthicalHackingCourse';
 import BusinessAnalysisCourse from './pages/BusinessAnalysisCourse';
+import FlutterTrainingCourse from './pages/FlutterTrainingCourse';
+import ReactNativeAppDevelopmentCourse from './pages/ReactNativeAppDevelopmentCourse';
+import PythonAiTrainingCourse from './pages/PythonAiTrainingCourse';
+import CCppCourse from './pages/CCppCourse';
+import DataScienceWithPythonCourse from './pages/DataScienceWithPythonCourse';
 
 
 
@@ -60,6 +65,12 @@ const App = () => {
           <Route path="/qa-training" element={<QATrainingCourse />} />
           <Route path="/ethical-hacking" element={<EthicalHackingCourse />} />
           <Route path="/business-analysis" element={<BusinessAnalysisCourse />} />
+          <Route path="/flutter-training" element={<FlutterTrainingCourse />} />
+          <Route path="/python-ai-training" element={<PythonAiTrainingCourse />} />
+          <Route path="/data-science-python" element={<DataScienceWithPythonCourse />} />
+
+          <Route path="/c-cpp-training" element={<CCppCourse />} />
+          <Route path="/react-native-training" element={<ReactNativeAppDevelopmentCourse />} />
          
           {/* Services Page */}
           <Route path="/website-development" element={<WebsiteDevelopmentService />} />
