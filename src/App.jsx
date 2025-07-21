@@ -45,6 +45,9 @@ import PHPTrainingCourse from './pages/PHPTrainingCourse';
 import PythonTrainingCourse from './pages/PythonTrainingCourse';
 import ServicesComponent from './components/ServicesComponent';
 import SEOTrainingCourse from './pages/SEOTrainingCourse';
+import SEOADVANCEDTrainingCourse from './pages/SEOADVANCEDTrainingCourse';
+import NodeJSTrainingCourse from './pages/NodeJSTrainingCourse';
+
 
 
 
@@ -90,6 +93,8 @@ const App = () => {
           <Route path="/php-training" element={<PHPTrainingCourse />} />
           <Route path="/python-training" element={<PythonTrainingCourse />} />
           <Route path="/seo-basic" element={<SEOTrainingCourse />} />
+          <Route path="/seo-advanced" element={<SEOADVANCEDTrainingCourse />} />
+          <Route path="/nodejs-training" element={<NodeJSTrainingCourse />} />
           
 
          
