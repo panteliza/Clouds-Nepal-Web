@@ -82,7 +82,6 @@ const courses = [
       "Social Media Marketing (SMM)",
     ],
   },
-  
   {
     image: img7,
     title: "Python & Django Training",
@@ -173,7 +172,7 @@ const courses = [
       "Control Structures: Loops and Conditionals",
     ],
   },
-   {
+  {
     image: img16,
     title: "C & C++ Programming Language Training",
     path: "/c-cpp-training",

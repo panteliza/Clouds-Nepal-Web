@@ -1,19 +1,11 @@
-// FrontendDevelopmentCourse.jsx – Full Course Page with Navbar
-import React, { useState } from "react";
+// FrontendDevelopmentCourse.jsx
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import Navbar from '../components/Navbar';
-import { FaCheckCircle } from "react-icons/fa";
+import NavbarMain from '../components/Navbar'
 import Footer from "../components/Footer";
-
-const classSchedule = [
-  { date: "22 Jul 2025", slots: ["01:00 PM – 02:30 PM", "06:00 PM – 07:30 PM"] },
-  { date: "29 Jul 2025", slots: ["04:00 PM – 05:30 PM", "06:30 PM – 08:00 PM"] },
-  { date: "2 Aug 2025", slots: ["11:00 AM – 12:30 PM", "05:00 PM – 06:30 PM"] },
-  { date: "5 Aug 2025", slots: ["10:00 AM – 11:30 AM", "06:00 PM – 07:30 PM"] },
-  { date: "9 Aug 2025", slots: ["01:00 PM – 02:30 PM", "07:00 PM – 08:30 PM"] },
-  { date: "12 Aug 2025", slots: ["09:00 AM – 10:30 AM", "05:00 PM – 06:30 PM"] },
-  { date: "15 Aug 2025", slots: ["04:00 PM – 05:30 PM", "06:30 PM – 08:00 PM"] },
-];
+import { FaCheckCircle } from "react-icons/fa";
+import CourseSearchBar from '../components/CourseSearchBar'
+import { allCourses } from "../components/courses";
 
 const faqs = [
   {
@@ -47,108 +39,193 @@ const faqs = [
 ];
 
 const FrontendDevelopmentCourse = () => {
-  const [showMore, setShowMore] = useState(false);
-  const displayedClasses = showMore ? classSchedule : classSchedule.slice(0, 3);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
-    <div className="bg-gray-50 min-h-screen text-gray-800">
-      <Navbar />
+     <div className="pt-[70px]">
+      <NavbarMain/>
+       <CourseSearchBar allCourses={allCourses} />
 
-      {/* Hero Section */}
-      <section className="pt-[100px] max-w-screen-xl mx-auto px-4 md:px-10">
-        <motion.h1
-          className="text-3xl md:text-4xl font-bold text-[#044e30] mb-6"
-          initial={{ opacity: 0, y: -20 }}
+        {/* Hero Section */}
+        <motion.section
+          className="pt-[34px] max-w-screen-xl mx-auto px-4 md:px-10"
+          initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Frontend Development Training in Nepal
-        </motion.h1>
+          <motion.h1
+            className="text-3xl md:text-4xl font-bold text-[#044e30] mb-6"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            Frontend Development Training
+          </motion.h1>
 
-        {/* Overview + Classes */}
-        <div className="flex flex-col lg:flex-row gap-8">
-          <div className="lg:w-2/3">
-            <p className="text-lg leading-relaxed">
-              Learn to build beautiful, responsive websites and web applications using HTML, CSS, JavaScript, and React.js. This course is designed to take you from beginner to job-ready frontend developer.
-            </p>
-            <p className="mt-4 text-lg">
-              From layout to interactivity and deployment, gain real-world skills needed to excel in today’s frontend job market.
-            </p>
-          </div>
-
-          <div className="lg:w-1/3 bg-green-50 p-4 rounded-xl shadow-md self-start">
-            <h3 className="font-semibold text-lg mb-2">Upcoming Classes</h3>
-            <ul className="space-y-2 text-sm">
-              {displayedClasses.map((cls, idx) => (
-                <li key={idx}>
-                  <strong>{cls.date}</strong>
-                  <br /> {cls.slots.join(" | ")}
-                </li>
-              ))}
-            </ul>
-            <button
-              onClick={() => setShowMore(!showMore)}
-              className="text-green-700 text-sm mt-2 inline-block"
+          <div className="flex flex-col lg:flex-row gap-5">
+            <motion.div
+              className="lg:w-2/3"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
             >
-              {showMore ? "See Less" : "See 4 more classes"}
-            </button>
-          </div>
-        </div>
-      </section>
+              <p className="text-lg leading-relaxed">
+                Learn to build beautiful, responsive websites and web applications using HTML, CSS, JavaScript, and React.js. This course is designed to take you from beginner to job-ready frontend developer.
+              </p>
+              <p className="mt-4 text-lg">
+                From layout to interactivity and deployment, gain real-world skills needed to excel in today’s frontend job market.
+              </p>
+            </motion.div>
 
-      {/* Curriculum */}
-      <section className="max-w-screen-xl mx-auto px-4 md:px-10 mt-16">
-        <h2 className="text-2xl font-bold text-[#044e30] mb-6">What You Will Learn</h2>
-        <ul className="space-y-3 list-disc pl-5 text-base">
-          <li>Introduction to Frontend Development & Web Technologies</li>
-          <li>UI/UX Fundamentals – Figma & AI-assisted design tools</li>
-          <li>Mastering HTML5 & CSS3 – semantic tags, layout, forms</li>
-          <li>Responsive Design – mobile-first, breakpoints, accessibility</li>
-          <li>JavaScript ES6+ – DOM, events, async (Promises/Async/Await)</li>
-          <li>ReactJS – components, props, hooks, router</li>
-          <li>Advanced Styling – Tailwind CSS, Framer Motion animations</li>
-          <li>REST APIs – fetch, Axios, dynamic data rendering</li>
-          <li>Version Control – Git, GitHub workflows</li>
-          <li>Intro to Next.js – SSR, file-based routing</li>
-          <li>Form Handling – Formik/React Hook Form</li>
-          <li>Final Project – React UI + mock API + Netlify/Vercel deploy</li>
+            {/* Updated Timing Box */}
+          <motion.div
+  className="lg:w-1/3 bg-white p-5 rounded-xl shadow-md border border-teal-100"
+  initial={{ opacity: 0, x: 50 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ delay: 0.4 }}
+>
+  <div className="bg-cyan-100 p-5 rounded-xl shadow-inner w-full">
+    <h3 className="text-lg font-bold text-center text-[#044e30] mb-4">
+      Available Seat TIME
+    </h3>
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {/* Physical Class */}
+      <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+        <h4 className="text-sm font-semibold text-[#044e30] mb-2 text-center">
+          PHYSICAL CLASS
+        </h4>
+        <ul className="text-sm text-gray-800 space-y-1 text-center">
+          <li>6:00AM – 7:30AM</li>
+          <li>7:30AM – 9:00AM</li>
+          <li>2:30PM – 4:00PM</li>
         </ul>
-      </section>
+      </div>
 
-      {/* Benefits */}
-      <section className="max-w-screen-xl mx-auto px-4 md:px-10 mt-16">
-        <h2 className="text-2xl font-bold text-[#044e30] mb-6">Benefits of Frontend Development Course</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="space-y-3">
-            <p className="flex items-start gap-2"><FaCheckCircle className="text-green-700 mt-1" /> Complete beginner-friendly structure</p>
-            <p className="flex items-start gap-2"><FaCheckCircle className="text-green-700 mt-1" /> Master HTML, CSS, JS, and React</p>
-            <p className="flex items-start gap-2"><FaCheckCircle className="text-green-700 mt-1" /> Work on real-world projects and designs</p>
-            <p className="flex items-start gap-2"><FaCheckCircle className="text-green-700 mt-1" /> Suitable for freelance and job-ready goals</p>
-          </div>
-          <div className="space-y-3">
-            <p className="flex items-start gap-2"><FaCheckCircle className="text-green-700 mt-1" /> Online + Offline class options</p>
-            <p className="flex items-start gap-2"><FaCheckCircle className="text-green-700 mt-1" /> Career guidance and placement support</p>
-            <p className="flex items-start gap-2"><FaCheckCircle className="text-green-700 mt-1" /> Build portfolio and host it live</p>
-            <p className="flex items-start gap-2"><FaCheckCircle className="text-green-700 mt-1" /> Certificate upon completion</p>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="max-w-screen-xl mx-auto px-4 md:px-10 mt-16 pb-20">
-        <h2 className="text-2xl font-bold text-[#044e30] mb-6 text-center">Frequently Asked Questions</h2>
-        <div className="space-y-3 max-w-2xl mx-auto">
-          {faqs.map((faq, idx) => (
-            <details key={idx} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
-              <summary className="cursor-pointer font-semibold text-gray-800">{faq.question}</summary>
-              <p className="mt-2 text-gray-600 text-sm">{faq.answer}</p>
-            </details>
-          ))}
-        </div>
-      </section>
+      {/* Online Class */}
+      <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+        <h4 className="text-sm font-semibold text-[#044e30] mb-2 text-center">
+          ONLINE CLASS
+        </h4>
+        <ul className="text-sm text-gray-800 space-y-1 text-center">
+          <li>7:00AM – 8:30AM</li>
+          <li>1:30PM – 3:00PM</li>
+          <li>8:30PM – 10:00PM</li>
+        </ul>
+      </div>
     </div>
-    <Footer />
+
+    <p className="text-xs text-center mt-6 font-semibold text-[#044e30]">
+      CODE YOUR DREAMS INTO REALITY
+    </p>
+  </div>
+</motion.div>
+
+          </div>
+        </motion.section>
+
+        {/* Curriculum */}
+        <motion.section
+          className="max-w-screen-xl mx-auto px-4 md:px-10 mt-7"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ staggerChildren: 0.1 }}
+        >
+          <motion.h2 className="text-2xl font-bold text-[#044e30] mb-6">
+            What You Will Learn
+          </motion.h2>
+          <ul className="space-y-3 list-disc pl-5 text-base">
+            {[
+              "Introduction to Frontend Development & Web Technologies",
+              "UI/UX Fundamentals – Figma & AI-assisted design tools",
+              "Mastering HTML5 & CSS3 – semantic tags, layout, forms",
+              "Responsive Design – mobile-first, breakpoints, accessibility",
+              "JavaScript ES6+ – DOM, events, async (Promises/Async/Await)",
+              "ReactJS – components, props, hooks, router",
+              "Advanced Styling – Tailwind CSS, Framer Motion animations",
+              "REST APIs – fetch, Axios, dynamic data rendering",
+              "Version Control – Git, GitHub workflows",
+              "Intro to Next.js – SSR, file-based routing",
+              "Form Handling – Formik/React Hook Form",
+              "Final Project – React UI + mock API + Netlify/Vercel deploy"
+            ].map((item, idx) => (
+              <motion.li
+                key={idx}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: idx * 0.05 }}
+              >
+                {item}
+              </motion.li>
+            ))}
+          </ul>
+        </motion.section>
+
+        {/* Benefits */}
+        <motion.section
+          className="max-w-screen-xl mx-auto px-4 md:px-10 mt-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <h2 className="text-2xl font-bold text-[#044e30] mb-6">
+            Benefits of Frontend Development Course
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              ["Complete beginner-friendly structure", "Master HTML, CSS, JS, and React", "Work on real-world projects and designs", "Suitable for freelance and job-ready goals"],
+              ["Online + Offline class options", "Career guidance and placement support", "Build portfolio and host it live", "Certificate upon completion"]
+            ].map((group, i) => (
+              <motion.div
+                key={i}
+                className="space-y-3"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.3 }}
+              >
+                {group.map((text, j) => (
+                  <p className="flex items-start gap-2" key={j}>
+                    <FaCheckCircle className="text-green-700 mt-1" />
+                    {text}
+                  </p>
+                ))}
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* FAQ */}
+        <motion.section
+          className="max-w-screen-xl mx-auto px-4 md:px-10 mt-16 pb-20"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-2xl font-bold text-[#044e30] mb-6 text-center">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-3 max-w-2xl mx-auto">
+            {faqs.map((faq, idx) => (
+              <motion.details
+                key={idx}
+                className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.1 }}
+              >
+                <summary className="cursor-pointer font-semibold text-gray-800">
+                  {faq.question}
+                </summary>
+                <p className="mt-2 text-gray-600 text-sm">{faq.answer}</p>
+              </motion.details>
+            ))}
+          </div>
+        </motion.section>
+      </div>
+      <Footer />
     </>
   );
 };
