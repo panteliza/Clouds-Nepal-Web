@@ -126,28 +126,30 @@ const NavbarMain = () => {
           ))}
 
          <div className="flex ">
-  <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-    <img src={img1} alt="LinkedIn" className="h-[40px] w-[40px] object-contain hover:scale-110 transition duration-300" />
-  </a>
-  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+  
+  <a href="https://www.instagram.com/cloudsnepal_web?igsh=N3c3bXo2ZnN0NWoy" target="_blank" rel="noopener noreferrer">
     <img src={img3} alt="Instagram" className="h-[40px] w-[40px] object-contain hover:scale-110 transition duration-300" />
   </a>
-  <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.facebook.com/share/19CPrxXU7E/" target="_blank" rel="noopener noreferrer">
     <img src={img2} alt="Facebook" className="h-[40px] w-[40px] object-contain hover:scale-110 transition duration-300" />
+  </a>
+  <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+    <img src={img1} alt="Thread" className="h-[40px] w-[40px] object-contain hover:scale-110 transition duration-300" />
   </a>
 </div>
         </div>
 
         {/* Mobile Social Icons */}
        <div className="flex  items-center lg:hidden">
-  <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-    <img src={img1} alt="LinkedIn" className="h-[30px] w-[30px] object-contain hover:scale-110 transition duration-300" />
-  </a>
-  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+ 
+  <a href="https://www.instagram.com/cloudsnepal_web?igsh=N3c3bXo2ZnN0NWoy" target="_blank" rel="noopener noreferrer">
     <img src={img3} alt="Instagram" className="h-[30px] w-[30px] object-contain hover:scale-110 transition duration-300" />
   </a>
-  <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.facebook.com/share/19CPrxXU7E/" target="_blank" rel="noopener noreferrer">
     <img src={img2} alt="Facebook" className="h-[30px] w-[30px] object-contain hover:scale-110 transition duration-300" />
+  </a>
+   <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+    <img src={img1} alt="Thread" className="h-[30px] w-[30px] object-contain hover:scale-110 transition duration-300" />
   </a>
 </div>
 
