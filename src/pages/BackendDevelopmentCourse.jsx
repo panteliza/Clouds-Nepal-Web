@@ -1,152 +1,225 @@
-// BackendDevelopmentCourse.jsx – Full Course Page with Navbar
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import Navbar from '../components/Navbar';
-import { FaCheckCircle } from "react-icons/fa";
+import NavbarMain from "../components/Navbar";
 import Footer from "../components/Footer";
-
-const classSchedule = [
-  { date: "23 Jul 2025", slots: ["01:00 PM – 02:30 PM", "06:00 PM – 07:30 PM"] },
-  { date: "30 Jul 2025", slots: ["04:00 PM – 05:30 PM", "06:30 PM – 08:00 PM"] },
-  { date: "3 Aug 2025", slots: ["11:00 AM – 12:30 PM", "05:00 PM – 06:30 PM"] },
-  { date: "6 Aug 2025", slots: ["10:00 AM – 11:30 AM", "06:00 PM – 07:30 PM"] },
-  { date: "10 Aug 2025", slots: ["01:00 PM – 02:30 PM", "07:00 PM – 08:30 PM"] },
-  { date: "13 Aug 2025", slots: ["09:00 AM – 10:30 AM", "05:00 PM – 06:30 PM"] },
-  { date: "16 Aug 2025", slots: ["04:00 PM – 05:30 PM", "06:30 PM – 08:00 PM"] },
-];
+import CourseSearchBar from "../components/CourseSearchBar";
+import { allCourses } from "../components/courses";
+import { FaCheckCircle } from "react-icons/fa";
 
 const faqs = [
   {
     question: "What is backend development training?",
-    answer: "Backend development training focuses on server-side logic, databases, and APIs using technologies like Node.js, Express, MongoDB, and PostgreSQL."
+    answer: "Backend development training teaches you how to build server-side logic, APIs, databases, and authentication systems using technologies like Node.js, Express, and MongoDB.",
   },
   {
-    question: "Do I need frontend knowledge before joining?",
-    answer: "No prior frontend experience is needed. However, familiarity with basic programming concepts is helpful."
+    question: "Do I need frontend knowledge?",
+    answer: "It helps, but not required. This course focuses purely on backend skills.",
+  },
+  {
+    question: "Will I learn to build APIs?",
+    answer: "Yes, you will master RESTful API development with Node.js and Express.",
+  },
+  {
+    question: "Do you cover database integration?",
+    answer: "Absolutely! We cover MongoDB, schemas, models, and Mongoose.",
   },
   {
     question: "Is this course beginner-friendly?",
-    answer: "Yes, we start from scratch and gradually build to advanced topics through hands-on projects."
+    answer: "Yes, it starts with the fundamentals and moves to advanced topics gradually.",
   },
   {
-    question: "Will I learn deployment and hosting?",
-    answer: "Yes, we cover deployment on platforms like Heroku, Railway, Render, and Vercel."
+    question: "Do you provide certification?",
+    answer: "Yes, you'll receive a certificate upon successful completion.",
   },
   {
-    question: "What is the course duration?",
-    answer: "Approximately 3 months with 3–4 sessions per week. Each session is 1.5 hours long."
-  },
-  {
-    question: "Will I get job placement assistance?",
-    answer: "Yes, we offer placement guidance, resume support, and interview preparation."
+    question: "Is job placement support included?",
+    answer: "Yes, we provide resume help, interview prep, and job matching.",
   },
 ];
 
 const BackendDevelopmentCourse = () => {
-  const [showMore, setShowMore] = useState(false);
-  const displayedClasses = showMore ? classSchedule : classSchedule.slice(0, 3);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
-    <div className="bg-gray-50 min-h-screen text-gray-800">
-      <Navbar />
+      <div className="pt-[70px]">
+        <NavbarMain />
+        <CourseSearchBar allCourses={allCourses} />
 
-      {/* Hero Section */}
-      <section className="pt-[100px] max-w-screen-xl mx-auto px-4 md:px-10">
-        <motion.h1
-          className="text-3xl md:text-4xl font-bold text-[#044e30] mb-6"
-          initial={{ opacity: 0, y: -20 }}
+        {/* Hero Section */}
+        <motion.section
+          className="pt-[34px] max-w-screen-xl mx-auto px-4 md:px-10"
+          initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Backend Development Training in Nepal
-        </motion.h1>
+          <motion.h1
+            className="text-3xl md:text-4xl font-bold text-[#044e30] mb-6"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            Backend Development Training
+          </motion.h1>
 
-        {/* Overview + Classes */}
-        <div className="flex flex-col lg:flex-row gap-8">
-          <div className="lg:w-2/3">
-            <p className="text-lg leading-relaxed">
-              Learn to build powerful, scalable server-side applications using Node.js, Express, MongoDB, and PostgreSQL. This course emphasizes APIs, databases, authentication, and deployment. Tailored for job seekers, this program is fully project-based and highly practical.
-            </p>
-            <p className="mt-4 text-lg">
-              From RESTful APIs to cloud deployment, you'll gain real-world skills that are highly demanded in the backend job market.
-            </p>
-          </div>
-
-          <div className="lg:w-1/3 bg-green-50 p-4 rounded-xl shadow-md">
-            <h3 className="font-semibold text-lg mb-2">Upcoming Classes</h3>
-            <ul className="space-y-2 text-sm">
-              {displayedClasses.map((cls, idx) => (
-                <li key={idx}>
-                  <strong>{cls.date}</strong>
-                  <br /> {cls.slots.join(" | ")}
-                </li>
-              ))}
-            </ul>
-            <button
-              onClick={() => setShowMore(!showMore)}
-              className="text-green-700 text-sm mt-2 inline-block"
+          <div className="flex flex-col lg:flex-row gap-5">
+            <motion.div
+              className="lg:w-2/3"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
             >
-              {showMore ? "See Less" : "See 4 more classes"}
-            </button>
+              <p className="text-lg leading-relaxed">
+                Learn to build powerful and scalable server-side applications using Node.js, Express.js, and MongoDB. This course is ideal for anyone who wants to master API development, authentication, and database management.
+              </p>
+              <p className="mt-4 text-lg">
+                From database design to RESTful APIs, get everything you need to become a successful backend developer.
+              </p>
+            </motion.div>
+
+            {/* Timing Box */}
+            <motion.div
+              className="lg:w-1/3 bg-white p-5 rounded-xl shadow-md border border-teal-100"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              <div className="bg-cyan-100 p-5 rounded-xl shadow-inner w-full">
+                <h3 className="text-lg font-bold text-center text-[#044e30] mb-4">
+                  Available Seat TIME
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+                    <h4 className="text-sm font-semibold text-[#044e30] mb-2 text-center">
+                      PHYSICAL CLASS
+                    </h4>
+                    <ul className="text-sm text-gray-800 space-y-1 text-center">
+                      <li>6:00AM – 7:30AM</li>
+                      <li>7:30AM – 9:00AM</li>
+                      <li>2:30PM – 4:00PM</li>
+                    </ul>
+                  </div>
+                  <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+                    <h4 className="text-sm font-semibold text-[#044e30] mb-2 text-center">
+                      ONLINE CLASS
+                    </h4>
+                    <ul className="text-sm text-gray-800 space-y-1 text-center">
+                      <li>7:00AM – 8:30AM</li>
+                      <li>1:30PM – 3:00PM</li>
+                      <li>8:30PM – 10:00PM</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="text-xs text-center mt-6 font-semibold text-[#044e30]">
+                  CODE YOUR DREAMS INTO REALITY
+                </p>
+              </div>
+            </motion.div>
           </div>
-        </div>
-      </section>
+        </motion.section>
 
-      {/* Curriculum */}
-      <section className="max-w-screen-xl mx-auto px-4 md:px-10 mt-16">
-        <h2 className="text-2xl font-bold text-[#044e30] mb-6">What You Will Learn</h2>
-        <ul className="space-y-3 list-disc pl-5 text-base">
-          <li>Introduction to Backend Development & System Architecture</li>
-          <li>Node.js Basics – Modules, NPM, core APIs</li>
-          <li>Express.js Framework – Routing, Middleware, Controllers</li>
-          <li>Working with MongoDB & Mongoose – Schemas, CRUD operations, relationships</li>
-          <li>PostgreSQL Basics – Tables, SQL queries, pg-promise or Prisma</li>
-          <li>Authentication & Authorization – JWT, bcrypt, OAuth strategies</li>
-          <li>RESTful APIs & Error Handling</li>
-          <li>File Uploads, Email Integration, and Rate Limiting</li>
-          <li>CI/CD Concepts & Environment Management</li>
-          <li>Deployment on Render, Railway, Vercel or Heroku</li>
-          <li>Final Project: Complete backend for a real-world app</li>
-        </ul>
-      </section>
+        {/* Curriculum */}
+        <motion.section
+          className="max-w-screen-xl mx-auto px-4 md:px-10 mt-7"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ staggerChildren: 0.1 }}
+        >
+          <motion.h2 className="text-2xl font-bold text-[#044e30] mb-6">
+            What You Will Learn
+          </motion.h2>
+          <ul className="space-y-3 list-disc pl-5 text-base">
+            {[
+              "Intro to Backend Development & Node.js",
+              "Setting up Node.js and NPM Environment",
+              "Core Modules and Asynchronous JS (Callbacks, Promises)",
+              "Building RESTful APIs with Express.js",
+              "CRUD Operations with MongoDB and Mongoose",
+              "Authentication using JWT and Bcrypt",
+              "Middleware, Error Handling, and Logging",
+              "API Security Best Practices (CORS, Rate Limiting)",
+              "File Uploads, Email Integration, and .env management",
+              "Testing with Postman & Thunder Client",
+              "Deploying Backend Apps to Cloud (Render/Vercel)",
+              "Final Project: Full CRUD API with Auth + Docs"
+            ].map((item, idx) => (
+              <motion.li
+                key={idx}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: idx * 0.05 }}
+              >
+                {item}
+              </motion.li>
+            ))}
+          </ul>
+        </motion.section>
 
-      {/* Benefits */}
-      <section className="max-w-screen-xl mx-auto px-4 md:px-10 mt-16">
-        <h2 className="text-2xl font-bold text-[#044e30] mb-6">Benefits of Backend Development Course</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="space-y-3">
-            <p className="flex items-start gap-2"><FaCheckCircle className="text-green-700 mt-1" /> Hands-on server-side programming</p>
-            <p className="flex items-start gap-2"><FaCheckCircle className="text-green-700 mt-1" /> Learn MongoDB, PostgreSQL & REST APIs</p>
-            <p className="flex items-start gap-2"><FaCheckCircle className="text-green-700 mt-1" /> Focused on real-world applications</p>
-            <p className="flex items-start gap-2"><FaCheckCircle className="text-green-700 mt-1" /> Online & offline batches</p>
+        {/* Benefits */}
+        <motion.section
+          className="max-w-screen-xl mx-auto px-4 md:px-10 mt-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <h2 className="text-2xl font-bold text-[#044e30] mb-6">
+            Benefits of Backend Development Course
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              ["Beginner to Advanced Backend Concepts", "Master Node.js, Express, MongoDB", "Work on Real-world API Projects", "Secure & Optimized Backend Architecture"],
+              ["Offline + Live Online Classes", "Job Assistance and Resume Support", "Industry Best Practices and Git Flow", "Earn Certificate & Build Real Projects"]
+            ].map((group, i) => (
+              <motion.div
+                key={i}
+                className="space-y-3"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.3 }}
+              >
+                {group.map((text, j) => (
+                  <p className="flex items-start gap-2" key={j}>
+                    <FaCheckCircle className="text-green-700 mt-1" />
+                    {text}
+                  </p>
+                ))}
+              </motion.div>
+            ))}
           </div>
-          <div className="space-y-3">
-            <p className="flex items-start gap-2"><FaCheckCircle className="text-green-700 mt-1" /> Placement support after completion</p>
-            <p className="flex items-start gap-2"><FaCheckCircle className="text-green-700 mt-1" /> Learn backend security best practices</p>
-            <p className="flex items-start gap-2"><FaCheckCircle className="text-green-700 mt-1" /> Git & version control collaboration</p>
-            <p className="flex items-start gap-2"><FaCheckCircle className="text-green-700 mt-1" /> Certificate and project portfolio</p>
+        </motion.section>
+
+        {/* FAQ */}
+        <motion.section
+          className="max-w-screen-xl mx-auto px-4 md:px-10 mt-16 pb-20"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-2xl font-bold text-[#044e30] mb-6 text-center">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-3 max-w-2xl mx-auto">
+            {faqs.map((faq, idx) => (
+              <motion.details
+                key={idx}
+                className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.1 }}
+              >
+                <summary className="cursor-pointer font-semibold text-gray-800">
+                  {faq.question}
+                </summary>
+                <p className="mt-2 text-gray-600 text-sm">{faq.answer}</p>
+              </motion.details>
+            ))}
           </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="max-w-screen-xl mx-auto px-4 md:px-10 mt-16 pb-20">
-        <h2 className="text-2xl font-bold text-[#044e30] mb-6 text-center">Frequently Asked Questions</h2>
-        <div className="space-y-3 max-w-2xl mx-auto">
-          {faqs.map((faq, idx) => (
-            <details key={idx} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
-              <summary className="cursor-pointer font-semibold text-gray-800">{faq.question}</summary>
-              <p className="mt-2 text-gray-600 text-sm">{faq.answer}</p>
-            </details>
-          ))}
-        </div>
-      </section>
-
-      {/* Inquiry Button */}
-    
-    </div>
-    <Footer />
+        </motion.section>
+      </div>
+      <Footer />
     </>
   );
 };

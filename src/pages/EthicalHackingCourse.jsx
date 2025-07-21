@@ -1,39 +1,36 @@
+// EthicalHackingCourse.jsx
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import NavbarMain from "../components/Navbar";
+import NavbarMain from '../components/Navbar';
 import Footer from "../components/Footer";
-import CourseSearchBar from "../components/CourseSearchBar";
-import { allCourses } from "../components/courses";
 import { FaCheckCircle } from "react-icons/fa";
+import CourseSearchBar from '../components/CourseSearchBar';
+import { allCourses } from "../components/courses";
 
 const faqs = [
   {
-    question: "What is full stack web development?",
-    answer: "Full stack development covers both frontend and backend. You'll learn how to build complete web applications from user interfaces to server logic and databases."
+    question: "What is ethical hacking training?",
+    answer: "Ethical hacking training provides the skills to identify and fix security vulnerabilities in systems, networks, and applications by using hacking techniques ethically."
   },
   {
-    question: "What technologies will I learn?",
-    answer: "You’ll learn HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB with API integration."
+    question: "Do I need a technical background to start?",
+    answer: "A basic understanding of computers and networking is helpful, but the course starts from foundational concepts."
   },
   {
-    question: "Is this course suitable for beginners?",
-    answer: "Yes! We start from basics in both frontend and backend and build up to full project deployment."
+    question: "Is Linux knowledge required?",
+    answer: "No prior Linux knowledge is needed. We cover Linux essentials as part of the training."
   },
   {
-    question: "Will I be job-ready after this course?",
-    answer: "Yes, the course includes projects, placement support, and freelancing preparation."
+    question: "Will this help me become a certified ethical hacker?",
+    answer: "Yes, this course covers key CEH topics and prepares you for ethical hacking certifications."
   },
   {
-    question: "What if I only know basic computer skills?",
-    answer: "That’s enough to get started. We guide you from fundamentals to advanced topics step-by-step."
-  },
-  {
-    question: "Do you offer certification?",
-    answer: "Yes! All students receive a certificate after successful course completion."
-  },
+    question: "Are practical labs included?",
+    answer: "Yes, hands-on labs and exercises are included to practice real-world hacking techniques ethically."
+  }
 ];
 
-const FullStackDevelopmentCourse = () => {
+const EthicalHackingCourse = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -57,7 +54,7 @@ const FullStackDevelopmentCourse = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            Full Stack Web Development Training
+            Ethical Hacking Training
           </motion.h1>
 
           <div className="flex flex-col lg:flex-row gap-5">
@@ -68,14 +65,13 @@ const FullStackDevelopmentCourse = () => {
               transition={{ delay: 0.3 }}
             >
               <p className="text-lg leading-relaxed">
-                Become a professional full stack developer by mastering both frontend and backend technologies. This course teaches you how to build modern, scalable, and responsive web applications from scratch.
+                Learn how to ethically hack into systems to find and fix security flaws. This course equips you with practical skills in cybersecurity, Linux, networking, and ethical penetration testing.
               </p>
               <p className="mt-4 text-lg">
-                Learn HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, and API development—all in one place.
+                Prepare for a cybersecurity career with hands-on labs and real-world tools used by ethical hackers.
               </p>
             </motion.div>
 
-            {/* Timing Box */}
             <motion.div
               className="lg:w-1/3 bg-white p-5 rounded-xl shadow-md border border-teal-100"
               initial={{ opacity: 0, x: 50 }}
@@ -128,17 +124,17 @@ const FullStackDevelopmentCourse = () => {
             What You Will Learn
           </motion.h2>
           <ul className="space-y-3 list-disc pl-5 text-base">
-            {[
-              "Frontend with HTML, CSS, JavaScript & React",
-              "Backend with Node.js, Express.js",
-              "Building RESTful APIs with full CRUD operations",
-              "MongoDB integration with Mongoose",
-              "JWT Authentication and Authorization",
-              "React + Express + Mongo full integration",
-              "Modern DevTools: Git, Postman, VSCode, Thunder Client",
-              "Responsive and secure project architecture",
-              "Hosting full stack apps with Vercel & Render",
-              "Final project: Complete MERN Stack Application"
+            {["Introduction to Ethical Hacking",
+              "Networking Fundamentals for Hackers",
+              "Linux Basics for Ethical Hacking",
+              "Reconnaissance and Footprinting",
+              "Scanning and Enumeration Techniques",
+              "Vulnerability Assessment & Exploitation",
+              "WiFi and Web Application Hacking",
+              "Social Engineering Attacks & Prevention",
+              "Cyber Laws and Responsible Disclosure",
+              "Penetration Testing Tools (Kali Linux, Metasploit, Nmap)",
+              "Report Writing and Incident Handling"
             ].map((item, idx) => (
               <motion.li
                 key={idx}
@@ -160,12 +156,19 @@ const FullStackDevelopmentCourse = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl font-bold text-[#044e30] mb-6">
-            Benefits of Full Stack Web Development Course
+            Benefits of Ethical Hacking Training
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              ["Complete frontend + backend training", "Master MERN Stack (Mongo, Express, React, Node)", "Real-world projects and API integration", "Career-ready development approach"],
-              ["Live online and physical batches", "Placement support and mock interviews", "Learn to build secure full apps", "Certificate + Freelancing training"]
+              ["Hands-on ethical hacking practice in labs",
+              "Learn from industry-expert instructors",
+              "Understand how hackers think and act",
+              "Suitable for cybersecurity beginners"],
+
+              ["Build a career in ethical hacking or penetration testing",
+              "Gain confidence with real-world tools",
+              "Live online or offline batch options",
+              "Certificate after course completion"]
             ].map((group, i) => (
               <motion.div
                 key={i}
@@ -218,4 +221,4 @@ const FullStackDevelopmentCourse = () => {
   );
 };
 
-export default FullStackDevelopmentCourse;
+export default EthicalHackingCourse;

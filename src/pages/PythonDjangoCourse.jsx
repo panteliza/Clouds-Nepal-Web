@@ -1,39 +1,46 @@
+// PythonDjangoCourse.jsx
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import NavbarMain from "../components/Navbar";
 import Footer from "../components/Footer";
+import { FaCheckCircle } from "react-icons/fa";
 import CourseSearchBar from "../components/CourseSearchBar";
 import { allCourses } from "../components/courses";
-import { FaCheckCircle } from "react-icons/fa";
 
 const faqs = [
   {
-    question: "What is full stack web development?",
-    answer: "Full stack development covers both frontend and backend. You'll learn how to build complete web applications from user interfaces to server logic and databases."
+    question: "What is Python & Django training?",
+    answer:
+      "This course teaches you Python programming and Django framework to build dynamic websites, APIs, and web apps efficiently.",
   },
   {
-    question: "What technologies will I learn?",
-    answer: "You’ll learn HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB with API integration."
+    question: "Do I need prior programming knowledge?",
+    answer:
+      "No, the course starts from Python basics. It’s beginner-friendly but also includes advanced topics for experienced learners.",
   },
   {
-    question: "Is this course suitable for beginners?",
-    answer: "Yes! We start from basics in both frontend and backend and build up to full project deployment."
+    question: "Are classes available online?",
+    answer:
+      "Yes, we offer both live online and in-person classes with recordings and doubt-clearing sessions.",
   },
   {
-    question: "Will I be job-ready after this course?",
-    answer: "Yes, the course includes projects, placement support, and freelancing preparation."
+    question: "How long is the course?",
+    answer:
+      "The duration is around 3 to 3.5 months, with 3 sessions per week and hands-on project work.",
   },
   {
-    question: "What if I only know basic computer skills?",
-    answer: "That’s enough to get started. We guide you from fundamentals to advanced topics step-by-step."
+    question: "What kind of projects will I work on?",
+    answer:
+      "You’ll build CRUD applications, APIs with Django REST Framework, and full-fledged websites deployed online.",
   },
   {
-    question: "Do you offer certification?",
-    answer: "Yes! All students receive a certificate after successful course completion."
+    question: "Will I get a certificate and job assistance?",
+    answer:
+      "Yes, you’ll receive certification after completion and get support with resumes, interviews, and freelancing guidance.",
   },
 ];
 
-const FullStackDevelopmentCourse = () => {
+const PythonDjangoCourse = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -57,7 +64,7 @@ const FullStackDevelopmentCourse = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            Full Stack Web Development Training
+            Python & Django Training
           </motion.h1>
 
           <div className="flex flex-col lg:flex-row gap-5">
@@ -68,10 +75,10 @@ const FullStackDevelopmentCourse = () => {
               transition={{ delay: 0.3 }}
             >
               <p className="text-lg leading-relaxed">
-                Become a professional full stack developer by mastering both frontend and backend technologies. This course teaches you how to build modern, scalable, and responsive web applications from scratch.
+                Learn Python programming from basics to advanced concepts and build full-stack web applications using Django and Django REST Framework. Perfect for backend and full-stack developer roles.
               </p>
               <p className="mt-4 text-lg">
-                Learn HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, and API development—all in one place.
+                This course blends programming logic, database design, API development, and deployment — all using industry-standard tools.
               </p>
             </motion.div>
 
@@ -92,9 +99,9 @@ const FullStackDevelopmentCourse = () => {
                       PHYSICAL CLASS
                     </h4>
                     <ul className="text-sm text-gray-800 space-y-1 text-center">
-                      <li>6:00AM – 7:30AM</li>
-                      <li>7:30AM – 9:00AM</li>
-                      <li>2:30PM – 4:00PM</li>
+                      <li>6:30AM – 8:00AM</li>
+                      <li>10:00AM – 11:30AM</li>
+                      <li>4:00PM – 5:30PM</li>
                     </ul>
                   </div>
                   <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
@@ -102,14 +109,14 @@ const FullStackDevelopmentCourse = () => {
                       ONLINE CLASS
                     </h4>
                     <ul className="text-sm text-gray-800 space-y-1 text-center">
-                      <li>7:00AM – 8:30AM</li>
-                      <li>1:30PM – 3:00PM</li>
-                      <li>8:30PM – 10:00PM</li>
+                      <li>7:30AM – 9:00AM</li>
+                      <li>2:00PM – 3:30PM</li>
+                      <li>8:00PM – 9:30PM</li>
                     </ul>
                   </div>
                 </div>
                 <p className="text-xs text-center mt-6 font-semibold text-[#044e30]">
-                  CODE YOUR DREAMS INTO REALITY
+                  BUILD ROBUST APPS WITH PYTHON & DJANGO
                 </p>
               </div>
             </motion.div>
@@ -129,16 +136,18 @@ const FullStackDevelopmentCourse = () => {
           </motion.h2>
           <ul className="space-y-3 list-disc pl-5 text-base">
             {[
-              "Frontend with HTML, CSS, JavaScript & React",
-              "Backend with Node.js, Express.js",
-              "Building RESTful APIs with full CRUD operations",
-              "MongoDB integration with Mongoose",
-              "JWT Authentication and Authorization",
-              "React + Express + Mongo full integration",
-              "Modern DevTools: Git, Postman, VSCode, Thunder Client",
-              "Responsive and secure project architecture",
-              "Hosting full stack apps with Vercel & Render",
-              "Final project: Complete MERN Stack Application"
+              "Python Basics and Advanced Concepts",
+              "Object-Oriented Programming (OOP) in Python",
+              "Python Libraries and Frameworks (NumPy, Pandas, etc.)",
+              "Django – Models, Views, Templates",
+              "Django Admin & Forms",
+              "Django REST Framework – APIs & Authentication",
+              "Database Integration – SQLite & PostgreSQL",
+              "User Authentication & Authorization",
+              "Working with Templates and Static Files",
+              "Deployment on Heroku/Vercel/Render",
+              "Git & GitHub for Version Control",
+              "Final Project – Full-stack Django Web App",
             ].map((item, idx) => (
               <motion.li
                 key={idx}
@@ -160,12 +169,22 @@ const FullStackDevelopmentCourse = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl font-bold text-[#044e30] mb-6">
-            Benefits of Full Stack Web Development Course
+            Benefits of Python & Django Course
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              ["Complete frontend + backend training", "Master MERN Stack (Mongo, Express, React, Node)", "Real-world projects and API integration", "Career-ready development approach"],
-              ["Live online and physical batches", "Placement support and mock interviews", "Learn to build secure full apps", "Certificate + Freelancing training"]
+              [
+                "Complete backend development training",
+                "Django + REST API + Database integration",
+                "Hands-on projects and real code reviews",
+                "Best for jobs, freelancing, and tech startups",
+              ],
+              [
+                "Online + Offline classes with Q&A support",
+                "Project portfolio for job-readiness",
+                "Freelancing & client handling guidance",
+                "Completion certificate & career help",
+              ],
             ].map((group, i) => (
               <motion.div
                 key={i}
@@ -218,4 +237,4 @@ const FullStackDevelopmentCourse = () => {
   );
 };
 
-export default FullStackDevelopmentCourse;
+export default PythonDjangoCourse;

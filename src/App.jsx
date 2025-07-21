@@ -22,6 +22,13 @@ import InvoicingPaymentService from './pages/InvoicingPaymentService';
 import PosImsErpService from './pages/PosImsErpService';
 import SeoSemPpcService from './pages/SeoSemPpcService';
 import MarketingAutomationService from './pages/MarketingAutomationService';
+import MeanStackCourse from './pages/MeanStackCourse';
+import DigitalMarketingCourse from './pages/DigitalMarketingCourse';
+import PythonDjangoCourse from './pages/PythonDjangoCourse';
+import UIUXDesignCourse from './pages/UIUXDesignCourse';
+import QATrainingCourse from './pages/QATrainingCourse';
+import EthicalHackingCourse from './pages/EthicalHackingCourse';
+import BusinessAnalysisCourse from './pages/BusinessAnalysisCourse';
 
 
 
@@ -46,6 +53,13 @@ const App = () => {
           <Route path="/frontend-development" element={<FrontendDevelopmentCourse />} />
           <Route path="/backend-development" element={<BackendDevelopmentCourse />} />
           <Route path="/fullstack-development" element={<FullStackDevelopmentCourse />} />
+          <Route path="/mean-stack" element={<MeanStackCourse />} />
+          <Route path="/digital-marketing" element={<DigitalMarketingCourse />} />
+          <Route path="/python-django" element={<PythonDjangoCourse />} />
+          <Route path="/uiux-design" element={<UIUXDesignCourse />} />
+          <Route path="/qa-training" element={<QATrainingCourse />} />
+          <Route path="/ethical-hacking" element={<EthicalHackingCourse />} />
+          <Route path="/business-analysis" element={<BusinessAnalysisCourse />} />
          
           {/* Services Page */}
           <Route path="/website-development" element={<WebsiteDevelopmentService />} />

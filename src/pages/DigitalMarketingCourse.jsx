@@ -1,39 +1,46 @@
+// DigitalMarketingCourse.jsx
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import NavbarMain from "../components/Navbar";
 import Footer from "../components/Footer";
+import { FaCheckCircle } from "react-icons/fa";
 import CourseSearchBar from "../components/CourseSearchBar";
 import { allCourses } from "../components/courses";
-import { FaCheckCircle } from "react-icons/fa";
 
 const faqs = [
   {
-    question: "What is full stack web development?",
-    answer: "Full stack development covers both frontend and backend. You'll learn how to build complete web applications from user interfaces to server logic and databases."
+    question: "What is Digital Marketing training?",
+    answer:
+      "Digital Marketing training helps you master online marketing tools and strategies like SEO, PPC, Social Media, Email Marketing, and more to grow businesses online.",
   },
   {
-    question: "What technologies will I learn?",
-    answer: "You’ll learn HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB with API integration."
+    question: "Do I need any technical background?",
+    answer:
+      "No. This course is beginner-friendly. Anyone interested in marketing, freelancing, or growing online presence can join.",
   },
   {
-    question: "Is this course suitable for beginners?",
-    answer: "Yes! We start from basics in both frontend and backend and build up to full project deployment."
+    question: "Are online classes available?",
+    answer:
+      "Yes, we offer both online and physical class options for your convenience.",
   },
   {
-    question: "Will I be job-ready after this course?",
-    answer: "Yes, the course includes projects, placement support, and freelancing preparation."
+    question: "What’s the duration of the course?",
+    answer:
+      "The course runs for about 2.5 to 3 months with regular interactive sessions and real-time project work.",
   },
   {
-    question: "What if I only know basic computer skills?",
-    answer: "That’s enough to get started. We guide you from fundamentals to advanced topics step-by-step."
+    question: "Will I work on real campaigns?",
+    answer:
+      "Yes, you’ll practice with real-world tools and case studies including campaign analysis and ad setup.",
   },
   {
-    question: "Do you offer certification?",
-    answer: "Yes! All students receive a certificate after successful course completion."
+    question: "Is there placement or freelancing support?",
+    answer:
+      "We provide freelancing guidance, resume reviews, mock interviews, and job placement assistance.",
   },
 ];
 
-const FullStackDevelopmentCourse = () => {
+const DigitalMarketingCourse = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -57,7 +64,7 @@ const FullStackDevelopmentCourse = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            Full Stack Web Development Training
+            Digital Marketing Training
           </motion.h1>
 
           <div className="flex flex-col lg:flex-row gap-5">
@@ -68,10 +75,10 @@ const FullStackDevelopmentCourse = () => {
               transition={{ delay: 0.3 }}
             >
               <p className="text-lg leading-relaxed">
-                Become a professional full stack developer by mastering both frontend and backend technologies. This course teaches you how to build modern, scalable, and responsive web applications from scratch.
+                Master the skills to market products, services, and brands online. Learn SEO, PPC, content creation, analytics, and social media strategy to become a certified digital marketer.
               </p>
               <p className="mt-4 text-lg">
-                Learn HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, and API development—all in one place.
+                Ideal for job seekers, freelancers, and entrepreneurs looking to grow their presence in the digital world.
               </p>
             </motion.div>
 
@@ -92,9 +99,9 @@ const FullStackDevelopmentCourse = () => {
                       PHYSICAL CLASS
                     </h4>
                     <ul className="text-sm text-gray-800 space-y-1 text-center">
-                      <li>6:00AM – 7:30AM</li>
-                      <li>7:30AM – 9:00AM</li>
-                      <li>2:30PM – 4:00PM</li>
+                      <li>7:00AM – 8:30AM</li>
+                      <li>10:00AM – 11:30AM</li>
+                      <li>3:00PM – 4:30PM</li>
                     </ul>
                   </div>
                   <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
@@ -102,14 +109,14 @@ const FullStackDevelopmentCourse = () => {
                       ONLINE CLASS
                     </h4>
                     <ul className="text-sm text-gray-800 space-y-1 text-center">
-                      <li>7:00AM – 8:30AM</li>
-                      <li>1:30PM – 3:00PM</li>
-                      <li>8:30PM – 10:00PM</li>
+                      <li>8:00AM – 9:30AM</li>
+                      <li>12:30PM – 2:00PM</li>
+                      <li>8:00PM – 9:30PM</li>
                     </ul>
                   </div>
                 </div>
                 <p className="text-xs text-center mt-6 font-semibold text-[#044e30]">
-                  CODE YOUR DREAMS INTO REALITY
+                  DOMINATE DIGITAL PLATFORMS
                 </p>
               </div>
             </motion.div>
@@ -129,16 +136,18 @@ const FullStackDevelopmentCourse = () => {
           </motion.h2>
           <ul className="space-y-3 list-disc pl-5 text-base">
             {[
-              "Frontend with HTML, CSS, JavaScript & React",
-              "Backend with Node.js, Express.js",
-              "Building RESTful APIs with full CRUD operations",
-              "MongoDB integration with Mongoose",
-              "JWT Authentication and Authorization",
-              "React + Express + Mongo full integration",
-              "Modern DevTools: Git, Postman, VSCode, Thunder Client",
-              "Responsive and secure project architecture",
-              "Hosting full stack apps with Vercel & Render",
-              "Final project: Complete MERN Stack Application"
+              "Search Engine Optimization (SEO)",
+              "Pay-Per-Click (PPC) Advertising",
+              "Social Media Marketing (SMM)",
+              "Content Marketing & Blogging",
+              "Email Marketing Strategies",
+              "Google Ads & Meta Ads (Facebook/Instagram)",
+              "YouTube Marketing & Video SEO",
+              "Google Analytics & Campaign Tracking",
+              "Marketing Funnel Strategy",
+              "Freelancing & Client Pitching",
+              "Real-World Campaign Setup & Analysis",
+              "Portfolio & Certification Guidance",
             ].map((item, idx) => (
               <motion.li
                 key={idx}
@@ -160,12 +169,22 @@ const FullStackDevelopmentCourse = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl font-bold text-[#044e30] mb-6">
-            Benefits of Full Stack Web Development Course
+            Benefits of Digital Marketing Course
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              ["Complete frontend + backend training", "Master MERN Stack (Mongo, Express, React, Node)", "Real-world projects and API integration", "Career-ready development approach"],
-              ["Live online and physical batches", "Placement support and mock interviews", "Learn to build secure full apps", "Certificate + Freelancing training"]
+              [
+                "Beginner-friendly digital marketing blueprint",
+                "Learn SEO, Google Ads, SMM, and Email Marketing",
+                "Work on real campaigns and tools",
+                "Perfect for job seekers & entrepreneurs",
+              ],
+              [
+                "Live online & offline sessions",
+                "Resume & portfolio building guidance",
+                "Freelancing and client pitching skills",
+                "Certification after course completion",
+              ],
             ].map((group, i) => (
               <motion.div
                 key={i}
@@ -218,4 +237,4 @@ const FullStackDevelopmentCourse = () => {
   );
 };
 
-export default FullStackDevelopmentCourse;
+export default DigitalMarketingCourse;

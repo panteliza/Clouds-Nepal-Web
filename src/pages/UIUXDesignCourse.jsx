@@ -8,32 +8,32 @@ import { FaCheckCircle } from "react-icons/fa";
 
 const faqs = [
   {
-    question: "What is full stack web development?",
-    answer: "Full stack development covers both frontend and backend. You'll learn how to build complete web applications from user interfaces to server logic and databases."
+    question: "What is UI/UX design?",
+    answer: "UI/UX design is about creating user-friendly interfaces that provide a great user experience. It focuses on both visual design (UI) and usability (UX)."
   },
   {
-    question: "What technologies will I learn?",
-    answer: "You’ll learn HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB with API integration."
+    question: "Is coding required for UI/UX?",
+    answer: "No coding is required. This course focuses on design tools, principles, and processes to build intuitive interfaces."
   },
   {
-    question: "Is this course suitable for beginners?",
-    answer: "Yes! We start from basics in both frontend and backend and build up to full project deployment."
+    question: "What tools will I learn?",
+    answer: "You'll learn tools like Figma, Adobe XD, and Canva along with principles of color, typography, layout, and prototyping."
   },
   {
-    question: "Will I be job-ready after this course?",
-    answer: "Yes, the course includes projects, placement support, and freelancing preparation."
+    question: "Do I need a design background?",
+    answer: "Not at all. This course is beginner-friendly and starts from the basics."
   },
   {
-    question: "What if I only know basic computer skills?",
-    answer: "That’s enough to get started. We guide you from fundamentals to advanced topics step-by-step."
+    question: "Will I work on projects?",
+    answer: "Yes! You will work on real design case studies and create a portfolio."
   },
   {
-    question: "Do you offer certification?",
-    answer: "Yes! All students receive a certificate after successful course completion."
+    question: "Is job placement available?",
+    answer: "Yes. We offer job assistance and freelancing preparation for UI/UX roles."
   },
 ];
 
-const FullStackDevelopmentCourse = () => {
+const UIUXDesignCourse = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -57,7 +57,7 @@ const FullStackDevelopmentCourse = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            Full Stack Web Development Training
+            UI/UX Design Training
           </motion.h1>
 
           <div className="flex flex-col lg:flex-row gap-5">
@@ -68,10 +68,10 @@ const FullStackDevelopmentCourse = () => {
               transition={{ delay: 0.3 }}
             >
               <p className="text-lg leading-relaxed">
-                Become a professional full stack developer by mastering both frontend and backend technologies. This course teaches you how to build modern, scalable, and responsive web applications from scratch.
+                Master the art of intuitive and visually stunning interface design. This course will teach you how to understand user needs and turn them into attractive, easy-to-use digital products.
               </p>
               <p className="mt-4 text-lg">
-                Learn HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, and API development—all in one place.
+                No design experience needed — start from the fundamentals and build a strong UI/UX portfolio using Figma and industry-standard workflows.
               </p>
             </motion.div>
 
@@ -129,16 +129,14 @@ const FullStackDevelopmentCourse = () => {
           </motion.h2>
           <ul className="space-y-3 list-disc pl-5 text-base">
             {[
-              "Frontend with HTML, CSS, JavaScript & React",
-              "Backend with Node.js, Express.js",
-              "Building RESTful APIs with full CRUD operations",
-              "MongoDB integration with Mongoose",
-              "JWT Authentication and Authorization",
-              "React + Express + Mongo full integration",
-              "Modern DevTools: Git, Postman, VSCode, Thunder Client",
-              "Responsive and secure project architecture",
-              "Hosting full stack apps with Vercel & Render",
-              "Final project: Complete MERN Stack Application"
+              "Introduction to UI/UX Design",
+              "Design Principles and Fundamentals",
+              "User Research and Persona Creation",
+              "Wireframing and Prototyping using Figma",
+              "Visual Design with Color, Typography, Layout",
+              "Usability Testing & Feedback Loops",
+              "Creating Mobile & Web App Interfaces",
+              "Portfolio Development with Case Studies"
             ].map((item, idx) => (
               <motion.li
                 key={idx}
@@ -160,12 +158,12 @@ const FullStackDevelopmentCourse = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl font-bold text-[#044e30] mb-6">
-            Benefits of Full Stack Web Development Course
+            Benefits of UI/UX Design Training
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              ["Complete frontend + backend training", "Master MERN Stack (Mongo, Express, React, Node)", "Real-world projects and API integration", "Career-ready development approach"],
-              ["Live online and physical batches", "Placement support and mock interviews", "Learn to build secure full apps", "Certificate + Freelancing training"]
+              ["Beginner-friendly and creative course", "Work on real UI/UX projects and apps", "Learn Figma, wireframes, and mockups", "Build and present a strong design portfolio"],
+              ["Join live online or in-person sessions", "Job and freelancing guidance included", "Understand user psychology & behavior", "Get certified and start freelancing"]
             ].map((group, i) => (
               <motion.div
                 key={i}
@@ -218,4 +216,4 @@ const FullStackDevelopmentCourse = () => {
   );
 };
 
-export default FullStackDevelopmentCourse;
+export default UIUXDesignCourse;

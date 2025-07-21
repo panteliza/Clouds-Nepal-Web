@@ -1,39 +1,46 @@
+// MeanStackCourse.jsx
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import NavbarMain from "../components/Navbar";
 import Footer from "../components/Footer";
+import { FaCheckCircle } from "react-icons/fa";
 import CourseSearchBar from "../components/CourseSearchBar";
 import { allCourses } from "../components/courses";
-import { FaCheckCircle } from "react-icons/fa";
 
 const faqs = [
   {
-    question: "What is full stack web development?",
-    answer: "Full stack development covers both frontend and backend. You'll learn how to build complete web applications from user interfaces to server logic and databases."
+    question: "What is MEAN Stack training?",
+    answer:
+      "MEAN Stack training teaches you to build full-stack web applications using MongoDB, Express.js, Angular, and Node.js.",
   },
   {
-    question: "What technologies will I learn?",
-    answer: "You’ll learn HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB with API integration."
+    question: "Is this course beginner-friendly?",
+    answer:
+      "Yes. You’ll start with basics and gradually move to advanced full-stack development concepts.",
   },
   {
-    question: "Is this course suitable for beginners?",
-    answer: "Yes! We start from basics in both frontend and backend and build up to full project deployment."
+    question: "Do you offer online classes?",
+    answer:
+      "Yes, we provide both physical and online live classes with interaction and project reviews.",
   },
   {
-    question: "Will I be job-ready after this course?",
-    answer: "Yes, the course includes projects, placement support, and freelancing preparation."
+    question: "How long is the course?",
+    answer:
+      "The course lasts around 3–4 months with 3 classes per week, each session being 1.5 hours.",
   },
   {
-    question: "What if I only know basic computer skills?",
-    answer: "That’s enough to get started. We guide you from fundamentals to advanced topics step-by-step."
+    question: "Will I build real projects?",
+    answer:
+      "Yes. You'll build full-stack projects using Angular frontend and Node.js backend with MongoDB database.",
   },
   {
-    question: "Do you offer certification?",
-    answer: "Yes! All students receive a certificate after successful course completion."
+    question: "Will I get placement support?",
+    answer:
+      "We provide placement assistance, resume help, and interview prep to help you land jobs.",
   },
 ];
 
-const FullStackDevelopmentCourse = () => {
+const MeanStackCourse = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -57,7 +64,7 @@ const FullStackDevelopmentCourse = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            Full Stack Web Development Training
+            MEAN Stack Development Training
           </motion.h1>
 
           <div className="flex flex-col lg:flex-row gap-5">
@@ -68,10 +75,10 @@ const FullStackDevelopmentCourse = () => {
               transition={{ delay: 0.3 }}
             >
               <p className="text-lg leading-relaxed">
-                Become a professional full stack developer by mastering both frontend and backend technologies. This course teaches you how to build modern, scalable, and responsive web applications from scratch.
+                Learn to build powerful full-stack web applications using MongoDB, Express, Angular, and Node.js. This industry-ready course is perfect for aspiring backend and full-stack developers.
               </p>
               <p className="mt-4 text-lg">
-                Learn HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, and API development—all in one place.
+                From frontend to API development and database handling — become a complete developer equipped to handle modern web projects.
               </p>
             </motion.div>
 
@@ -109,7 +116,7 @@ const FullStackDevelopmentCourse = () => {
                   </div>
                 </div>
                 <p className="text-xs text-center mt-6 font-semibold text-[#044e30]">
-                  CODE YOUR DREAMS INTO REALITY
+                  CODE YOUR FUTURE WITH MEAN STACK
                 </p>
               </div>
             </motion.div>
@@ -129,16 +136,17 @@ const FullStackDevelopmentCourse = () => {
           </motion.h2>
           <ul className="space-y-3 list-disc pl-5 text-base">
             {[
-              "Frontend with HTML, CSS, JavaScript & React",
-              "Backend with Node.js, Express.js",
-              "Building RESTful APIs with full CRUD operations",
-              "MongoDB integration with Mongoose",
-              "JWT Authentication and Authorization",
-              "React + Express + Mongo full integration",
-              "Modern DevTools: Git, Postman, VSCode, Thunder Client",
-              "Responsive and secure project architecture",
-              "Hosting full stack apps with Vercel & Render",
-              "Final project: Complete MERN Stack Application"
+              "HTML5 & CSS3 Fundamentals",
+              "JavaScript Essentials – ES6+, DOM, Async",
+              "Node.js – Environment, Modules, File System",
+              "Express.js – Middleware, Routing, RESTful APIs",
+              "MongoDB – CRUD operations, Mongoose",
+              "Angular – Components, Services, Routing",
+              "Connecting Angular frontend to Express backend",
+              "JWT Authentication & Authorization",
+              "Hosting on platforms like Heroku/Vercel",
+              "Git & GitHub for version control",
+              "Real-time project with API + UI integration",
             ].map((item, idx) => (
               <motion.li
                 key={idx}
@@ -160,12 +168,22 @@ const FullStackDevelopmentCourse = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl font-bold text-[#044e30] mb-6">
-            Benefits of Full Stack Web Development Course
+            Benefits of MEAN Stack Course
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              ["Complete frontend + backend training", "Master MERN Stack (Mongo, Express, React, Node)", "Real-world projects and API integration", "Career-ready development approach"],
-              ["Live online and physical batches", "Placement support and mock interviews", "Learn to build secure full apps", "Certificate + Freelancing training"]
+              [
+                "Beginner to Advanced MEAN Stack Learning",
+                "Build real-world full-stack apps",
+                "Work with MongoDB, Express, Angular, and Node",
+                "Launch a career as a full-stack developer",
+              ],
+              [
+                "Live online & offline classes",
+                "Placement assistance and career mentorship",
+                "Project-based curriculum with code reviews",
+                "Certificate & portfolio-ready apps",
+              ],
             ].map((group, i) => (
               <motion.div
                 key={i}
@@ -218,4 +236,4 @@ const FullStackDevelopmentCourse = () => {
   );
 };
 
-export default FullStackDevelopmentCourse;
+export default MeanStackCourse;
