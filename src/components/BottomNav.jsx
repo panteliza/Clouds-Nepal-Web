@@ -65,9 +65,9 @@ const BottomNav = () => {
           <FaBook size={20} />
           <span>Courses</span>
         </Link>
-        <Link to="/about" className="text-gray-700 flex flex-col items-center text-sm font-medium">
+        <Link to="/services" className="text-gray-700 flex flex-col items-center text-sm font-medium">
           <FaInfoCircle size={20} />
-          <span>About</span>
+          <span>Services</span>
         </Link>
         <button onClick={toggleSidebar} className="text-gray-700 flex flex-col items-center text-sm font-medium">
           <FaEllipsisH size={20} />

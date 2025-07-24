@@ -53,6 +53,7 @@ import CloudsContactUsPage from './pages/CloudsContactUsPage';
 import StudentTestimonialsPage from './pages/StudentTestimonialsPage';
 import OurMission from './pages/OurMission';
 import OurVission from './pages/OurVission';
+import ServicesCloudPage from './pages/ServicesCloudPage';
 
 
 
@@ -79,6 +80,8 @@ const App = () => {
           <Route path="/testimonials" element={<StudentTestimonialsPage />} />
           <Route path="/mission" element={<OurMission />} />
           <Route path="/vision" element={<OurVission/>} />
+          <Route path="/services" element={<ServicesCloudPage/>} />
+
          {/* Courses */}
           <Route path="/frontend-development" element={<FrontendDevelopmentCourse />} />
           <Route path="/backend-development" element={<BackendDevelopmentCourse />} />
