@@ -84,7 +84,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="bg-green-900 text-white py-16 px-4 relative z-10">
+    <section className="bg-green-900 text-white py-10 px-4 relative z-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
         {/* Left Section */}
         <div>
