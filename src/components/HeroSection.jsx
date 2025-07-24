@@ -2,7 +2,6 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/effect-fade";
 
@@ -85,18 +84,13 @@ const HeroSection = () => {
             accelerate your business to new heights.
           </motion.p>
 
-         import { Link } from "react-router-dom";
-
-<Link to="/contact-us">
-  <motion.button
-    className="bg-[#05693A] hover:bg-[#049b5f] text-white font-bold px-8 py-4 rounded-full shadow-lg transition duration-300 flex items-center gap-2 animate-shimmer"
-    whileHover={{ scale: 1.1 }}
-    whileTap={{ scale: 0.95 }}
-  >
-    ⚡ Get in Touch With Us
-  </motion.button>
-</Link>
-
+          <motion.button
+            className="bg-[#05693A] hover:bg-[#049b5f] text-white font-bold px-8 py-4 rounded-full shadow-lg transition duration-300 flex items-center gap-2 animate-shimmer"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            ⚡ Explore Our Services
+          </motion.button>
         </motion.div>
 
         {/* Right Swiper Section */}
