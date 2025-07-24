@@ -54,6 +54,7 @@ import StudentTestimonialsPage from './pages/StudentTestimonialsPage';
 import OurMission from './pages/OurMission';
 import OurVission from './pages/OurVission';
 import ServicesCloudPage from './pages/ServicesCloudPage';
+import CareerPage from './pages/CareerPage';
 
 
 
@@ -81,6 +82,7 @@ const App = () => {
           <Route path="/mission" element={<OurMission />} />
           <Route path="/vision" element={<OurVission/>} />
           <Route path="/services" element={<ServicesCloudPage/>} />
+          <Route path="/career" element={<CareerPage/>} />
 
          {/* Courses */}
           <Route path="/frontend-development" element={<FrontendDevelopmentCourse />} />
