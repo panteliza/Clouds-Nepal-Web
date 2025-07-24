@@ -1,3 +1,4 @@
+// PythonAiTrainingCourse.jsx
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import NavbarMain from "../components/Navbar";
@@ -5,6 +6,7 @@ import Footer from "../components/Footer";
 import CourseSearchBar from "../components/CourseSearchBar";
 import { allCourses } from "../components/courses";
 import { FaCheckCircle } from "react-icons/fa";
+import CloudsContactForm from "../components/CloudsContactForm";
 
 const faqs = [
   {
@@ -68,6 +70,43 @@ const PythonAiTrainingCourse = () => {
           </div>
         </motion.section>
 
+        {/* Timings Section */}
+        <motion.section
+          className="max-w-screen-xl mx-auto px-4 md:px-10 mt-7"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.h2 className="text-2xl font-bold text-[#044e30] mb-6">
+            Class Timings
+          </motion.h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {/* Physical Class */}
+            <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+              <h4 className="text-sm font-semibold text-[#044e30] mb-2 text-center">
+                PHYSICAL CLASS
+              </h4>
+              <ul className="text-sm text-gray-800 space-y-1 text-center">
+                <li>7:00AM – 8:30AM</li>
+                <li>11:00AM – 12:30PM</li>
+                <li>4:00PM – 5:30PM</li>
+              </ul>
+            </div>
+
+            {/* Online Class */}
+            <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+              <h4 className="text-sm font-semibold text-[#044e30] mb-2 text-center">
+                ONLINE CLASS
+              </h4>
+              <ul className="text-sm text-gray-800 space-y-1 text-center">
+                <li>8:00AM – 9:30AM</li>
+                <li>2:00PM – 3:30PM</li>
+                <li>7:00PM – 8:30PM</li>
+              </ul>
+            </div>
+          </div>
+        </motion.section>
+
         {/* Curriculum */}
         <motion.section
           className="max-w-screen-xl mx-auto px-4 md:px-10 mt-7"
@@ -117,8 +156,7 @@ const PythonAiTrainingCourse = () => {
             Benefits of Python + AI Training
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
-            {[
-              ["No coding background required", "Ideal for IT students, engineers & job-seekers", "100% project-based learning", "Learn AI tools used in real-world apps"],
+            {[["No coding background required", "Ideal for IT students, engineers & job-seekers", "100% project-based learning", "Learn AI tools used in real-world apps"],
               ["Offline + Online flexible options", "CV, GitHub & Portfolio Support", "Capstone project with certificate", "Placement assistance & internship support"]
             ].map((group, i) => (
               <motion.div
@@ -141,7 +179,7 @@ const PythonAiTrainingCourse = () => {
 
         {/* FAQ */}
         <motion.section
-          className="max-w-screen-xl mx-auto px-4 md:px-10 mt-16 pb-20"
+          className="max-w-screen-xl mx-auto px-4 md:px-10 mt-16 pb-2"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
@@ -167,6 +205,7 @@ const PythonAiTrainingCourse = () => {
           </div>
         </motion.section>
       </div>
+      <CloudsContactForm />
       <Footer />
     </>
   );

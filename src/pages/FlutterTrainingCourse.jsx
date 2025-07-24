@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import { FaCheckCircle } from "react-icons/fa";
 import CourseSearchBar from '../components/CourseSearchBar';
 import { allCourses } from "../components/courses";
+import CloudsContactForm from "../components/CloudsContactForm";
 
 const faqs = [
   {
@@ -136,7 +137,7 @@ const FlutterTrainingCourse = () => {
       </motion.section>
 
       {/* FAQ */}
-      <motion.section className="max-w-screen-xl mx-auto px-4 md:px-10 mt-16 pb-20">
+      <motion.section className="max-w-screen-xl mx-auto px-4 md:px-10 mt-16 pb-2">
         <h2 className="text-2xl font-bold text-[#044e30] mb-6 text-center">
           Frequently Asked Questions
         </h2>
@@ -152,7 +153,7 @@ const FlutterTrainingCourse = () => {
           ))}
         </div>
       </motion.section>
-
+<CloudsContactForm/>
       <Footer />
     </div>
   );

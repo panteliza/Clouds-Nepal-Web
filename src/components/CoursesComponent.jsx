@@ -307,7 +307,7 @@ const courses = [
 
 const CoursesComponent = () => {
   return (
-    <section className="py-16 px-4 bg-white">
+    <section className="pb-10 pt-5 px-4 bg-white">
       <motion.h2
         className="text-4xl font-extrabold text-center mb-6 bg-gradient-to-r from-green-700 via-green-600 to-green-800 text-transparent bg-clip-text"
         initial={{ opacity: 0, y: 30 }}

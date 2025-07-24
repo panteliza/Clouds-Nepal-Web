@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import { FaCheckCircle } from "react-icons/fa";
 import CourseSearchBar from "../components/CourseSearchBar";
 import { allCourses } from "../components/courses";
+import CloudsContactForm from "../components/CloudsContactForm";
 
 const faqs = [
   {
@@ -98,21 +99,22 @@ const MeanStackCourse = () => {
                     <h4 className="text-sm font-semibold text-[#044e30] mb-2 text-center">
                       PHYSICAL CLASS
                     </h4>
-                    <ul className="text-sm text-gray-800 space-y-1 text-center">
-                      <li>6:00AM – 7:30AM</li>
-                      <li>7:30AM – 9:00AM</li>
-                      <li>2:30PM – 4:00PM</li>
-                    </ul>
-                  </div>
-                  <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-                    <h4 className="text-sm font-semibold text-[#044e30] mb-2 text-center">
-                      ONLINE CLASS
-                    </h4>
-                    <ul className="text-sm text-gray-800 space-y-1 text-center">
-                      <li>7:00AM – 8:30AM</li>
-                      <li>1:30PM – 3:00PM</li>
-                      <li>8:30PM – 10:00PM</li>
-                    </ul>
+                   <ul className="text-sm text-gray-800 space-y-1 text-center">
+      <li>7:30AM – 9:00AM</li>
+      <li>12:00PM – 1:30PM</li>
+      <li>5:00PM – 6:30PM</li>
+    </ul>
+  </div>
+
+  <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+    <h4 className="text-sm font-semibold text-[#044e30] mb-2 text-center">
+       ONLINE CLASS
+    </h4>
+    <ul className="text-sm text-gray-800 space-y-1 text-center">
+      <li>8:00AM – 9:30AM</li>
+      <li>2:00PM – 3:30PM</li>
+      <li>7:30PM – 9:00PM</li>
+    </ul>
                   </div>
                 </div>
                 <p className="text-xs text-center mt-6 font-semibold text-[#044e30]">
@@ -205,7 +207,7 @@ const MeanStackCourse = () => {
 
         {/* FAQ */}
         <motion.section
-          className="max-w-screen-xl mx-auto px-4 md:px-10 mt-16 pb-20"
+          className="max-w-screen-xl mx-auto px-4 md:px-10 mt-16 pb-2"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
@@ -231,6 +233,7 @@ const MeanStackCourse = () => {
           </div>
         </motion.section>
       </div>
+      <CloudsContactForm/>
       <Footer />
     </>
   );

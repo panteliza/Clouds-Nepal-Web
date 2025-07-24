@@ -105,7 +105,7 @@ const BackendDevelopmentCourse = () => {
 
   <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
     <h4 className="text-sm font-semibold text-[#044e30] mb-2 text-center">
-      COURSE 2 - ONLINE CLASS
+       ONLINE CLASS
     </h4>
     <ul className="text-sm text-gray-800 space-y-1 text-center">
       <li>9:00AM – 10:30AM</li>
@@ -195,7 +195,7 @@ const BackendDevelopmentCourse = () => {
 
         {/* FAQ */}
         <motion.section
-          className="max-w-screen-xl mx-auto px-4 md:px-10 mt-16 "
+          className="max-w-screen-xl mx-auto px-4 md:px-10 mt-16 pb-2"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
