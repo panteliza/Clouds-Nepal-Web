@@ -107,7 +107,7 @@ const Testimonials = () => {
     ))}
   </div>
   <div className="text-sm font-semibold text-white whitespace-nowrap ml-4">
-    +1200 Students have learned with us
+    +600 Students have learned with us
   </div>
 </div>
 

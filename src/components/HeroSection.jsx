@@ -1,7 +1,9 @@
+// HeroSection.jsx
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/effect-fade";
 
@@ -11,6 +13,8 @@ import slider2 from "../assets/slider2.png";
 import slider3 from "../assets/slider3.png";
 
 const HeroSection = () => {
+  const MotionButton = motion.button;
+
   return (
     <section className="relative bg-gradient-to-br from-white to-gray-100 py-20 px-6 md:px-20 overflow-hidden">
       {/* SVG Animated Backgrounds */}
@@ -78,19 +82,19 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            At <strong>Clouds Web Nepal</strong>, we specialize in crafting
-            visually powerful and technically flawless digital products.
-            Whether it's web development or complete tech solutions, we
-            accelerate your business to new heights.
+            At <strong>Clouds Web Nepal</strong>, we specialize in crafting visually powerful and technically flawless digital products.
+            Whether it's web development or complete tech solutions, we accelerate your business to new heights.
           </motion.p>
 
-          <motion.button
-            className="bg-[#05693A] hover:bg-[#049b5f] text-white font-bold px-8 py-4 rounded-full shadow-lg transition duration-300 flex items-center gap-2 animate-shimmer"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            ⚡ Explore Our Services
-          </motion.button>
+          <Link to="/contact-us">
+            <MotionButton
+              className="bg-[#05693A] hover:bg-[#049b5f] text-white font-bold px-8 py-4 rounded-full shadow-lg transition duration-300 flex items-center gap-2 animate-shimmer"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              ⚡ Get in Touch With Us
+            </MotionButton>
+          </Link>
         </motion.div>
 
         {/* Right Swiper Section */}
@@ -107,40 +111,18 @@ const HeroSection = () => {
             loop={true}
             className="w-full h-full"
           >
-            <SwiperSlide>
-              <motion.img
-                src={slider1}
-                alt="Tech Showcase 1"
-                className="w-full h-full object-cover"
-                initial={{ scale: 1.1 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 3 }}
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <motion.img
-                src={slider2}
-                alt="Tech Showcase 2"
-                className="w-full h-full object-cover"
-                initial={{ scale: 1.1 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 3 }}
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="w-full h-full bg-[#05693A] flex items-center justify-center">
+            {[slider1, slider2, slider3].map((img, i) => (
+              <SwiperSlide key={i}>
                 <motion.img
-                  src={slider3}
-                  alt="Tech Showcase 3"
-                  className="w-full h-full object-contain"
+                  src={img}
+                  alt={`Tech Showcase ${i + 1}`}
+                  className="w-full h-full object-cover"
                   initial={{ scale: 1.1 }}
                   animate={{ scale: 1 }}
                   transition={{ duration: 3 }}
                 />
-              </div>
-            </SwiperSlide>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </motion.div>
       </motion.div>
@@ -183,21 +165,10 @@ const HeroSection = () => {
           background-size: 200% auto;
           animation: shimmer 2s linear infinite;
         }
-
-        /* New: Floating code symbols */
         @keyframes floatSymbol {
-          0% {
-            transform: translateY(0) rotate(0deg);
-            opacity: 0.05;
-          }
-          50% {
-            transform: translateY(-20px) rotate(2deg);
-            opacity: 0.07;
-          }
-          100% {
-            transform: translateY(0) rotate(-2deg);
-            opacity: 0.05;
-          }
+          0% { transform: translateY(0) rotate(0deg); opacity: 0.05; }
+          50% { transform: translateY(-20px) rotate(2deg); opacity: 0.07; }
+          100% { transform: translateY(0) rotate(-2deg); opacity: 0.05; }
         }
         .animate-float-symbol {
           animation: floatSymbol 12s ease-in-out infinite;
