@@ -91,6 +91,9 @@ const FrontendDevelopmentCourse = () => {
     <h3 className="text-lg font-bold text-center text-[#044e30] mb-4">
       Available Seat TIME
     </h3>
+
+
+    
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
       {/* Physical Class */}
       <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">

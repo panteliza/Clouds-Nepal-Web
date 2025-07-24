@@ -2,14 +2,12 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-
-// 📌 Replace these with actual image paths
+// Import course images
 import img1 from "../assets/frontend.webp";
 import img2 from "../assets/backend.webp";
 import img3 from "../assets/fullstack.webp";
 import img4 from "../assets/mean.webp";
 import img5 from "../assets/digital-marketing.webp";
-
 import img7 from "../assets/python-django.webp";
 import img8 from "../assets/qa.webp";
 import img9 from "../assets/uiux.webp";
@@ -306,10 +304,10 @@ const courses = [
   },
 ];
 
-const CoursesComponent
- = () => {
+
+const CoursesComponent = () => {
   return (
-    <section className="py-5 px-4 bg-white">
+    <section className="py-16 px-4 bg-white">
       <motion.h2
         className="text-4xl font-extrabold text-center mb-6 bg-gradient-to-r from-green-700 via-green-600 to-green-800 text-transparent bg-clip-text"
         initial={{ opacity: 0, y: 30 }}
@@ -324,52 +322,35 @@ const CoursesComponent
         Gain in-demand skills with our expertly crafted courses led by industry professionals.
       </p>
 
-     <motion.div
-        className="grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto relative z-0"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={{
-          hidden: {},
-          visible: {
-            transition: {
-              staggerChildren: 0.15
-            }
-          }
-        }}
-      >
-        {courses.slice(0, 15).map((course, index) => (
-          <Link to={course.path} key={index}>
-            <motion.div
-              className="bg-white rounded-2xl shadow-lg hover:shadow-2xl border border-gray-200 transition transform hover:-translate-y-2 duration-300 ease-in-out flex flex-col cursor-pointer"
-              variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0 }
-              }}
-            >
-              <img
-                src={course.image}
-                alt={course.title}
-                className="w-full h-44 sm:h-52 object-cover transition duration-300 ease-in-out hover:scale-105"
-                loading="lazy"
-              />
-              <div className="p-5 flex-1">
-                <h3 className="sm:text-lg font-bold text-green-700 mb-2">{course.title}</h3>
-                <ul className="list-disc list-inside text-[10px] sm:text-sm text-gray-600 space-y-1">
-                  {course.points.map((point, i) => (
-                    <li key={i}>{point}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="sm:p-4 pb-2 flex justify-center">
-                <span className="px-3 py-1 sm:px-6 sm:py-2 bg-green-700 text-white rounded-full font-semibold transition">
-                  Read More
-                </span>
-              </div>
-            </motion.div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {courses.map((course, index) => (
+          <Link
+            key={index}
+            to={course.path}
+            className="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer"
+          >
+            <img
+              src={course.image}
+              alt={course.title}
+              className="w-full h-52 object-cover transition-transform duration-300 hover:scale-105"
+              loading="lazy"
+            />
+            <div className="p-5 flex-1">
+              <h3 className="text-lg font-bold text-green-700 mb-2">{course.title}</h3>
+              <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
+                {course.points.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="p-4 flex justify-center">
+              <span className="px-6 py-2 bg-green-700 text-white rounded-full font-semibold transition">
+                Read More
+              </span>
+            </div>
           </Link>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 };
