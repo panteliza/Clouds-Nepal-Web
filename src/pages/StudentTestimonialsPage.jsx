@@ -143,6 +143,10 @@ const testimonials = [
 ];
 
 const StudentTestimonials = () => {
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+  
   const [filter, setFilter] = useState("");
   const filtered = testimonials.filter((t) =>
     t.course.toLowerCase().includes(filter.toLowerCase())
