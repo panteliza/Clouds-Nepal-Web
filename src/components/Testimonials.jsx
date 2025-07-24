@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/pagination";
 
 // ✅ Correct Image Imports
 import img1 from "../assets/Ansha Basnet.png";
@@ -24,7 +23,6 @@ import img16 from "../assets/Dipjung Gurung.jpg";
 import img17 from "../assets/Chetan Rajbansi.jpg";
 import img18 from "../assets/Nitesh Acharya.jpg";
 import img19 from "../assets/Suman Basnet.jpg";
-
 
 const testimonials = [
   {
@@ -82,8 +80,7 @@ const Testimonials = () => {
   const [modalData, setModalData] = useState(null);
   const avatarImages = [
     img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,
-    img11, img12, img13, img14, img15, img16, img17, img18,
-    img19,
+    img11, img12, img13, img14, img15, img16, img17, img18, img19,
   ];
 
   return (
@@ -95,29 +92,40 @@ const Testimonials = () => {
           <p className="mb-6 text-lg">
             Our team can assist you in transforming your skill through latest tech capabilities to stay ahead of the competition.
           </p>
-        <div className="flex items-center flex-wrap gap-2 mt-4">
-  <div className="flex -space-x-2 overflow-hidden">
-    {avatarImages.map((img, i) => (
-      <img
+          <div className="flex items-center flex-wrap gap-2 mt-4">
+        <div className="flex -space-x-2 overflow-hidden">
+  {avatarImages.map((img, i) => {
+    let blurClass = "";
+    if (i > 14) blurClass = "blur-[2px] brightness-90 scale-112";
+    else if (i > 6) blurClass = "blur-[1px] brightness-95 scale-105";
+
+    return (
+      <div
         key={i}
-        src={img}
-        alt={`Student ${i + 1}`}
-        className="w-8 h-8 rounded-full border-2 border-white object-cover"
-      />
-    ))}
-  </div>
-  <div className="text-sm font-semibold text-white whitespace-nowrap ml-4">
-    +600 Students have learned with us
-  </div>
+        className="w-8 h-8 rounded-full border-2 border-white overflow-hidden relative"
+      >
+        <img
+          src={img}
+          alt={`Student ${i + 1}`}
+          className={`w-full h-full object-cover transition duration-300 ${blurClass}`}
+        />
+      </div>
+    );
+  })}
 </div>
 
+
+
+            <div className="text-sm font-semibold text-white whitespace-nowrap ml-4">
+              +600 Students have learned with us
+            </div>
+          </div>
         </div>
 
         {/* Swiper Section */}
         <div className="md:col-span-2">
           <Swiper
-            modules={[Pagination, Autoplay]}
-            pagination={{ clickable: true }}
+            modules={[Autoplay]}
             autoplay={{ delay: 5000 }}
             spaceBetween={30}
             breakpoints={{

@@ -35,15 +35,17 @@ const CloudsContactForm = () => {
     setMessageSent(true);
   };
 
-  const inputStyle = "w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition";
+const inputStyle =
+  "w-full p-3 rounded-2xl border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-300 transition-all duration-200";
+
 
   return (
-    <div className="relative min-h-screen py-0 px-4 flex items-center justify-center bg-gradient-to-br from-green-200 via-white to-blue-200 overflow-hidden">
+    <div className="relative  py-5 px-4 flex items-center justify-center bg-gradient-to-br from-green-200 via-white to-blue-200 overflow-hidden">
       {/* Floating Glow Background */}
       <div className="absolute top-0 left-0 w-full h-full bg-animated rounded-xl z-0"></div>
 
       <div className="max-w-4xl w-full bg-white p-10 rounded-xl shadow-2xl relative z-10 animate-softFade">
-        <h2 className="text-4xl font-bold text-center text-blue-900 mb-8">Enroll in a Course</h2>
+        <h2 className="text-4xl font-bold text-center text-green-900 mb-8">Enroll in a Course</h2>
 
         {messageSent ? (
           <p className="text-green-700 font-semibold text-center">Form submitted successfully! Please check your Gmail.</p>
@@ -76,7 +78,8 @@ const CloudsContactForm = () => {
 
             <button
               type="submit"
-              className="w-full bg-blue-800 text-white py-3 text-lg font-semibold rounded hover:bg-blue-900 transition"
+              className="w-40 mx-auto block bg-green-800 text-white py-3 text-lg font-semibold rounded-3xl hover:bg-green-900 transition"
+
             >
               Submit
             </button>
