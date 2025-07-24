@@ -66,86 +66,86 @@ const CloudsContactUsPage = () => {
   };
 
   return (
-    <>
-    <NavbarMain/>
-    <div className="relative min-h-screen px-6 py-24 bg-gradient-to-tr from-[#e1f5ec] via-[#f0f9ff] to-[#d2ebf5] overflow-hidden">
-      {/* Glowing background blobs */}
-      <div className="absolute w-[500px] h-[500px] bg-[#39765B] opacity-20 rounded-full blur-3xl top-[-100px] left-[-120px] animate-pulse"></div>
-      <div className="absolute w-[400px] h-[400px] bg-[#91d5c6] opacity-20 rounded-full blur-3xl bottom-[-100px] right-[-100px] animate-pulse"></div>
+    <div className="flex flex-col min-h-screen bg-gradient-to-tr from-[#e1f5ec] via-[#f0f9ff] to-[#d2ebf5]">
+      <NavbarMain />
 
-      <div className="relative z-10 max-w-7xl mx-auto grid md:grid-cols-2 gap-10">
-        {/* 🎓 Course Form */}
-        <div className="bg-white/20 backdrop-blur-2xl p-10 rounded-3xl border border-white/40 shadow-xl hover:shadow-2xl transition-all duration-500">
-          <h2 className="text-3xl font-bold text-[#14452F] mb-6 text-center">📘 Enroll in a Course</h2>
-          {courseMsg ? (
-            <p className="text-green-700 font-semibold text-center">Course form submitted successfully!</p>
-          ) : (
-            <form onSubmit={handleCourseSubmit} className="space-y-5">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input name="name" placeholder="Name" required className={inputStyle} />
-                <input name="age" type="number" placeholder="Age" required className={inputStyle} />
-                <input name="permanent" placeholder="Permanent Address" required className={inputStyle} />
-                <input name="temporary" placeholder="Temporary Address" required className={inputStyle} />
-                <input name="phone" type="tel" placeholder="Phone" required className={inputStyle} />
-                <input name="email" type="email" placeholder="Email" required className={inputStyle} />
-                <input name="qualification" placeholder="Qualification" required className={inputStyle} />
-              </div>
+      <div className="relative px-6 pt-24 pb-10 flex-grow">
+        {/* Background blobs */}
+        <div className="absolute w-[500px] h-[500px] bg-[#39765B] opacity-20 rounded-full blur-3xl top-[-100px] left-[-120px] animate-pulse"></div>
+        <div className="absolute w-[400px] h-[400px] bg-[#91d5c6] opacity-20 rounded-full blur-3xl bottom-[-100px] right-[-100px] animate-pulse"></div>
 
-              <select name="course" required className={inputStyle}>
-                <option value="">-- Select Course --</option>
-                {courseOptions.map((course, i) => (
-                  <option key={i} value={course}>{course}</option>
-                ))}
-              </select>
+        <div className="relative z-10 max-w-7xl mx-auto grid md:grid-cols-2 gap-10">
+          {/* 🎓 Course Form */}
+          <div className="bg-white/20 backdrop-blur-2xl p-10 pt-5 rounded-3xl border border-white/40 shadow-xl hover:shadow-2xl transition-all duration-500">
+            <h2 className="text-3xl font-bold text-[#14452F] mb-6 text-center"> Enroll in a Course</h2>
+            {courseMsg ? (
+              <p className="text-green-700 font-semibold text-center">Course form submitted successfully!</p>
+            ) : (
+              <form onSubmit={handleCourseSubmit} className="space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input name="name" placeholder="Name" required className={inputStyle} />
+                  <input name="age" type="number" placeholder="Age" required className={inputStyle} />
+                  <input name="permanent" placeholder="Permanent Address" required className={inputStyle} />
+                  <input name="temporary" placeholder="Temporary Address" required className={inputStyle} />
+                  <input name="phone" type="tel" placeholder="Phone" required className={inputStyle} />
+                  <input name="email" type="email" placeholder="Email" required className={inputStyle} />
+                  <input name="qualification" placeholder="Qualification" required className={inputStyle} />
+                </div>
 
-              <textarea name="message" placeholder="Write your message..." rows="4" required className={inputStyle} />
-              <button
-  type="submit"
-  className="bg-[#14452F] text-white px-8 py-3 text-lg font-semibold rounded-xl hover:bg-[#0f3a28] transition mx-auto block"
->
-  Submit
-</button>
+                <select name="course" required className={inputStyle}>
+                  <option value="">-- Select Course --</option>
+                  {courseOptions.map((course, i) => (
+                    <option key={i} value={course}>{course}</option>
+                  ))}
+                </select>
 
-            </form>
-          )}
-        </div>
+                <textarea name="message" placeholder="Write your message..." rows="4" required className={inputStyle} />
+                <button
+                  type="submit"
+                  className="bg-[#14452F] text-white px-8 py-3 text-lg font-semibold rounded-xl hover:bg-[#0f3a28] transition mx-auto block"
+                >
+                  Submit
+                </button>
+              </form>
+            )}
+          </div>
 
-        {/* 🛠️ Service Form */}
-        <div className="bg-white/20 backdrop-blur-2xl p-10 rounded-3xl border border-white/40 shadow-xl hover:shadow-2xl transition-all duration-500">
-          <h2 className="text-3xl font-bold text-[#14452F] mb-6 text-center">💻 Request a Service</h2>
-          {serviceMsg ? (
-            <p className="text-green-700 font-semibold text-center">Service inquiry sent successfully!</p>
-          ) : (
-            <form onSubmit={handleServiceSubmit} className="space-y-5">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input name="name" placeholder="Your Name" required className={inputStyle} />
-                <input name="company" placeholder="Company Name (optional)" className={inputStyle} />
-                <input name="email" type="email" placeholder="Email" required className={inputStyle} />
-                <input name="phone" type="tel" placeholder="Phone" required className={inputStyle} />
-              </div>
+          {/* 🛠️ Service Form */}
+          <div className="bg-white/20 backdrop-blur-2xl p-10 pt-5 rounded-3xl border border-white/40 shadow-xl hover:shadow-2xl transition-all duration-500">
+            <h2 className="text-3xl font-bold text-[#14452F] mb-6 text-center"> Request a Service</h2>
+            {serviceMsg ? (
+              <p className="text-green-700 font-semibold text-center">Service inquiry sent successfully!</p>
+            ) : (
+              <form onSubmit={handleServiceSubmit} className="space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input name="name" placeholder="Your Name" required className={inputStyle} />
+                  <input name="company" placeholder="Company Name (optional)" className={inputStyle} />
+                  <input name="email" type="email" placeholder="Email" required className={inputStyle} />
+                  <input name="phone" type="tel" placeholder="Phone" required className={inputStyle} />
+                </div>
 
-              <select name="service" required className={inputStyle}>
-                <option value="">-- Select Service --</option>
-                {serviceOptions.map((service, i) => (
-                  <option key={i} value={service}>{service}</option>
-                ))}
-              </select>
+                <select name="service" required className={inputStyle}>
+                  <option value="">-- Select Service --</option>
+                  {serviceOptions.map((service, i) => (
+                    <option key={i} value={service}>{service}</option>
+                  ))}
+                </select>
 
-              <textarea name="message" placeholder="Describe your project, timeline..." rows="4" required className={inputStyle} />
-              <button
-  type="submit"
-  className="bg-[#39765B] text-white px-8 py-3 text-lg font-semibold rounded-xl hover:bg-[#2e5e49] transition mx-auto block"
->
-  Send Inquiry
-</button>
-
-            </form>
-          )}
+                <textarea name="message" placeholder="Describe your project, timeline..." rows="4" required className={inputStyle} />
+                <button
+                  type="submit"
+                  className="bg-[#39765B] text-white px-8 py-3 text-lg font-semibold rounded-xl hover:bg-[#2e5e49] transition mx-auto block"
+                >
+                  Send Inquiry
+                </button>
+              </form>
+            )}
+          </div>
         </div>
       </div>
-      <Footer/>
 
-      {/* Animations */}
+      <Footer />
+
       <style>{`
         @keyframes pulse {
           0%, 100% { transform: scale(1); }
@@ -153,7 +153,6 @@ const CloudsContactUsPage = () => {
         }
       `}</style>
     </div>
-    </>
   );
 };
 
