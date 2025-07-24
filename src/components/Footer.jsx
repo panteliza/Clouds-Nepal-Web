@@ -10,7 +10,7 @@ const Footer = () => {
       className="w-full text-white"
       style={{
         backgroundColor: "#0f3e24", // Tailwind green-700
-        backgroundImage: `linear-gradient(to bottom, rgba(21, 128, 61, 0.6), rgba(21, 128, 61, 0.8)), url(${footerBg})`,
+        backgroundImage: `linear-gradient(to bottom, rgba(21, 128, 61, 0.6), rgba(21, 128, 61, 0.8)), `,
         backgroundPosition: "center bottom",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
@@ -128,10 +128,11 @@ const Footer = () => {
       {/* Copyright */}
       <div
         className="w-full text-center py-3 px-4 text-white font-medium"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, #166534, #22c55e, #4ade80, #86efac, #22c55e, #16a34a)",
-        }}
+       style={{
+  backgroundImage:
+    "linear-gradient(to right, #0f3d2e, #14532d, #166534, #1e7b3b, #14532d, #0f3d2e)",
+}}
+
       >
         <p className="text-sm xl:text-md">
           © {new Date().getFullYear()} <strong>Clouds Nepal Web</strong>. All Rights Reserved.

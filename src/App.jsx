@@ -51,6 +51,8 @@ import ExpressJsTrainingCourse from './pages/ExpressJsTrainingCourse';
 import AboutCloudsNepal from './pages/AboutCloudsNepal';
 import CloudsContactUsPage from './pages/CloudsContactUsPage';
 import StudentTestimonialsPage from './pages/StudentTestimonialsPage';
+import OurMission from './pages/OurMission';
+import OurVission from './pages/OurVission';
 
 
 
@@ -75,6 +77,8 @@ const App = () => {
           <Route path="/about" element={<AboutCloudsNepal />} />
           <Route path="/contact-us" element={<CloudsContactUsPage />} />
           <Route path="/testimonials" element={<StudentTestimonialsPage />} />
+          <Route path="/mission" element={<OurMission />} />
+          <Route path="/vission" element={<OurVission />} />
          {/* Courses */}
           <Route path="/frontend-development" element={<FrontendDevelopmentCourse />} />
           <Route path="/backend-development" element={<BackendDevelopmentCourse />} />
