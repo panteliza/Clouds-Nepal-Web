@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaHome, FaBook, FaInfoCircle, FaEllipsisH } from "react-icons/fa";
+import { FaHome, FaBook,  FaEllipsisH ,FaLaptop} from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 import { motion } from "framer-motion";
 
@@ -66,7 +66,7 @@ const BottomNav = () => {
           <span>Courses</span>
         </Link>
         <Link to="/services" className="text-gray-700 flex flex-col items-center text-sm font-medium">
-          <FaInfoCircle size={20} />
+          <FaLaptop size={20} />
           <span>Services</span>
         </Link>
         <button onClick={toggleSidebar} className="text-gray-700 flex flex-col items-center text-sm font-medium">
