@@ -32,13 +32,26 @@ const AboutCloudsNepal = () => {
         />
 
         <div className="relative z-10 max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-12">
+             {/* Image without blur */}
+          <motion.div
+            className="relative rounded-3xl shadow-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-700 ease-in-out"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.6, duration: 1 }}
+          >
+            <img
+              src={aboutImage}
+              alt="Clouds Nepal Team"
+              className="w-full h-auto object-cover rounded-2xl"
+            />
+          </motion.div>
           {/* Text Section */}
           <motion.div
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-[#14452F] mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-[#14452F] mt-3 mb-4">
               About Clouds Nepal Web
             </h1>
            <p className="text-lg leading-relaxed text-gray-700">
@@ -70,19 +83,7 @@ const AboutCloudsNepal = () => {
 
           </motion.div>
 
-          {/* Image without blur */}
-          <motion.div
-            className="relative rounded-3xl shadow-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-700 ease-in-out"
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.6, duration: 1 }}
-          >
-            <img
-              src={aboutImage}
-              alt="Clouds Nepal Team"
-              className="w-full h-auto object-cover rounded-2xl"
-            />
-          </motion.div>
+       
         </div>
       </section>
 
