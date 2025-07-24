@@ -50,6 +50,7 @@ import NodeJSTrainingCourse from './pages/NodeJSTrainingCourse';
 import ExpressJsTrainingCourse from './pages/ExpressJsTrainingCourse';
 import AboutCloudsNepal from './pages/AboutCloudsNepal';
 import CloudsContactUsPage from './pages/CloudsContactUsPage';
+import StudentTestimonialsPage from './pages/StudentTestimonialsPage';
 
 
 
@@ -73,6 +74,7 @@ const App = () => {
           <Route path="/courses" element={<CoursesPage />} />
           <Route path="/about" element={<AboutCloudsNepal />} />
           <Route path="/contact-us" element={<CloudsContactUsPage />} />
+          <Route path="/testimonials" element={<StudentTestimonialsPage />} />
          {/* Courses */}
           <Route path="/frontend-development" element={<FrontendDevelopmentCourse />} />
           <Route path="/backend-development" element={<BackendDevelopmentCourse />} />
