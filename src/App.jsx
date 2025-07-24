@@ -48,6 +48,7 @@ import SEOTrainingCourse from './pages/SEOTrainingCourse';
 import SEOADVANCEDTrainingCourse from './pages/SEOADVANCEDTrainingCourse';
 import NodeJSTrainingCourse from './pages/NodeJSTrainingCourse';
 import ExpressJsTrainingCourse from './pages/ExpressJsTrainingCourse';
+import AboutCloudsNepal from './pages/AboutCloudsNepal';
 
 
 
@@ -69,6 +70,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/courses" element={<CoursesPage />} />
+          <Route path="/about" element={<AboutCloudsNepal />} />
          {/* Courses */}
           <Route path="/frontend-development" element={<FrontendDevelopmentCourse />} />
           <Route path="/backend-development" element={<BackendDevelopmentCourse />} />
