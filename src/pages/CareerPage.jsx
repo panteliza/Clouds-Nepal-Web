@@ -72,7 +72,7 @@ const CareerPage = () => {
   return (
     <>
       <Navbar />
-      <section className="px-4 bg-gradient-to-b from-white to-blue-50 pt-[100px] pb-10 min-h-screen">
+      <section className="px-4 bg-gradient-to-b from-white to-blue-50 pt-[100px] pb-5 ">
         <motion.h2
           className="text-4xl font-extrabold text-center mb-6"
           initial={{ opacity: 0, y: 30 }}
@@ -133,6 +133,11 @@ const CareerPage = () => {
             </form>
           )}
         </div>
+        {/* 📌 No openings notice */}
+<div className="mt-6 text-center">
+  <p className="text-sm text-gray-600 italic">🚫 Currently, there are no open positions.</p>
+  <p className="text-sm text-gray-500">You can still submit your application for future consideration.</p>
+</div>
       </section>
       <Footer />
     </>
