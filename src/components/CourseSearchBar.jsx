@@ -178,7 +178,7 @@ const CourseSearchBar = ({ allCourses }) => {
             transition={{ duration: 0.3 }}
             className="bg-white shadow-md rounded-b-xl max-h-[300px] overflow-y-auto px-6 py-3"
           >
-            <ul className="space-y-2">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {allCourses.map((course, index) => (
                 <motion.li
                   key={index}
