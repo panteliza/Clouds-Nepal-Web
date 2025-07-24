@@ -72,7 +72,7 @@ const OurVission = () => {
         </div>
 
         <motion.div
-          className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+          className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
           initial="hidden"
           animate="visible"
           variants={{
