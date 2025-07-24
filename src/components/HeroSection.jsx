@@ -84,13 +84,18 @@ const HeroSection = () => {
             accelerate your business to new heights.
           </motion.p>
 
-          <motion.button
-            className="bg-[#05693A] hover:bg-[#049b5f] text-white font-bold px-8 py-4 rounded-full shadow-lg transition duration-300 flex items-center gap-2 animate-shimmer"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            ⚡ Explore Our Services
-          </motion.button>
+         import { Link } from "react-router-dom";
+
+<Link to="/contact-us">
+  <motion.button
+    className="bg-[#05693A] hover:bg-[#049b5f] text-white font-bold px-8 py-4 rounded-full shadow-lg transition duration-300 flex items-center gap-2 animate-shimmer"
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.95 }}
+  >
+    ⚡ Get in Touch With Us
+  </motion.button>
+</Link>
+
         </motion.div>
 
         {/* Right Swiper Section */}
