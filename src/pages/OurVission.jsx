@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import NavbarMain from "../components/Navbar";
 import Footer from "../components/Footer";
 import { FaEye, FaRocket, FaGlobeAsia, FaBrain } from "react-icons/fa";
-import visionImage from "../assets/visionpic.png"; // ✅ Replace with your optimized image
+import visionImage from "../assets/VissionPic.png"; // ✅ Make sure this is the corrected image
 
 const OurVission = () => {
   useEffect(() => {
@@ -38,14 +38,17 @@ const OurVission = () => {
         </motion.h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.img
-            src={visionImage}
-            alt="Vision Banner"
-            className="rounded-2xl shadow-xl w-full object-cover"
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.9, delay: 0.2 }}
-          />
+     <motion.img
+  src={visionImage}
+  alt="Vision Banner"
+  className="rounded-2xl shadow-xl w-full object-cover"
+  initial={{ scale: 0.9, opacity: 0 }}
+  animate={{ scale: 1, opacity: 1 }}
+  transition={{ duration: 0.9, delay: 0.2 }}
+/>
+
+
+
 
           <motion.div
             className="space-y-6 text-gray-700 text-lg leading-relaxed"
