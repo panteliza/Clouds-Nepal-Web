@@ -10,7 +10,7 @@ import Testimonials from "../components/Testimonials";
 import Footer from "../components/Footer";
 import ClientsSlider from "../components/ClientsSlider";
 import CourseSearchBar from "../components/CourseSearchBar";
-import  {} allCourses  from "../components/courses";
+import  {allCourses }  from "../components/courses";
 
 
 
