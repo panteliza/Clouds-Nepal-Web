@@ -173,6 +173,7 @@ const StudentTestimonials = () => {
           Hear From Our Students
         </motion.h2>
 
+        {/* Search Input */}
         <motion.div
           className="flex justify-center mb-12"
           initial={{ opacity: 0, scale: 0.95 }}
@@ -186,11 +187,14 @@ const StudentTestimonials = () => {
               placeholder="Search testimonials by course..."
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-              className="w-full text-sm sm:text-base text-gray-700 placeholder-gray-400 outline-none bg-transparent"
+              className="w-full text-[16px] sm:text-base text-gray-700 placeholder-gray-400 outline-none bg-transparent"
+              inputMode="text"
+              autoComplete="off"
             />
           </div>
         </motion.div>
 
+        {/* Testimonials Grid */}
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
           initial="hidden"
