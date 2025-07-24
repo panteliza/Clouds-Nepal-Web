@@ -11,6 +11,7 @@ import Footer from "../components/Footer";
 import ClientsSlider from "../components/ClientsSlider";
 import CourseSearchBar from "../components/CourseSearchBar";
 import  {allCourses }  from "../components/courses";
+import InternshipApply from "../components/InternshipApply";
 
 
 
@@ -35,6 +36,7 @@ const Home = () => {
              <CoursesLimited/>
              <CloudsContactForm/>
              <Testimonials/>
+             <InternshipApply/>
              <ClientsSlider/>
            <Footer/>
       

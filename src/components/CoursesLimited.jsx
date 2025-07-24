@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -37,8 +37,6 @@ const courses = [
 ];
 
 const CoursesLimited = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-
   return (
     <section className="py-16 px-4 bg-white">
       <motion.h2
@@ -76,40 +74,35 @@ const CoursesLimited = () => {
         }}
       >
         {courses.slice(0, 15).map((course, index) => (
-          <motion.div
-            key={index}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
-            className={`relative bg-white rounded-2xl shadow-md overflow-hidden border border-gray-200 flex flex-col transition duration-300 ease-in-out ${hoveredIndex === index ? "z-50 scale-105" : hoveredIndex !== null ? "blur-sm opacity-70" : "opacity-100"}`}
-            variants={{
-              hidden: { opacity: 0, y: 30 },
-              visible: { opacity: 1, y: 0 }
-            }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-          >
-            <motion.img
-              src={course.image}
-              alt={course.title}
-              className={`w-full h-44 sm:h-52 object-cover transition duration-500 ease-in-out ${hoveredIndex !== null && hoveredIndex !== index ? "blur-[2px] brightness-95 grayscale-0" : "blur-0 brightness-100 grayscale-0 scale-100"}`}
-              loading="lazy"
-            />
-            <div className="p-5 flex-1">
-              <h3 className="sm:text-lg font-bold text-green-700 mb-2">{course.title}</h3>
-              <ul className="list-disc list-inside text-[10px] sm:text-sm text-gray-600 space-y-1">
-                {course.points.map((point, i) => (
-                  <li key={i}>{point}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="sm:p-4 pb-2 flex justify-center">
-              <Link
-                to={course.path}
-                className="px-3 py-1 sm:px-6 sm:py-2 bg-green-700 text-white rounded-full font-semibold hover:bg-green-800 transition"
-              >
-                Read More
-              </Link>
-            </div>
-          </motion.div>
+          <Link to={course.path} key={index}>
+            <motion.div
+              className="bg-white rounded-2xl shadow-lg hover:shadow-2xl border border-gray-200 transition transform hover:-translate-y-2 duration-300 ease-in-out flex flex-col cursor-pointer"
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 }
+              }}
+            >
+              <img
+                src={course.image}
+                alt={course.title}
+                className="w-full h-44 sm:h-52 object-cover transition duration-300 ease-in-out hover:scale-105"
+                loading="lazy"
+              />
+              <div className="p-5 flex-1">
+                <h3 className="sm:text-lg font-bold text-green-700 mb-2">{course.title}</h3>
+                <ul className="list-disc list-inside text-[10px] sm:text-sm text-gray-600 space-y-1">
+                  {course.points.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="sm:p-4 pb-2 flex justify-center">
+                <span className="px-3 py-1 sm:px-6 sm:py-2 bg-green-700 text-white rounded-full font-semibold transition">
+                  Read More
+                </span>
+              </div>
+            </motion.div>
+          </Link>
         ))}
       </motion.div>
 
