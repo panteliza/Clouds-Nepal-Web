@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import NavbarMain from "../components/Navbar";
 import Footer from "../components/Footer";
 import { FaBullseye, FaUsers, FaLightbulb, FaChartLine } from "react-icons/fa";
-import missionImg from "../assets/MissionPic.png";
+import missionImg from "../assets/MissionPic.webp";
 
 const MissionPage = () => {
   useEffect(() => {
@@ -27,9 +27,9 @@ const MissionPage = () => {
         <div className="absolute w-[500px] h-[500px] bg-yellow-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse bottom-[-100px] right-[-100px]" />
       </motion.div>
 
-      <section className="relative z-10 max-w-6xl mx-auto px-4 py-24">
+      <section className="relative z-10 max-w-6xl mx-auto px-4 pt-25 pb-12">
         <motion.h1
-          className="text-5xl font-extrabold text-center text-[#14452F] mb-12"
+          className="text-5xl font-extrabold text-center text-[#14452F] mb-10"
           initial={{ y: -40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.7 }}
@@ -69,7 +69,7 @@ const MissionPage = () => {
         </div>
 
         <motion.div
-          className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+          className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
           initial="hidden"
           animate="visible"
           variants={{

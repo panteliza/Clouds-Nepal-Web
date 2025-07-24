@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import NavbarMain from "../components/Navbar";
 import Footer from "../components/Footer";
 import { FaEye, FaRocket, FaGlobeAsia, FaBrain } from "react-icons/fa";
-import visionImage from "../assets/VissionPic.png"; // ✅ Make sure this is the corrected image
+import visionImage from "../assets/VissionPic.webp"; // ✅ Make sure this is the corrected image
 
 const OurVission = () => {
   useEffect(() => {
@@ -27,7 +27,7 @@ const OurVission = () => {
         <div className="absolute w-[400px] h-[400px] bg-pink-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-pulse right-[-80px] bottom-[-80px]" />
       </motion.div>
 
-      <section className="relative z-10 max-w-7xl mx-auto px-4 py-24">
+      <section className="relative z-10 max-w-7xl mx-auto px-4 pt-25 pb-12">
         <motion.h1
           className="text-5xl sm:text-6xl font-extrabold text-center text-[#14452F] mb-12"
           initial={{ y: -50, opacity: 0 }}
