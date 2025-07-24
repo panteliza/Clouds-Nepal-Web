@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import { FaUsers, FaUserTie, FaMoneyCheckAlt } from "react-icons/fa";
 import heroImage from "../assets/graphic.svg"; // Replace with CRM/HR themed illustration
 import ServicesComponent from "../components/ServicesComponent";
+import ServiceForm from "../components/ServiceForm";
 
 const CrmHrPayrollService = () => {
   useEffect(() => {
@@ -133,7 +134,7 @@ const CrmHrPayrollService = () => {
          Get a free consulation
         </a>
       </section>
-
+<ServiceForm/>
       <ServicesComponent />
       <Footer />
     </div>

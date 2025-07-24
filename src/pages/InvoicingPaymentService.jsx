@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import { FaMoneyBillWave, FaLock, FaRocket } from "react-icons/fa";
 import heroImage from "../assets/pay-per-click.svg"; // Replace with relevant SVG/WebP
 import ServicesComponent from "../components/ServicesComponent";
+import ServiceForm from "../components/ServiceForm";
 
 const InvoicingPaymentService = () => {
   useEffect(() => {
@@ -133,7 +134,7 @@ const InvoicingPaymentService = () => {
          Get a free consulation
         </a>
       </section>
-
+<ServiceForm/>
       <ServicesComponent />
       <Footer />
     </div>

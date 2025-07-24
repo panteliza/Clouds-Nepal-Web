@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import { FaWrench, FaLifeRing, FaSyncAlt } from "react-icons/fa";
 import heroImage from "../assets/social.svg"; // Replace with maintenance/support themed image
 import ServicesComponent from "../components/ServicesComponent";
+import ServiceForm from "../components/ServiceForm";
 
 const MaintenanceSupportService = () => {
   useEffect(() => {
@@ -133,7 +134,7 @@ const MaintenanceSupportService = () => {
         Get a free consulation
         </a>
       </section>
-
+<ServiceForm/>
       <ServicesComponent />
       <Footer />
     </div>

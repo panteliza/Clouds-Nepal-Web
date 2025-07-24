@@ -7,6 +7,7 @@ import { FaCheckCircle, FaCode, FaChartLine, FaMobileAlt } from "react-icons/fa"
 import heroImage from "../assets/website.svg"; // Replace with actual optimized image
 import featureImg from "../assets/uiux.webp"; // Replace with actual optimized image
 import ServicesComponent from "../components/ServicesComponent";
+import ServiceForm from "../components/ServiceForm";
 
 const WebsiteDevelopmentService = () => {
   useEffect(() => {
@@ -139,6 +140,7 @@ const WebsiteDevelopmentService = () => {
              Get a free consulation
             </a>
       </section>
+      <ServiceForm/>
       <ServicesComponent/>
 
       <Footer />

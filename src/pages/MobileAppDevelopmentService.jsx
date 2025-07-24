@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import { FaMobileAlt, FaReact, FaCloudUploadAlt } from "react-icons/fa";
 import heroImage from "../assets/app development.svg"; // Replace with optimized mobile app dev image
 import ServicesComponent from "../components/ServicesComponent";
+import ServiceForm from "../components/ServiceForm";
 
 const MobileAppDevelopmentService = () => {
   useEffect(() => {
@@ -140,7 +141,7 @@ const MobileAppDevelopmentService = () => {
         Get a free consultation 
         </a>
       </section>
-
+<ServiceForm/>
       <ServicesComponent />
       <Footer />
     </div>

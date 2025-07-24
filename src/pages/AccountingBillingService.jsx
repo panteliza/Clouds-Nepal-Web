@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import { FaFileInvoiceDollar, FaCalculator, FaChartPie } from "react-icons/fa";
 import heroImage from "../assets/content-writing.svg"; // Replace with relevant SVG/WebP
 import ServicesComponent from "../components/ServicesComponent";
+import ServiceForm from "../components/ServiceForm";
 
 const AccountingBillingService = () => {
   useEffect(() => {
@@ -133,7 +134,7 @@ const AccountingBillingService = () => {
           Get a free consulation
         </a>
       </section>
-
+<ServiceForm/>
       <ServicesComponent />
       <Footer />
     </div>

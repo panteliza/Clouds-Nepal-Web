@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import heroImage from "../assets/UI_UX.svg"; // Replace with optimized enterprise software illustration
 import ServicesComponent from "../components/ServicesComponent";
+import ServiceForm from "../components/ServiceForm";
 
 const EnterpriseSoftwareService = () => {
   useEffect(() => {
@@ -144,7 +145,7 @@ const EnterpriseSoftwareService = () => {
          Get a free consultation 
         </a>
       </section>
-
+<ServiceForm/>
       <ServicesComponent />
       <Footer />
     </div>

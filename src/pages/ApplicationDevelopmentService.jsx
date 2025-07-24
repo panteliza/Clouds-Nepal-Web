@@ -6,6 +6,7 @@ import { FaCheckCircle, FaCogs, FaDesktop, FaShieldAlt } from "react-icons/fa";
 import heroImage from "../assets/system-software.svg"; // Replace with actual optimized image
 
 import ServicesComponent from "../components/ServicesComponent";
+import ServiceForm from "../components/ServiceForm";
 
 const ApplicationDevelopmentService = () => {
   useEffect(() => {
@@ -141,7 +142,7 @@ const ApplicationDevelopmentService = () => {
         Get a free consultation 
         </a>
       </section>
-
+<ServiceForm/>
       <ServicesComponent />
       <Footer />
     </div>

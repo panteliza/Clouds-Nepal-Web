@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import { FaCashRegister, FaWarehouse, FaNetworkWired } from "react-icons/fa";
 import heroImage from "../assets/digital-market.svg"; // Replace with retail automation-themed image
 import ServicesComponent from "../components/ServicesComponent";
+import ServiceForm from "../components/ServiceForm";
 
 const PosImsErpService = () => {
   useEffect(() => {
@@ -133,7 +134,7 @@ const PosImsErpService = () => {
         Get a free consulation
         </a>
       </section>
-
+<ServiceForm/>
       <ServicesComponent />
       <Footer />
     </div>

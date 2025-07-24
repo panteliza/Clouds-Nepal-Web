@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import { FaCloud, FaTools, FaLock } from "react-icons/fa";
 import heroImage from "../assets/website.svg"; // Replace with cloud/consulting optimized SVG
 import ServicesComponent from "../components/ServicesComponent";
+import ServiceForm from "../components/ServiceForm";
 
 const CloudConsultingService = () => {
   useEffect(() => {
@@ -140,7 +141,7 @@ const CloudConsultingService = () => {
          Get a free consultation 
         </a>
       </section>
-
+<ServiceForm/>
       <ServicesComponent />
       <Footer />
     </div>

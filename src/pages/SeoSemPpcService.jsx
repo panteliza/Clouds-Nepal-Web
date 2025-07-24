@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import { FaSearchDollar, FaBullhorn, FaChartLine } from "react-icons/fa";
 import heroImage from "../assets/seo.svg"; // Replace with optimized digital marketing SVG
 import ServicesComponent from "../components/ServicesComponent";
+import ServiceForm from "../components/ServiceForm";
 
 const SeoSemPpcService = () => {
   useEffect(() => {
@@ -133,7 +134,7 @@ const SeoSemPpcService = () => {
           Get a free consulation
         </a>
       </section>
-
+<ServiceForm/>
       <ServicesComponent />
       <Footer />
     </div>

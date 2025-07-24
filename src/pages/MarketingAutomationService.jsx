@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import { FaEnvelopeOpenText, FaRobot, FaChartBar } from "react-icons/fa";
 import heroImage from "../assets/app development.svg"; // Replace with a marketing automation SVG/WebP
 import ServicesComponent from "../components/ServicesComponent";
+import ServiceForm from "../components/ServiceForm";
 
 const MarketingAutomationService = () => {
   useEffect(() => {
@@ -133,7 +134,7 @@ const MarketingAutomationService = () => {
         Get a free consulation
         </a>
       </section>
-
+<ServiceForm/>
       <ServicesComponent />
       <Footer />
     </div>
