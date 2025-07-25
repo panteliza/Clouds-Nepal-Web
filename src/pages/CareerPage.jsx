@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
-import axios from "axios";
 import emailjs from "@emailjs/browser";
+
+const cloudName = "dj9kmsssz";
+const uploadPreset = "unsigned_resume_upload";
 
 const CareerPage = () => {
   const [messageSent, setMessageSent] = useState(false);
@@ -11,12 +13,42 @@ const CareerPage = () => {
   const [uploading, setUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [resumePreview, setResumePreview] = useState(null);
+  const [resumeFile, setResumeFile] = useState(null);
 
   const handleResumeChange = (e) => {
     const file = e.target.files[0];
-    if (file) {
-      setResumePreview(file.name);
+    if (file && file.size < 5 * 1024 * 1024) {
+      setResumePreview(URL.createObjectURL(file));
+      setResumeFile(file);
+    } else {
+      setError("File too large. Please upload under 5MB.");
     }
+  };
+
+  const uploadToCloudinary = async (file) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", uploadPreset);
+
+    return new Promise((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", `https://api.cloudinary.com/v1_1/${cloudName}/upload`);
+
+      xhr.upload.onprogress = (e) => {
+        if (e.lengthComputable) {
+          const percent = Math.round((e.loaded / e.total) * 100);
+          setUploadProgress(percent);
+        }
+      };
+
+      xhr.onload = () => {
+        const res = JSON.parse(xhr.responseText);
+        resolve(res.secure_url);
+      };
+
+      xhr.onerror = () => reject("Upload failed");
+      xhr.send(formData);
+    });
   };
 
   const handleSubmit = async (e) => {
@@ -27,21 +59,12 @@ const CareerPage = () => {
     setUploadProgress(0);
 
     const formData = new FormData(e.target);
-    const file = formData.get("resume");
 
     try {
-      const cloudData = new FormData();
-      cloudData.append("file", file);
-      cloudData.append("upload_preset", "your_unsigned_preset"); // Replace with your actual preset
-
-      const response = await axios.post("https://api.cloudinary.com/v1_1/your_cloud_name/upload", cloudData, {
-        onUploadProgress: (progressEvent) => {
-          const percent = Math.round((progressEvent.loaded * 100) / progressEvent.total);
-          setUploadProgress(percent);
-        },
-      });
-
-      const resumeUrl = response.data.secure_url;
+      let resumeUrl = "";
+      if (resumeFile) {
+        resumeUrl = await uploadToCloudinary(resumeFile);
+      }
 
       const templateParams = {
         name: formData.get("name"),
@@ -52,22 +75,26 @@ const CareerPage = () => {
       };
 
       await emailjs.send(
-        "your_service_id", // Replace with your EmailJS service ID
-        "your_template_id", // Replace with your EmailJS template ID
+        "service_g3rlo63",
+        "template_n7xu5rr",
         templateParams,
-        "your_public_key" // Replace with your EmailJS public key
+        "Q5TbH441gAc7OeBbK"
       );
 
       setMessageSent(true);
+      e.target.reset();
+      setResumeFile(null);
+      setResumePreview(null);
     } catch (err) {
       console.error("Submission error:", err);
-      setError("Something went wrong. Please try again later.");
+      setError("❌ Something went wrong. Please try again.");
     } finally {
       setUploading(false);
     }
   };
 
-  const inputClass = "w-full p-3 rounded-xl bg-white/30 border border-gray-300 placeholder:text-gray-700 text-gray-900 backdrop-blur-xl focus:outline-none focus:ring-2 focus:ring-[#218C57] shadow-inner transition";
+  const inputClass =
+    "w-full p-3 rounded-xl bg-white/30 border border-gray-300 placeholder:text-gray-700 text-gray-900 backdrop-blur-xl focus:outline-none focus:ring-2 focus:ring-[#218C57] shadow-inner transition";
 
   return (
     <>
@@ -93,21 +120,30 @@ const CareerPage = () => {
               ✅ Your application has been submitted successfully!
             </p>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6" encType="multipart/form-data">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input type="text" name="name" required placeholder="Full Name" className={inputClass} />
                 <input type="email" name="email" required placeholder="Email Address" className={inputClass} />
                 <input type="tel" name="phone" required placeholder="Phone Number" className={inputClass} />
-                <input type="file" name="resume" required accept=".pdf,.doc,.docx" onChange={handleResumeChange} className={inputClass + " bg-white text-gray-900"} />
+                <input
+                  type="file"
+                  name="resume"
+                  required
+                  accept="image/*"
+                  onChange={handleResumeChange}
+                  className={inputClass + " bg-white text-gray-900"}
+                />
               </div>
 
               {resumePreview && (
-                <p className="text-sm text-gray-600 mt-[-10px]">📄 Selected: {resumePreview}</p>
-              )}
-
-              {uploading && (
-                <div className="w-full bg-gray-200 h-3 rounded">
-                  <div className="bg-[#218C57] h-3 rounded" style={{ width: `${uploadProgress}%` }}></div>
+                <div>
+                  <p className="text-sm text-gray-600 mt-[-10px]">📄 Preview:</p>
+                  <img src={resumePreview} alt="Resume preview" className="rounded-xl max-w-full max-h-64 mt-2" />
+                  {uploading && (
+                    <div className="w-full bg-gray-200 h-3 rounded mt-2">
+                      <div className="bg-[#218C57] h-3 rounded" style={{ width: `${uploadProgress}%` }}></div>
+                    </div>
+                  )}
                 </div>
               )}
 
@@ -122,22 +158,21 @@ const CareerPage = () => {
                 <p className="text-red-600 text-sm text-center font-medium">{error}</p>
               )}
 
-             <button
-  type="submit"
-  disabled={uploading}
-  className="w-48 mx-auto block bg-[#218C57] text-white py-2.5 text-base font-semibold rounded-xl hover:bg-[#186447] transition disabled:opacity-50"
->
-  {uploading ? "Uploading..." : "Submit Application"}
-</button>
-
+              <button
+                type="submit"
+                disabled={uploading}
+                className="w-48 mx-auto block bg-[#218C57] text-white py-2.5 text-base font-semibold rounded-xl hover:bg-[#186447] transition disabled:opacity-50"
+              >
+                {uploading ? "Sending..." : "Submit Application"}
+              </button>
             </form>
           )}
         </div>
-        {/* 📌 No openings notice */}
-<div className="mt-6 text-center">
-  <p className="text-sm text-gray-600 italic">🚫 Currently, there are no open positions.</p>
-  <p className="text-sm text-gray-500">You can still submit your application for future consideration.</p>
-</div>
+
+        <div className="mt-6 text-center">
+          <p className="text-sm text-gray-600 italic">🚫 Currently, there are no open positions.</p>
+          <p className="text-sm text-gray-500">You can still submit your application for future consideration.</p>
+        </div>
       </section>
       <Footer />
     </>

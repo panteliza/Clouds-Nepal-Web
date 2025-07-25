@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const courseOptions = [
   "ASP.NET", "AWS", "Backend Development", "Business Analysis", "C/C++", "Data Science",
@@ -11,44 +12,52 @@ const courseOptions = [
 
 const CloudsContactForm = () => {
   const [messageSent, setMessageSent] = useState(false);
+  const [error, setError] = useState(null);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData.entries());
+    const form = event.target;
+    const formData = new FormData(form);
 
-    const subject = "Clouds Nepal Web Course Inquiry";
-    const body = `
-      Name: ${encodeURIComponent(data.name)}
-      %0AAge: ${encodeURIComponent(data.age)}
-      %0APermanent Address: ${encodeURIComponent(data.permanent)}
-      %0ATemporary Address: ${encodeURIComponent(data.temporary)}
-      %0APhone: ${encodeURIComponent(data.phone)}
-      %0AEmail: ${encodeURIComponent(data.email)}
-      %0AQualification: ${encodeURIComponent(data.qualification)}
-      %0ACourse: ${encodeURIComponent(data.course)}
-      %0AMessage: ${encodeURIComponent(data.message)}
-    `;
+    const templateParams = {
+      name: formData.get("name"),
+      age: formData.get("age"),
+      permanent: formData.get("permanent"),
+      temporary: formData.get("temporary"),
+      phone: formData.get("phone"),
+      email: formData.get("email"),
+      qualification: formData.get("qualification"),
+      course: formData.get("course"),
+      message: formData.get("message"),
+    };
 
-    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=webcloudsnepal@gmail.com&su=${encodeURIComponent(subject)}&body=${body}`;
-    window.open(gmailLink, "_blank");
-    setMessageSent(true);
+    try {
+      await emailjs.send(
+        "service_g3rlo63",         // ✅ Replace with your service ID
+        "template_xtx20ru",         // ✅ Replace with your new EmailJS template ID
+        templateParams,
+        "Q5TbH441gAc7OeBbK"        // ✅ Your public key
+      );
+      setMessageSent(true);
+      form.reset();
+    } catch (err) {
+      console.error("Email send error:", err);
+      setError("Something went wrong. Please try again.");
+    }
   };
 
-const inputStyle =
-  "w-full p-3 rounded-2xl border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-300 transition-all duration-200";
-
+  const inputStyle =
+    "w-full p-3 rounded-2xl border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-300 transition-all duration-200";
 
   return (
-    <div className="relative  py-5 px-4 flex items-center justify-center bg-gradient-to-br from-green-200 via-white to-blue-200 overflow-hidden">
-      {/* Floating Glow Background */}
+    <div className="relative py-5 px-4 flex items-center justify-center bg-gradient-to-br from-green-200 via-white to-blue-200 overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full bg-animated rounded-xl z-0"></div>
 
       <div className="max-w-4xl w-full bg-white p-10 rounded-xl shadow-2xl relative z-10 animate-softFade">
         <h2 className="text-4xl font-bold text-center text-green-900 mb-8">Enroll in a Course</h2>
 
         {messageSent ? (
-          <p className="text-green-700 font-semibold text-center">Form submitted successfully! Please check your Gmail.</p>
+          <p className="text-green-700 font-semibold text-center">✅ Form submitted successfully!</p>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -76,10 +85,11 @@ const inputStyle =
               className={inputStyle}
             />
 
+            {error && <p className="text-red-600 text-center font-medium">{error}</p>}
+
             <button
               type="submit"
               className="w-40 mx-auto block bg-green-800 text-white py-3 text-lg font-semibold rounded-3xl hover:bg-green-900 transition"
-
             >
               Submit
             </button>
@@ -87,7 +97,6 @@ const inputStyle =
         )}
       </div>
 
-      {/* Custom Animations */}
       <style>{`
         .animate-softFade {
           animation: softFade 1.2s ease-out forwards;
