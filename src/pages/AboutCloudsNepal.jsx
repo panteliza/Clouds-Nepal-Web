@@ -11,88 +11,138 @@ const cardVariant = {
 
 const AboutCloudsNepal = () => {
   useEffect(() => {
-    // Scroll to top
     window.scrollTo(0, 0);
-
-    // Set document title
-    document.title = "About Us | Clouds Nepal Web – Nepal’s Leading Tech Company";
-
-    // Meta Description
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute("content", "Learn more about Clouds Nepal Web, Nepal’s top IT company and training provider. Discover our mission, services, and vision for digital Nepal.");
-    } else {
-      const desc = document.createElement("meta");
-      desc.name = "description";
-      desc.content = "Learn more about Clouds Nepal Web, Nepal’s top IT company and training provider. Discover our mission, services, and vision for digital Nepal.";
-      document.head.appendChild(desc);
-    }
-
-    // Canonical Link
-    if (!document.querySelector('link[rel="canonical"]')) {
-      const canonical = document.createElement("link");
-      canonical.rel = "canonical";
-      canonical.href = "https://www.cloudsnepalweb.com.np/about";
-      document.head.appendChild(canonical);
-    }
-
-    // Open Graph Title
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute("content", "About Us | Clouds Nepal Web");
-    else {
-      const tag = document.createElement("meta");
-      tag.setAttribute("property", "og:title");
-      tag.content = "About Us | Clouds Nepal Web";
-      document.head.appendChild(tag);
-    }
-
-    // Open Graph Description
-    const ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc) ogDesc.setAttribute("content", "Explore the mission, vision, and team behind Clouds Nepal Web, Nepal’s top-rated IT services and training company.");
-    else {
-      const tag = document.createElement("meta");
-      tag.setAttribute("property", "og:description");
-      tag.content = "Explore the mission, vision, and team behind Clouds Nepal Web, Nepal’s top-rated IT services and training company.";
-      document.head.appendChild(tag);
-    }
-
-    // Open Graph Image
-    const ogImg = document.querySelector('meta[property="og:image"]');
-    if (ogImg) ogImg.setAttribute("content", "https://www.cloudsnepalweb.com.np/og-image.webp");
-    else {
-      const tag = document.createElement("meta");
-      tag.setAttribute("property", "og:image");
-      tag.content = "https://www.cloudsnepalweb.com.np/og-image.webp";
-      document.head.appendChild(tag);
-    }
-
-    // Twitter Tags
-    const twitterTitle = document.createElement("meta");
-    twitterTitle.name = "twitter:title";
-    twitterTitle.content = "About Clouds Nepal Web";
-    document.head.appendChild(twitterTitle);
-
-    const twitterDesc = document.createElement("meta");
-    twitterDesc.name = "twitter:description";
-    twitterDesc.content = "Learn how Clouds Nepal Web is transforming Nepal’s tech space through IT education and digital solutions.";
-    document.head.appendChild(twitterDesc);
-
-    const twitterImg = document.createElement("meta");
-    twitterImg.name = "twitter:image";
-    twitterImg.content = "https://www.cloudsnepalweb.com.np/og-image.webp";
-    document.head.appendChild(twitterImg);
-
-    const twitterCard = document.createElement("meta");
-    twitterCard.name = "twitter:card";
-    twitterCard.content = "summary_large_image";
-    document.head.appendChild(twitterCard);
   }, []);
 
   return (
     <>
       <Navbar />
-      {/* Your existing full JSX code here remains untouched */}
-      {/* Keep the rest of your AboutCloudsNepal component the same */}
+
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-[#eef6f9] to-[#e2f0ec] overflow-hidden pt-22 py-16 px-6 md:px-16">
+        {/* Floating Background Orbs */}
+        <motion.div
+          className="absolute top-[-120px] left-[-120px] w-[500px] h-[500px] bg-[#39765B] rounded-full filter blur-3xl opacity-20 z-0"
+          animate={{ scale: [1, 1.2, 1], rotate: [0, 60, -60, 0] }}
+          transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute bottom-[-100px] right-[-100px] w-[420px] h-[420px] bg-[#39765B] rounded-full filter blur-2xl opacity-20 z-0"
+          animate={{ scale: [1, 1.1, 1], rotate: [0, -30, 30, 0] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        <div className="relative z-10 max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-12">
+          {/* Image */}
+          <motion.div
+            className="relative rounded-3xl shadow-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-700 ease-in-out"
+            initial={{ scale: 0.95, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.4, duration: 1 }}
+          >
+            <img
+              src={aboutImage}
+              alt="Clouds Nepal Team"
+              className="w-full h-auto object-cover rounded-2xl"
+            />
+          </motion.div>
+
+          {/* Text */}
+          <motion.div
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
+            <motion.h1
+              className="text-4xl md:text-5xl font-bold text-[#14452F] mt-3 mb-6"
+              initial={{ opacity: 0, y: -30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+            >
+              <span className="bg-gradient-to-r from-[#14452F] to-[#39765B] bg-clip-text text-transparent">
+                About Clouds Nepal Web
+              </span>
+            </motion.h1>
+
+            <motion.p
+              className="text-lg leading-relaxed text-gray-700"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2, duration: 1 }}
+            >
+              Since <strong>2022</strong>, <strong>Clouds Nepal Web</strong> has led Nepal’s IT transformation.
+              From building robust{" "}
+              <span className="font-semibold text-[#39765B]">software solutions</span> and{" "}
+              <span className="font-semibold text-[#39765B]">cloud platforms</span> to nurturing new tech
+              talent through <span className="font-semibold text-[#39765B]">IT training</span>, we’ve been
+              the digital engine for startups, students, and enterprise clients.
+
+              <br /><br />
+              Our mission is to turn ideas into innovation — locally built, globally trusted.
+              We believe technology should be accessible, meaningful, and empowering — whether
+              you’re a business seeking automation or a learner preparing for your first
+              programming job.
+
+              <br /><br />
+              With a team of passionate developers, cloud engineers, and tech mentors,
+              we bridge the gap between Nepal’s potential and global tech standards.
+              Our services span across <strong>website and app development</strong>,{" "}
+              <strong>custom ERP/CRM systems</strong>, and <strong>cloud integrations</strong>,
+              while our training programs prepare students for real-world IT careers.
+
+              <br /><br />
+              At Clouds Nepal Web, we are not just a service provider — we are partners in
+              digital growth. Together with our clients and students, we’re building the future
+              of technology in Nepal and beyond.
+            </motion.p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Cards Section */}
+      <section className="relative py-16 px-6 md:px-16 bg-white z-10 overflow-hidden">
+        {/* Additional Animated Background Orb */}
+        <motion.div
+          className="absolute w-[280px] h-[280px] rounded-full bg-[#d0f1e2] blur-3xl opacity-30 top-[20%] left-[40%] z-0"
+          animate={{ scale: [1, 1.3, 1], y: [0, 30, -30, 0] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        <motion.div
+          className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 text-center relative z-10"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ staggerChildren: 0.3 }}
+        >
+          {[
+            {
+              title: "Software Services",
+              desc: "Custom apps, cloud platforms, AI tools & secure enterprise software tailored for your business.",
+            },
+            {
+              title: "Professional IT Training",
+              desc: "Courses in frontend, backend, DevOps, cloud, AI & mobile app development. Learn from experts.",
+            },
+            {
+              title: "Vision & Mission",
+              desc: "To be Nepal’s leading digital accelerator through quality services, innovation & tech education.",
+            },
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              variants={cardVariant}
+              className="bg-[#F7FDFB] border border-[#C8E2D5] shadow-lg rounded-2xl p-8 hover:scale-[1.06] hover:shadow-2xl hover:border-[#39765B] transition-all duration-500"
+              whileHover={{ rotate: [0, 1, -1, 0] }}
+            >
+              <h3 className="text-xl font-semibold text-[#14452F] mb-4">{item.title}</h3>
+              <p className="text-gray-700">{item.desc}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
       <Footer />
     </>
   );
