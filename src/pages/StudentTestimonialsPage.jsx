@@ -1,8 +1,8 @@
-import React, { useState, useEffect  } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import NavbarMain from "../components/Navbar";
 import Footer from "../components/Footer";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaUserCircle } from "react-icons/fa";
 
 // ✅ Images
 import img1 from "../assets/Ansha Basnet.png";
@@ -140,13 +140,139 @@ const testimonials = [
     image: img19,
     text: `Built cloud computing skills with AWS labs. EC2, S3, Lambda, IAM — all practiced during sessions. Very helpful for my IT career.`,
   },
+  {
+    name: "Susmita Rai",
+    course: "Frontend Development",
+    image: <FaUserCircle className="text-6xl text-gray-400" />,
+    text: `The hands-on HTML, CSS, and React sessions helped me build real websites. Great foundation for starting my tech career.`,
+  },
+  {
+    name: "Sabina Tajpuniya",
+    course: "Frontend Development",
+    image: <FaUserCircle className="text-6xl text-gray-400" />,
+    text: `Learning frontend here was interactive and practical. Now I confidently build responsive sites from scratch.`,
+  },
+  {
+    name: "Rasmi Trikhatri",
+    course: "Frontend Development",
+    image: <FaUserCircle className="text-6xl text-gray-400" />,
+    text: `The mentors made sure we understood every topic before moving on. Loved building live projects in class.`,
+  },
+  {
+    name: "Sandosh Thapa",
+    course: "Frontend Development",
+    image: <FaUserCircle className="text-6xl text-gray-400" />,
+    text: `I had no prior experience, but the training helped me learn React, Git, and deployment quickly.`,
+  },
+  {
+    name: "Saroj Lumsumaju",
+    course: "Frontend Development",
+    image: <FaUserCircle className="text-6xl text-gray-400" />,
+    text: `Practical learning with expert guidance. The frontend course gave me a clear career direction.`,
+  },
+  {
+    name: "Bibek Khanal",
+    course: "Frontend Development",
+    image: <FaUserCircle className="text-6xl text-gray-400" />,
+    text: `Enjoyed the React sessions the most! Everything was project-based which made learning fun and effective.`,
+  },
+  {
+    name: "Suraj Karki",
+    course: "Frontend Development",
+    image: <FaUserCircle className="text-6xl text-gray-400" />,
+    text: `The structured curriculum and assignments boosted my skills and confidence in frontend technologies.`,
+  },
+  {
+    name: "Somprakash Chaudhary",
+    course: "Frontend, Backend, React Native",
+    image: <FaUserCircle className="text-6xl text-gray-400" />,
+    text: `From UI to APIs and mobile apps — this full-stack journey shaped my path into a complete developer.`,
+  },
+  {
+    name: "Smriti Baniya",
+    course: "Frontend (MERN)",
+    image: <FaUserCircle className="text-6xl text-gray-400" />,
+    text: `Loved working with MongoDB and React. I learned how to connect everything into one complete web app.`,
+  },
+  {
+    name: "Suraj Rai",
+    course: "Frontend Development",
+    image: <FaUserCircle className="text-6xl text-gray-400" />,
+    text: `Amazing support and step-by-step learning. The live project boosted my portfolio and job chances.`,
+  },
+  {
+    name: "Sandesh Pandey",
+    course: "Frontend Development",
+    image: <FaUserCircle className="text-6xl text-gray-400" />,
+    text: `I built a portfolio site and learned to host it online. This training made frontend learning very accessible.`,
+  },
+  {
+    name: "Milan Rai",
+    course: "Frontend, React Native, Backend",
+    image: <FaUserCircle className="text-6xl text-gray-400" />,
+    text: `The all-in-one course gave me real skills in mobile and web app development. Highly recommend!`,
+  },
+  {
+    name: "Sampurna K.C",
+    course: "Frontend Development",
+    image: <FaUserCircle className="text-6xl text-gray-400" />,
+    text: `This program is perfect for anyone serious about frontend. I can now code beautiful UIs with confidence.`,
+  },
+  {
+    name: "Milan Paudel",
+    course: "React Native",
+    image: <FaUserCircle className="text-6xl text-gray-400" />,
+    text: `I built mobile apps using React Native within weeks. The best part was testing them on real devices.`,
+  },
+  {
+    name: "Rasila Malla",
+    course: "MERN Stack",
+    image: <FaUserCircle className="text-6xl text-gray-400" />,
+    text: `Clear explanations, great projects, and practical MongoDB + Express training helped me go fullstack.`,
+  },
+  {
+    name: "Biplab Sapkota",
+    course: "Full Stack Development",
+    image: <FaUserCircle className="text-6xl text-gray-400" />,
+    text: `Loved learning both client and server sides. It made me confident enough to start freelancing.`,
+  },
+  {
+    name: "Dipesh Shrestha",
+    course: "Full Stack Development",
+    image: <FaUserCircle className="text-6xl text-gray-400" />,
+    text: `The roadmap, assignments, and capstone projects were extremely valuable for entering the tech field.`,
+  },
+  {
+    name: "Manohari Acharya",
+    course: "Frontend Development",
+    image: <FaUserCircle className="text-6xl text-gray-400" />,
+    text: `From basics to advanced styling and animations — the course delivered everything I needed.`,
+  },
+  {
+    name: "Srijan Raj Sakya",
+    course: "Full Stack Development",
+    image: <FaUserCircle className="text-6xl text-gray-400" />,
+    text: `Every session added value. The real-time API integration and database sessions made things click.`,
+  },
+  {
+    name: "Om Kumari Thapa",
+    course: "Frontend Development",
+    image: <FaUserCircle className="text-6xl text-gray-400" />,
+    text: `The instructors were patient and guided us with real examples. I now feel job-ready in frontend.`,
+  },
+  {
+    name: "Srijan Shrestha",
+    course: "Frontend Development",
+    image: <FaUserCircle className="text-6xl text-gray-400" />,
+    text: `The course structure and project reviews helped me polish my skills and boost my confidence.`,
+  },
 ];
 
 const StudentTestimonials = () => {
   useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
-  
+    window.scrollTo(0, 0);
+  }, []);
+
   const [filter, setFilter] = useState("");
   const filtered = testimonials.filter((t) =>
     t.course.toLowerCase().includes(filter.toLowerCase())
@@ -224,11 +350,17 @@ const StudentTestimonials = () => {
               <p className="text-4xl text-[#06693A] font-serif mb-3 leading-none">“</p>
               <p className="text-[15px] text-gray-700 mb-5 italic">{t.text}</p>
               <div className="flex items-center">
-                <img
-                  src={t.image}
-                  alt={t.name}
-                  className="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm mr-4"
-                />
+                <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-sm mr-4 flex items-center justify-center bg-gray-100 text-gray-500">
+                  {typeof t.image === "string" ? (
+                    <img
+                      src={t.image}
+                      alt={t.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    t.image
+                  )}
+                </div>
                 <div>
                   <h4 className="font-semibold text-[#14452F] leading-tight">{t.name}</h4>
                   <p className="text-sm text-gray-500">{t.course}</p>

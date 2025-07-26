@@ -9,7 +9,7 @@ const OurVission = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // ✅ SEO Settings
+    // ✅ SEO Settings.
     document.title = "Our Vision – Future-Ready Tech Education | Clouds Nepal Web";
 
     const descriptionText =
