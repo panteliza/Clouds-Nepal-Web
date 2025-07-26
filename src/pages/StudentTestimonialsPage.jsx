@@ -24,6 +24,9 @@ import img16 from "../assets/Dipjung Gurung.jpg";
 import img17 from "../assets/Chetan Rajbansi.jpg";
 import img18 from "../assets/Nitesh Acharya.jpg";
 import img19 from "../assets/Suman Basnet.jpg";
+import img20 from "../assets/Manohari Acharya.jpeg";
+import img21 from "../assets/Smrity Baniya.jpeg";
+import img22 from "../assets/Samundra Kc.jpeg";
 
 const testimonials = [
   {
@@ -140,6 +143,25 @@ const testimonials = [
     image: img19,
     text: `Built cloud computing skills with AWS labs. EC2, S3, Lambda, IAM — all practiced during sessions. Very helpful for my IT career.`,
   },
+   {
+    name: "Manohari Acharya",
+    course: "Frontend Development",
+    image: img20,
+    text: `From basics to advanced styling and animations — the course delivered everything I needed.`,
+  },
+   {
+    name: "Smriti Baniya",
+    course: "Frontend (MERN)",
+    image:img21,
+    text: `Loved working with MongoDB and React. I learned how to connect everything into one complete web app.`,
+  },
+  {
+  name: "Samundra K.C",
+  course: "Full Stack Development",
+  image: img22,
+  text: `The full stack course helped me connect frontend and backend seamlessly. I built complete apps with React and Node.js — truly a career-transforming experience.`,
+},
+
   {
     name: "Susmita Rai",
     course: "Frontend Development",
@@ -188,12 +210,7 @@ const testimonials = [
     image: <FaUserCircle className="text-6xl text-gray-400" />,
     text: `From UI to APIs and mobile apps — this full-stack journey shaped my path into a complete developer.`,
   },
-  {
-    name: "Smriti Baniya",
-    course: "Frontend (MERN)",
-    image: <FaUserCircle className="text-6xl text-gray-400" />,
-    text: `Loved working with MongoDB and React. I learned how to connect everything into one complete web app.`,
-  },
+ 
   {
     name: "Suraj Rai",
     course: "Frontend Development",
@@ -242,12 +259,7 @@ const testimonials = [
     image: <FaUserCircle className="text-6xl text-gray-400" />,
     text: `The roadmap, assignments, and capstone projects were extremely valuable for entering the tech field.`,
   },
-  {
-    name: "Manohari Acharya",
-    course: "Frontend Development",
-    image: <FaUserCircle className="text-6xl text-gray-400" />,
-    text: `From basics to advanced styling and animations — the course delivered everything I needed.`,
-  },
+ 
   {
     name: "Srijan Raj Sakya",
     course: "Full Stack Development",
