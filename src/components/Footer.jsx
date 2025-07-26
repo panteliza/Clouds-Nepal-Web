@@ -1,41 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaChevronUp, FaChevronDown } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import footerBg from "../assets/footerpic.png"; // Replace with actual image path
 
 const Footer = () => {
-  return (
-    <footer
-      className="w-full text-white"
-      style={{
-        backgroundColor: "#0f3e24", // Tailwind green-700
-        backgroundImage: `linear-gradient(to bottom, rgba(21, 128, 61, 0.6), rgba(21, 128, 61, 0.8)), `,
-        backgroundPosition: "center bottom",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        paddingBottom: "0px",
-      }}
-    >
-      {/* Content Section */}
-      <div className="relative z-10 py-10 px-6 sm:px-12 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* About */}
-          <div>
-            <h2 className="text-xl font-bold mb-4">About Us</h2>
-            <p className="text-sm leading-relaxed">
-              Clouds Nepal Web is a leading software and IT solutions company based in Nepal,
-              dedicated to delivering high-quality, innovative digital services. From custom website and
-              app development to UI/UX design, digital marketing, and branding, we empower businesses
-              to thrive in the digital age through reliable and scalable technology.
-            </p>
-          </div>
+  const [showServices, setShowServices] = useState(false);
 
-          {/* Services */}
-          <div>
-            <h2 className="text-xl font-bold mb-4">Our Services</h2>
-           <ul className="space-y-2 text-sm">
-  {[
+  const services = [
     { path: '/website-development', label: 'Website Development' },
     { path: '/application-development', label: 'Application Development' },
     { path: '/mobile-app-development', label: 'Mobile App Development' },
@@ -48,71 +19,85 @@ const Footer = () => {
     { path: '/pos-ims-erp', label: 'POS, IMS, ERP Software' },
     { path: '/seo-sem-ppc', label: 'SEO, SEM, PPC' },
     { path: '/marketing-automation', label: 'Marketing & Automation' },
-  ].map((service, index) => (
-    <li key={index}>
-      <Link to={service.path} className="hover:text-teal-300 transition">
-        {service.label}
-      </Link>
-    </li>
-  ))}
-</ul>
+  ];
 
+  return (
+    <footer className="w-full text-white bg-[#0f3e24]">
+      <div className="max-w-7xl mx-auto px-6 py-12">
+        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-10">
+          {/* About Us */}
+          <div className="w-full lg:w-1/3">
+            <h2 className="text-xl font-bold mb-4">About Us</h2>
+            <p className="text-sm leading-relaxed text-gray-100">
+              Clouds Nepal Web is a leading software and IT solutions company based in Nepal. From websites to mobile apps, digital marketing to cloud integrations — we build what grows your business.
+            </p>
           </div>
 
-          {/* Helpful Links */}
-          <div>
-            <h2 className="text-xl font-bold mb-4">Helpful Links</h2>
+          {/* Useful Links & Services */}
+          <div className="w-full lg:w-1/3">
+            <h2 className="text-xl font-bold mb-4">Useful Links</h2>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/about" className="hover:text-teal-300 transition">
-                  About Us
-                </Link>
+                <Link to="/about" className="hover:text-teal-300 transition">About Us</Link>
               </li>
               <li>
-                <Link to="/contact-us" className="hover:text-teal-300 transition">
-                  Contact Us
-                </Link>
+                <Link to="/courses" className="hover:text-teal-300 transition">Our Courses</Link>
               </li>
               <li>
-                <Link to="/courses" className="hover:text-teal-300 transition">
-                  Our Courses
-                </Link>
+                <Link to="/contact-us" className="hover:text-teal-300 transition">Contact Us</Link>
               </li>
             </ul>
+
+            <button
+              onClick={() => setShowServices(!showServices)}
+              className="mt-4 flex items-center text-sm text-teal-300 hover:underline"
+            >
+              {showServices ? 'Hide Services' : 'View All Services'}
+              {showServices ? <FaChevronUp className="ml-2" /> : <FaChevronDown className="ml-2" />}
+            </button>
+
+            {showServices && (
+              <div className="mt-4">
+                <h3 className="text-base font-semibold mb-2">Our Services</h3>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+                  {services.map((s, idx) => (
+                    <li key={idx}>
+                      <Link to={s.path} className="hover:text-teal-300 transition">
+                        {s.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
 
-          {/* Contact Info */}
-          <div>
+          {/* Support */}
+          <div className="w-full lg:w-1/3">
             <h2 className="text-xl font-bold mb-4">24/7 Support</h2>
-            <ul className="space-y-4 text-sm">
+            <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2">
                 <MdEmail className="text-lg" />
                 <a href="mailto:webcloudsnepal@gmail.com" className="hover:underline">
-                 webcloudsnepal@gmail.com
+                  webcloudsnepal@gmail.com
                 </a>
               </li>
-            <li className="flex flex-col gap-1">
-  <a href="tel:+9779766896866" className="flex items-center gap-2 hover:underline">
-    <FaPhoneAlt className="text-lg" />
-    9766896866
-  </a>
-  <a href="tel:+9779762634769" className="flex items-center gap-2 hover:underline">
-    <FaPhoneAlt className="text-lg" />
-    9762634769
-  </a>
-  <a href="tel:+9779769341576" className="flex items-center gap-2 hover:underline">
-    <FaPhoneAlt className="text-lg" />
-    9769341576
-  </a>
-  <a href="tel:+9779769341568" className="flex items-center gap-2 hover:underline">
-    <FaPhoneAlt className="text-lg" />
-    9769341568
-  </a>
-</li>
-
+              <li>
+                <a href="tel:+9779762634769" className="flex items-center gap-2 hover:underline">
+                  <FaPhoneAlt /> 9762634769
+                </a>
+              </li>
+              <li>
+                <a href="tel:+9779769341576" className="flex items-center gap-2 hover:underline">
+                  <FaPhoneAlt /> 9769341576
+                </a>
+              </li>
+              <li>
+                <a href="tel:+9779769341568" className="flex items-center gap-2 hover:underline">
+                  <FaPhoneAlt /> 9769341568
+                </a>
+              </li>
             </ul>
-
-            {/* CTA Button */}
             <a
               href="https://wa.me/9766896866"
               target="_blank"
@@ -125,18 +110,13 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright */}
       <div
-        className="w-full text-center py-3 px-4 text-white font-medium"
-       style={{
-  backgroundImage:
-    "linear-gradient(to right, #0f3d2e, #14532d, #166534, #1e7b3b, #14532d, #0f3d2e)",
-}}
-
+        className="text-center py-3 text-sm font-medium"
+        style={{
+          backgroundImage: "linear-gradient(to right, #0f3d2e, #14532d, #166534, #1e7b3b, #14532d, #0f3d2e)",
+        }}
       >
-        <p className="text-sm xl:text-md">
-          © {new Date().getFullYear()} <strong>Clouds Nepal Web</strong>. All Rights Reserved.
-        </p>
+        © {new Date().getFullYear()} <strong>Clouds Nepal Web</strong>. All Rights Reserved.
       </div>
     </footer>
   );
