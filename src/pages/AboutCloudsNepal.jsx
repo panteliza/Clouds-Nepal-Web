@@ -12,6 +12,31 @@ const cardVariant = {
 const AboutCloudsNepal = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    // ✅ Basic SEO tags without Helmet
+    document.title = "About Clouds Nepal Web – Software, Cloud, and IT Training Experts";
+
+    const metaDescription = document.querySelector("meta[name='description']");
+    if (metaDescription) {
+      metaDescription.setAttribute(
+        "content",
+        "Clouds Nepal Web leads Nepal’s digital transformation through software solutions, cloud services, and professional IT training since 2022."
+      );
+    } else {
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content =
+        "Clouds Nepal Web leads Nepal’s digital transformation through software solutions, cloud services, and professional IT training since 2022.";
+      document.head.appendChild(meta);
+    }
+
+    const canonicalLink = document.querySelector("link[rel='canonical']");
+    if (!canonicalLink) {
+      const link = document.createElement("link");
+      link.rel = "canonical";
+      link.href = "https://www.cloudsnepal.com/about";
+      document.head.appendChild(link);
+    }
   }, []);
 
   return (
@@ -42,7 +67,7 @@ const AboutCloudsNepal = () => {
           >
             <img
               src={aboutImage}
-              alt="Clouds Nepal Team"
+              alt="Clouds Nepal Web Team"
               className="w-full h-auto object-cover rounded-2xl"
             />
           </motion.div>

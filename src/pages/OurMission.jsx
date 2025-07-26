@@ -8,6 +8,30 @@ import missionImg from "../assets/MissionPic.webp";
 const MissionPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    // ✅ SEO Settings
+    document.title = "Mission – Empowering Nepal’s Tech Future | Clouds Nepal Web";
+
+    const descriptionContent =
+      "Our mission at Clouds Nepal Web is to equip learners with hands-on, job-ready skills in frontend, backend, DevOps, data science, and more. Learn with real mentors and build real impact.";
+
+    const metaDescription = document.querySelector("meta[name='description']");
+    if (metaDescription) {
+      metaDescription.setAttribute("content", descriptionContent);
+    } else {
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content = descriptionContent;
+      document.head.appendChild(meta);
+    }
+
+    const canonical = document.querySelector("link[rel='canonical']");
+    if (!canonical) {
+      const link = document.createElement("link");
+      link.rel = "canonical";
+      link.href = "https://www.cloudsnepal.com/mission";
+      document.head.appendChild(link);
+    }
   }, []);
 
   const iconStyle = "text-green-800 text-3xl mb-4";
@@ -60,7 +84,7 @@ const MissionPage = () => {
 
           <motion.img
             src={missionImg}
-            alt="Our Mission"
+            alt="Mission statement by Clouds Nepal Web"
             className="rounded-2xl shadow-lg w-full object-cover"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -80,23 +104,35 @@ const MissionPage = () => {
             },
           }}
         >
-          {[{
-            icon: <FaBullseye className={iconStyle} />, title: "Purpose-Driven",
-            desc: "We aim to cultivate skills that directly impact career growth, innovation, and real-world problem solving."
-          }, {
-            icon: <FaLightbulb className={iconStyle} />, title: "Innovation",
-            desc: "We embrace technology and adapt our training to reflect what’s shaping the future."
-          }, {
-            icon: <FaUsers className={iconStyle} />, title: "Inclusive Learning",
-            desc: "We believe everyone deserves the opportunity to grow—regardless of their background or experience."
-          }, {
-            icon: <FaChartLine className={iconStyle} />, title: "Real Results",
-            desc: "From classroom to career—we focus on measurable progress through mentorship and live projects."
-          }].map((item, i) => (
+          {[
+            {
+              icon: <FaBullseye className={iconStyle} />,
+              title: "Purpose-Driven",
+              desc: "We aim to cultivate skills that directly impact career growth, innovation, and real-world problem solving.",
+            },
+            {
+              icon: <FaLightbulb className={iconStyle} />,
+              title: "Innovation",
+              desc: "We embrace technology and adapt our training to reflect what’s shaping the future.",
+            },
+            {
+              icon: <FaUsers className={iconStyle} />,
+              title: "Inclusive Learning",
+              desc: "We believe everyone deserves the opportunity to grow—regardless of their background or experience.",
+            },
+            {
+              icon: <FaChartLine className={iconStyle} />,
+              title: "Real Results",
+              desc: "From classroom to career—we focus on measurable progress through mentorship and live projects.",
+            },
+          ].map((item, i) => (
             <motion.div
               key={i}
               className="bg-white rounded-xl p-6 shadow-md text-center backdrop-blur-sm bg-opacity-80 border border-green-100 hover:shadow-xl transition"
-              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
               whileHover={{ scale: 1.03 }}
             >
               {item.icon}

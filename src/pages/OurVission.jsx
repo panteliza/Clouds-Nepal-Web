@@ -8,6 +8,30 @@ import visionImage from "../assets/VissionPic.webp"; // ✅ Make sure this is th
 const OurVission = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    // ✅ SEO Settings
+    document.title = "Our Vision – Future-Ready Tech Education | Clouds Nepal Web";
+
+    const descriptionText =
+      "Discover the vision of Clouds Nepal Web — a future-focused platform dedicated to empowering learners across Nepal with global-standard tech training, creativity, and opportunity.";
+
+    const metaDesc = document.querySelector("meta[name='description']");
+    if (metaDesc) {
+      metaDesc.setAttribute("content", descriptionText);
+    } else {
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content = descriptionText;
+      document.head.appendChild(meta);
+    }
+
+    const canonicalLink = document.querySelector("link[rel='canonical']");
+    if (!canonicalLink) {
+      const link = document.createElement("link");
+      link.rel = "canonical";
+      link.href = "https://www.cloudsnepal.com/vision";
+      document.head.appendChild(link);
+    }
   }, []);
 
   const iconStyle = "text-4xl text-green-800 mb-4";
@@ -38,17 +62,14 @@ const OurVission = () => {
         </motion.h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-     <motion.img
-  src={visionImage}
-  alt="Vision Banner"
-  className="rounded-2xl shadow-xl w-full object-cover"
-  initial={{ scale: 0.9, opacity: 0 }}
-  animate={{ scale: 1, opacity: 1 }}
-  transition={{ duration: 0.9, delay: 0.2 }}
-/>
-
-
-
+          <motion.img
+            src={visionImage}
+            alt="Vision Banner of Clouds Nepal Web"
+            className="rounded-2xl shadow-xl w-full object-cover"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.9, delay: 0.2 }}
+          />
 
           <motion.div
             className="space-y-6 text-gray-700 text-lg leading-relaxed"
@@ -83,19 +104,28 @@ const OurVission = () => {
             },
           }}
         >
-          {[{
-            icon: <FaEye className={iconStyle} />, title: "Bold Perspective",
-            desc: "We aim to redefine tech education through a futuristic, learner-first lens."
-          }, {
-            icon: <FaRocket className={iconStyle} />, title: "Empowered Growth",
-            desc: "We want every learner to accelerate their growth and leave with confidence."
-          }, {
-            icon: <FaGlobeAsia className={iconStyle} />, title: "Global Standards",
-            desc: "Our training, mentors and tools align with global tech standards."
-          }, {
-            icon: <FaBrain className={iconStyle} />, title: "Creative Intelligence",
-            desc: "We promote curiosity and design thinking, the core drivers of innovation."
-          }].map((item, i) => (
+          {[
+            {
+              icon: <FaEye className={iconStyle} />,
+              title: "Bold Perspective",
+              desc: "We aim to redefine tech education through a futuristic, learner-first lens.",
+            },
+            {
+              icon: <FaRocket className={iconStyle} />,
+              title: "Empowered Growth",
+              desc: "We want every learner to accelerate their growth and leave with confidence.",
+            },
+            {
+              icon: <FaGlobeAsia className={iconStyle} />,
+              title: "Global Standards",
+              desc: "Our training, mentors and tools align with global tech standards.",
+            },
+            {
+              icon: <FaBrain className={iconStyle} />,
+              title: "Creative Intelligence",
+              desc: "We promote curiosity and design thinking, the core drivers of innovation.",
+            },
+          ].map((item, i) => (
             <motion.div
               key={i}
               className="bg-white rounded-xl p-6 shadow-md text-center backdrop-blur-sm bg-opacity-80 border border-green-100 hover:shadow-xl transition"
