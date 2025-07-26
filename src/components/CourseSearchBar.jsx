@@ -72,7 +72,7 @@ const CourseSearchBar = ({ allCourses }) => {
         <div className="absolute inset-0 z-0 animate-gradient-flow bg-[length:200%_200%] bg-gradient-to-r from-[#06693A] via-[#059669] to-[#034D2C] blur-sm opacity-90" />
         <div className="absolute inset-0 z-0 bg-white/40 backdrop-blur-sm mix-blend-overlay pointer-events-none" />
 
-        <div className="relative z-10 flex flex-wrap items-center justify-between gap-4 px-4 md:px-6 py-4">
+        <div className="relative z-10 flex flex-wrap items-center justify-between gap-5 px-4 md:px-6 lg:pt-5 md:pb-1 lg:pt-2 pb-1 pt-2 pb-3 ">
           <div className="flex flex-grow items-center gap-3 w-full md:w-auto">
             <div
               onClick={() => setShowList(!showList)}
