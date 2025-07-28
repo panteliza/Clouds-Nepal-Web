@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
@@ -14,6 +14,47 @@ const CareerPage = () => {
   const [uploadProgress, setUploadProgress] = useState(0);
   const [resumePreview, setResumePreview] = useState(null);
   const [resumeFile, setResumeFile] = useState(null);
+
+  // ✅ SEO Tags for Indexing
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    // Title
+    document.title = "Careers – Work with Clouds Nepal Web | Join Our IT Team";
+
+    // Meta Description
+    const metaDescription = document.querySelector("meta[name='description']");
+    if (metaDescription) {
+      metaDescription.setAttribute(
+        "content",
+        "Join the Clouds Nepal Web team! We're always looking for passionate developers, designers, marketers, and cloud experts. Submit your CV today."
+      );
+    } else {
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content =
+        "Join the Clouds Nepal Web team! We're always looking for passionate developers, designers, marketers, and cloud experts. Submit your CV today.";
+      document.head.appendChild(meta);
+    }
+
+    // Canonical Link
+    const canonicalLink = document.querySelector("link[rel='canonical']");
+    if (!canonicalLink) {
+      const link = document.createElement("link");
+      link.rel = "canonical";
+      link.href = "https://www.cloudsnepalweb.com.np/career";
+      document.head.appendChild(link);
+    }
+
+    // Robots Meta
+    const robotsTag = document.querySelector("meta[name='robots']");
+    if (!robotsTag) {
+      const meta = document.createElement("meta");
+      meta.name = "robots";
+      meta.content = "index, follow";
+      document.head.appendChild(meta);
+    }
+  }, []);
 
   const handleResumeChange = (e) => {
     const file = e.target.files[0];
@@ -99,7 +140,7 @@ const CareerPage = () => {
   return (
     <>
       <Navbar />
-      <section className="px-4 bg-gradient-to-b from-white to-blue-50 pt-[100px] pb-5 ">
+      <section className="px-4 bg-gradient-to-b from-white to-blue-50 pt-[100px] pb-5">
         <motion.h2
           className="text-4xl font-extrabold text-center mb-6"
           initial={{ opacity: 0, y: 30 }}
