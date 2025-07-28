@@ -75,6 +75,7 @@ const App = () => {
         <FloatingButtons />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/courses" element={<CoursesPage />} />
           <Route path="/about" element={<AboutCloudsNepal />} />
           <Route path="/contact-us" element={<CloudsContactUsPage />} />
