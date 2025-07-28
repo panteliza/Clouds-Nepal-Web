@@ -13,9 +13,10 @@ const AboutCloudsNepal = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // ✅ Basic SEO tags without Helmet
+    // ✅ SEO tags
     document.title = "About Clouds Nepal Web – Software, Cloud, and IT Training Experts";
 
+    // ✅ Meta Description
     const metaDescription = document.querySelector("meta[name='description']");
     if (metaDescription) {
       metaDescription.setAttribute(
@@ -30,12 +31,22 @@ const AboutCloudsNepal = () => {
       document.head.appendChild(meta);
     }
 
+    // ✅ Canonical Link (Fixed domain)
     const canonicalLink = document.querySelector("link[rel='canonical']");
     if (!canonicalLink) {
       const link = document.createElement("link");
       link.rel = "canonical";
-      link.href = "https://www.cloudsnepal.com/about";
+      link.href = "https://www.cloudsnepalweb.com.np/about";
       document.head.appendChild(link);
+    }
+
+    // ✅ Robots Meta
+    const robotsTag = document.querySelector("meta[name='robots']");
+    if (!robotsTag) {
+      const meta = document.createElement("meta");
+      meta.name = "robots";
+      meta.content = "index, follow";
+      document.head.appendChild(meta);
     }
   }, []);
 
@@ -45,7 +56,7 @@ const AboutCloudsNepal = () => {
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#eef6f9] to-[#e2f0ec] overflow-hidden pt-22 py-16 px-6 md:px-16">
-        {/* Floating Background Orbs */}
+        {/* Floating Orbs */}
         <motion.div
           className="absolute top-[-120px] left-[-120px] w-[500px] h-[500px] bg-[#39765B] rounded-full filter blur-3xl opacity-20 z-0"
           animate={{ scale: [1, 1.2, 1], rotate: [0, 60, -60, 0] }}
@@ -102,20 +113,17 @@ const AboutCloudsNepal = () => {
               <span className="font-semibold text-[#39765B]">cloud platforms</span> to nurturing new tech
               talent through <span className="font-semibold text-[#39765B]">IT training</span>, we’ve been
               the digital engine for startups, students, and enterprise clients.
-
               <br /><br />
               Our mission is to turn ideas into innovation — locally built, globally trusted.
               We believe technology should be accessible, meaningful, and empowering — whether
               you’re a business seeking automation or a learner preparing for your first
               programming job.
-
               <br /><br />
               With a team of passionate developers, cloud engineers, and tech mentors,
               we bridge the gap between Nepal’s potential and global tech standards.
               Our services span across <strong>website and app development</strong>,{" "}
               <strong>custom ERP/CRM systems</strong>, and <strong>cloud integrations</strong>,
               while our training programs prepare students for real-world IT careers.
-
               <br /><br />
               At Clouds Nepal Web, we are not just a service provider — we are partners in
               digital growth. Together with our clients and students, we’re building the future
@@ -127,7 +135,6 @@ const AboutCloudsNepal = () => {
 
       {/* Cards Section */}
       <section className="relative py-16 px-6 md:px-16 bg-white z-10 overflow-hidden">
-        {/* Additional Animated Background Orb */}
         <motion.div
           className="absolute w-[280px] h-[280px] rounded-full bg-[#d0f1e2] blur-3xl opacity-30 top-[20%] left-[40%] z-0"
           animate={{ scale: [1, 1.3, 1], y: [0, 30, -30, 0] }}
