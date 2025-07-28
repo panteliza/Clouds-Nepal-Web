@@ -281,14 +281,47 @@ const testimonials = [
 ];
 
 const StudentTestimonials = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   const [filter, setFilter] = useState("");
   const filtered = testimonials.filter((t) =>
     t.course.toLowerCase().includes(filter.toLowerCase())
   );
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    // ✅ SEO Setup
+    document.title = "Student Testimonials – Clouds Nepal Web | Real Reviews from IT Training Students";
+
+    const metaDescription = document.querySelector("meta[name='description']");
+    if (metaDescription) {
+      metaDescription.setAttribute(
+        "content",
+        "Read honest testimonials from Clouds Nepal Web students who completed training in DevOps, React, Python, QA, MERN stack, and more. Real success stories."
+      );
+    } else {
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content =
+        "Read honest testimonials from Clouds Nepal Web students who completed training in DevOps, React, Python, QA, MERN stack, and more. Real success stories.";
+      document.head.appendChild(meta);
+    }
+
+    const canonical = document.querySelector("link[rel='canonical']");
+    if (!canonical) {
+      const link = document.createElement("link");
+      link.rel = "canonical";
+      link.href = "https://www.cloudsnepalweb.com.np/testimonials";
+      document.head.appendChild(link);
+    }
+
+    const robots = document.querySelector("meta[name='robots']");
+    if (!robots) {
+      const meta = document.createElement("meta");
+      meta.name = "robots";
+      meta.content = "index, follow";
+      document.head.appendChild(meta);
+    }
+  }, []);
 
   return (
     <div className="relative bg-gradient-to-br from-[#e6f4ec] via-[#f3fdf8] to-[#e6f4ec] overflow-hidden min-h-screen">
@@ -315,7 +348,7 @@ const StudentTestimonials = () => {
           Hear From Our Students
         </motion.h2>
 
-        {/* Search Input */}
+        {/* Search */}
         <motion.div
           className="flex justify-center mb-12"
           initial={{ opacity: 0, scale: 0.95 }}
@@ -343,9 +376,7 @@ const StudentTestimonials = () => {
           animate="visible"
           variants={{
             visible: {
-              transition: {
-                staggerChildren: 0.1,
-              },
+              transition: { staggerChildren: 0.1 },
             },
           }}
         >
@@ -364,11 +395,7 @@ const StudentTestimonials = () => {
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-sm mr-4 flex items-center justify-center bg-gray-100 text-gray-500">
                   {typeof t.image === "string" ? (
-                    <img
-                      src={t.image}
-                      alt={t.name}
-                      className="w-full h-full object-cover"
-                    />
+                    <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
                   ) : (
                     t.image
                   )}
