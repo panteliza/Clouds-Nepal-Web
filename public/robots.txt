@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.cloudsnepalweb.com.np/sitemap.xml
