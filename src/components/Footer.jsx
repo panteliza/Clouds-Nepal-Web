@@ -75,29 +75,35 @@ const Footer = () => {
           {/* Support */}
           <div className="w-full lg:w-1/3">
             <h2 className="text-xl font-bold mb-4">24/7 Support</h2>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-center gap-2">
-                <MdEmail className="text-lg" />
-                <a href="mailto:webcloudsnepal@gmail.com" className="hover:underline">
-                  webcloudsnepal@gmail.com
-                </a>
-              </li>
-              <li>
-                <a href="tel:+9779762634769" className="flex items-center gap-2 hover:underline">
-                  <FaPhoneAlt /> 9762634769
-                </a>
-              </li>
-              <li>
-                <a href="tel:+9779769341576" className="flex items-center gap-2 hover:underline">
-                  <FaPhoneAlt /> 9769341576
-                </a>
-              </li>
-              <li>
-                <a href="tel:+9779769341568" className="flex items-center gap-2 hover:underline">
-                  <FaPhoneAlt /> 9769341568
-                </a>
-              </li>
-            </ul>
+          <ul className="space-y-3 text-sm">
+  <li className="flex items-center gap-2">
+    <MdEmail className="text-lg" />
+    <a href="mailto:webcloudsnepal@gmail.com" className="hover:underline">
+      webcloudsnepal@gmail.com
+    </a>
+  </li>
+  <li>
+    <a href="tel:+9779762634769" className="flex items-center gap-2 hover:underline">
+      <FaPhoneAlt /> 9762634769
+    </a>
+  </li>
+  <li>
+    <a href="tel:+9779769341576" className="flex items-center gap-2 hover:underline">
+      <FaPhoneAlt /> 9769341576
+    </a>
+  </li>
+  <li>
+    <a href="tel:+9779769341568" className="flex items-center gap-2 hover:underline">
+      <FaPhoneAlt /> 9769341568
+    </a>
+  </li>
+  <li>
+    <a href="tel:+9779766896866" className="flex items-center gap-2 font-semibold text-blue-600 hover:underline">
+      <FaPhoneAlt /> Hotline: 9766896866
+    </a>
+  </li>
+</ul>
+
             <a
               href="https://wa.me/9766896866"
               target="_blank"
