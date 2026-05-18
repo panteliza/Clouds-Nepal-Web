@@ -71,6 +71,71 @@ src/
  ├── pages/
  ├── styles/
  └── App.jsx
+```
 
-📸 Preview
+---
+
+## 📸 Preview
+
 <img width="1366" height="633" alt="Clouds Nepal Web Preview" src="https://github.com/user-attachments/assets/becc033a-e4c0-42d8-b718-783e673de3ef" />
+
+---
+
+## 📦 Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/panteliza/Clouds-Nepal-Web.git
+```
+
+Navigate to the project folder:
+
+```bash
+cd Clouds-Nepal-Web
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+---
+
+## 🌐 Deployment
+
+Deployed using Vercel with custom domain integration.
+
+Live Domain:
+
+https://cloudsnepalweb.com.np
+
+---
+
+## 👩‍💻 Author
+
+**Eliza Pant**
+
+Frontend Web Developer | React.js & Next.js Developer
+
+Portfolio: https://www.elizapant.com.np/
+
+GitHub: https://github.com/panteliza
+
+---
+
+## 📌 Future Improvements
+
+- Advanced animations
+- Dark mode support
+- Backend integration
+- Enhanced SEO optimization
+- Improved accessibility
+- Additional interactive sections
