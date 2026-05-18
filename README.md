@@ -1,12 +1,36 @@
-# React + Vite
+# Clouds Nepal Web ☁️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive cloud solutions website built using React and Vite.  
+Designed with a clean user interface, responsive layouts, and professional business-focused frontend architecture.
 
-Currently, two official plugins are available:
+## 🚀 Live Website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://cloudsnepalweb.com.np
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Responsive Design
+- Modern UI/UX
+- Fast Performance
+- Mobile Friendly
+- Professional Business Layout
+- Smooth User Experience
+- Optimized Frontend Structure
+
+## 🛠️ Tech Stack
+
+- React.js
+- Vite
+- JavaScript
+- CSS
+- Git & GitHub
+- Vercel
+
+## 📸 Preview
+
+Add project screenshots here.
+
+Example:
+
+```md
+![Preview](./preview.png)
