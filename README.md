@@ -28,9 +28,6 @@ https://cloudsnepalweb.com.np
 
 ## 📸 Preview
 
-Add project screenshots here.
+<img width="1366" height="633" alt="Screenshot (1474)" src="https://github.com/user-attachments/assets/becc033a-e4c0-42d8-b718-783e673de3ef" />
 
-Example:
 
-```md
-![Preview](./preview.png)
